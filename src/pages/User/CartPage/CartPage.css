@@ -1,0 +1,183 @@
+.titleHolderCart {
+  display: flex;
+}
+
+.back_btn {
+  border: none;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-right: 38px;
+  margin-left: 30px;
+}
+
+.titleCart {
+  color: #3a060e;
+
+  /* Font_Header */
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 500px;
+}
+
+.product_area {
+  width: 1200px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+  margin-top: -140px;
+  margin-left: 50px;
+}
+
+.Btnarea {
+  width: 1200px;
+  height: 224px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 15px 15px;
+  background: var(--button-color, #b1e321);
+  margin-top: 5px;
+}
+
+.Buy_btn {
+  width: var(--button-width);
+  height: var(--button-height);
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: var(--brown100);
+  color: var(--green100);
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-left: 830px;
+  margin-top: 40px;
+}
+
+.Buy_more {
+  border: none;
+  background-color: #b1e321;
+  color: #3a060e;
+  margin-left: 37px;
+  margin-top: 40px;
+}
+
+.Btnholder {
+  display: flex;
+}
+
+.total-holder {
+  display: flex;
+  margin-left: 50px;
+}
+
+.tong {
+  color: #000;
+  /* Font_Text */
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: 839px;
+  margin-top: 60px;
+}
+
+.total {
+  color: var(--Color1, #3a060e);
+
+  /* Font_Title */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 18px;
+  margin-right: 75px;
+  margin-top: 56px;
+}
+
+.product_area {
+  margin-top: 30px;
+}
+
+.LineProduct {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+  gap: 55px;
+  margin-top: 5px;
+  padding: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+}
+
+.ProductInforHear,
+.PriceHeader,
+.QuantityHeader,
+.MoneyHeader,
+.MoneyProduct {
+  color: #3a060e;
+
+  /* Font_Title */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 20px;
+}
+.HeaderHolder {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px !important;
+}
+.HeaderInfor {
+  margin-left: 104px;
+}
+.HeaderPrice {
+  margin-left: 260px;
+}
+.HeaderQuantity {
+  margin-left: 115px;
+}
+.HeaderMoney {
+  margin-left: 90px;
+}
+.PriceProduct {
+  width: 200px;
+  margin-left: -30px;
+}
+/* 
+.QuantityBtn {
+  margin-left: -30px;
+} */
+.Money {
+  width: 200px;
+  margin-left: -20px;
+}
+.Price {
+  color: #3a060e;
+
+  /* Font_Text_Big */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.ProductInfor {
+  margin-left: -50px;
+}
+
+.DeleteBtn {
+  margin-right: 20px;
+}

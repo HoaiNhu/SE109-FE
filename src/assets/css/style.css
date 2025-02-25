@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* color */
+  --brown100: #3a060e;
+  --brown50: #3a060580;
+  --brown30: #3a060e4d;
+  --green100: #b1e321;
+  --green80: #b2e321cc;
+  --green50: #b3e42150;
+  --green30: #b1e3214d;
+  --green10: #b2e3211d;
+  --white: #fff;
+  --grey5: #f5f5f5;
+  --grey9: #f9f9f9;
+  --grey: #ccc;
+  --shadow: #203c1640;
+  --button-width: 13rem;
+  --button-height: 4.4rem;
+  --search-box-width: 44rem;
+  --search-box-height: 5.2rem;
+  --font-size: 1.6rem;
+  --font-size-title: 4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* khôi phục lại cỡ chữ mặc định theo rem */
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}

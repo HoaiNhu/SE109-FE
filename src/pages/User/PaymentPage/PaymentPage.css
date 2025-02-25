@@ -1,0 +1,159 @@
+.container-xl-pay {
+    display: flex;
+}
+
+.PaymentInfor {
+    width: 670px;
+    height: 581px;
+    margin-left: 50px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    margin-top: 30px;
+    background: var(--White, #FFF);
+    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+}
+
+.pThongtin {
+    color: #3A060E;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.PayHolder {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.Bank {
+    border: none;
+    display: flex;
+    width: 260px;
+    height: 60px;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF;
+    color: #3A060E;
+    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+}
+
+.E-wallet {
+    display: flex;
+    border: none;
+    width: 260px;
+    height: 60px;
+    padding: 16px 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFF;
+    margin-left: 55px;
+    color: #3A060E;
+    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+}
+
+.inputH1 {
+    display: flex;
+    margin-left: 40px;
+    margin-top: 96px;
+}
+
+.input1,
+.input2 {
+    width: 260px;
+    height: 60px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 15px;
+    color: #3A060E;
+    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+    margin-bottom: 10px;
+}
+
+.inputSdt {
+    /* margin-left: 55px; */
+    display: grid;
+}
+
+.customBtn2 {
+    display: flex;
+    width: 130px;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    background: #3A060E;
+    color: #B1E321;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    /* 175% */
+}
+
+.Button-area-pay {
+    margin-top: 60px;
+    display: flex;
+    margin-left: 328px;
+}
+
+.button2 {
+    margin-left: 20px;
+}
+
+.final-order {
+    width: 500px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 15px;
+    background: var(--White, #FFF);
+    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+
+}
+.footerAreaPayment{
+    width: 500px;
+height: 146px;
+flex-shrink: 0;
+border-radius: 0px 0px 15px 15px;
+background: var(--button-color, #B1E321);
+margin-top:20px;
+padding-top: 10px;
+}
+
+
+.tamtinh1,
+.tamtinhVanChuyen1{
+    color: #3A060E;
+font-family: Poppins;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 20px;
+}
+.tamtinh2,
+.tamtinhVanChuyen2{
+    color: #3A060E;
+
+/* Font_Title */
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: 350px;
+}
