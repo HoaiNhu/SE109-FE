@@ -18,4 +18,5 @@
 .btn__component:hover {
   background: var(--color5, #f3d0d7);
   box-shadow: none;
+  color: var(--color8);
 }
