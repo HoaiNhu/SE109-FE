@@ -9,7 +9,11 @@ const CheckboxComponent = ({ isChecked, onChange }) => {
       viewBox="0 0 40 40"
       fill="none"
       onClick={onChange}
-      style={{ cursor: "pointer", transition: "all 0.3s ease" }}
+      style={{
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+        // borderRadius: "50%",
+      }}
     >
       {/* Vòng tròn hoặc nền */}
       <g filter="url(#filter0_d)">
@@ -18,9 +22,9 @@ const CheckboxComponent = ({ isChecked, onChange }) => {
           y="8.9"
           width="22.6"
           height="22.6"
-          rx="5"
-          fill={isChecked ? "#5a2d0c" : "#D9D9D9"} // Đổi màu khi chọn
-          style={{ transition: "fill 0.3s ease" }}
+          rx="50"
+          fill={isChecked ? "#e53888" : "#D9D9D9"}
+          style={{ transition: "fill 0.3s ease", padding: "4px" }}
         />
       </g>
 

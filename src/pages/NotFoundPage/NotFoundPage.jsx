@@ -13,6 +13,8 @@ import AddToCartButtonComponent from "../../components/AddToCartButtonComponent/
 import BackIconComponent from "../../components/BackIconComponent/BackIconComponent";
 import ButtonFormComponent from "../../components/ButtonFormComponent/ButtonFormComponent";
 import CardNews from "../../components/CardNews/CardNews";
+import CartIconComponent from "../../components/CartIconComponent/CartIconComponent";
+import CheckboxComponent from "../../components/CheckboxComponent/CheckboxComponent";
 
 const NotFoundPage = () => {
   return (
@@ -33,6 +35,8 @@ const NotFoundPage = () => {
       {/* <SizeComponent></SizeComponent> */}
       {/* <AddBtn></AddBtn> */}
       <AddToCartButtonComponent>Add to cart</AddToCartButtonComponent>
+      <CartIconComponent></CartIconComponent>
+      <CheckboxComponent></CheckboxComponent>
       {/* <BackIconComponent></BackIconComponent> */}
       {/* <ButtonFormComponent></ButtonFormComponent> */}
       {/* <CardNews></CardNews> */}
