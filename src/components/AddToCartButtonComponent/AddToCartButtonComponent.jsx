@@ -33,7 +33,8 @@ const AddToCartButtonComponent = ({ className = "", ...props }) => {
           />
           <ellipse cx="17.5" cy="23.6806" rx="1" ry="1.16667" fill="black" />
           <ellipse cx="9.5" cy="23.6806" rx="1" ry="1.16667" fill="black" />
-        </svg>
+        </svg>{" "}
+        Add to cart
       </button>
     </div>
   );

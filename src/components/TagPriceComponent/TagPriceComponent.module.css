@@ -1,13 +1,13 @@
 .btn__component {
-  display: block;
-  width: 129px;
+  /* display: block; */
+  width: 20rem;
   height: 40px;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  background: var(--green100);
-  color: var(--brown100);
+  background: transparent;
+  color: var(--color1);
   border: none;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 2.4rem;
+  font-weight: 400;
   margin-left: 0;
 }

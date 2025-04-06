@@ -27,15 +27,15 @@ const NotFoundPage = () => {
         type="email"
         placeholder="Nhập email"
       /> */}
-      {/* <FooterComponent></FooterComponent>
-      <SideMenuComponent></SideMenuComponent>
-      <OTPComponent></OTPComponent>
-      <SizeComponent></SizeComponent>
-      <AddBtn></AddBtn>
-      <AddToCartButtonComponent></AddToCartButtonComponent>
-      <BackIconComponent></BackIconComponent>
-      <ButtonFormComponent></ButtonFormComponent> */}
-      <CardNews></CardNews>
+      {/* <FooterComponent></FooterComponent> */}
+      {/* <SideMenuComponent></SideMenuComponent> */}
+      {/* <OTPComponent></OTPComponent> */}
+      {/* <SizeComponent></SizeComponent> */}
+      {/* <AddBtn></AddBtn> */}
+      <AddToCartButtonComponent>Add to cart</AddToCartButtonComponent>
+      {/* <BackIconComponent></BackIconComponent> */}
+      {/* <ButtonFormComponent></ButtonFormComponent> */}
+      {/* <CardNews></CardNews> */}
     </div>
   );
 };
