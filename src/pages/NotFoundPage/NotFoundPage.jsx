@@ -11,6 +11,7 @@ import SizeComponent from "../../components/SizeComponent/SizeComponent";
 import AddBtn from "../../components/AddBtn(+)/AddBtn";
 import AddToCartButtonComponent from "../../components/AddToCartButtonComponent/AddToCartButtonComponent";
 import BackIconComponent from "../../components/BackIconComponent/BackIconComponent";
+import ButtonFormComponent from "../../components/ButtonFormComponent/ButtonFormComponent";
 
 const NotFoundPage = () => {
   return (
@@ -32,6 +33,7 @@ const NotFoundPage = () => {
       <AddBtn></AddBtn>
       <AddToCartButtonComponent></AddToCartButtonComponent>
       <BackIconComponent></BackIconComponent>
+      <ButtonFormComponent></ButtonFormComponent>
     </div>
   );
 };
