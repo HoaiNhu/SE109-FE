@@ -8,6 +8,7 @@ import SideMenuComponent from "../../components/SideMenuComponent/SideMenuCompon
 import "./NotFoundPage.css";
 import OTPComponent from "../../components/OTPComponent/OTPComponent";
 import SizeComponent from "../../components/SizeComponent/SizeComponent";
+import AddBtn from "../../components/AddBtn(+)/AddBtn";
 
 const NotFoundPage = () => {
   return (
@@ -26,6 +27,7 @@ const NotFoundPage = () => {
       <SideMenuComponent></SideMenuComponent>
       <OTPComponent></OTPComponent>
       <SizeComponent></SizeComponent>
+      <AddBtn></AddBtn>
     </div>
   );
 };
