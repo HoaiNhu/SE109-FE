@@ -10,6 +10,7 @@ import OTPComponent from "../../components/OTPComponent/OTPComponent";
 import SizeComponent from "../../components/SizeComponent/SizeComponent";
 import AddBtn from "../../components/AddBtn(+)/AddBtn";
 import AddToCartButtonComponent from "../../components/AddToCartButtonComponent/AddToCartButtonComponent";
+import BackIconComponent from "../../components/BackIconComponent/BackIconComponent";
 
 const NotFoundPage = () => {
   return (
@@ -30,6 +31,7 @@ const NotFoundPage = () => {
       <SizeComponent></SizeComponent>
       <AddBtn></AddBtn>
       <AddToCartButtonComponent></AddToCartButtonComponent>
+      <BackIconComponent></BackIconComponent>
     </div>
   );
 };
