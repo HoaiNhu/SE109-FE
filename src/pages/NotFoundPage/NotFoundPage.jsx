@@ -20,20 +20,20 @@ const NotFoundPage = () => {
       <ButtonComponent>Đăng nhập</ButtonComponent>
       <SearchBoxComponent></SearchBoxComponent>
       <ButtonNoBGComponent className="custom_btn">home</ButtonNoBGComponent>
-      <FormComponent
+      {/* <FormComponent
         id="emailInput"
         label="Email"
         type="email"
         placeholder="Nhập email"
-      />
-      <FooterComponent></FooterComponent>
+      /> */}
+      {/* <FooterComponent></FooterComponent>
       <SideMenuComponent></SideMenuComponent>
       <OTPComponent></OTPComponent>
       <SizeComponent></SizeComponent>
       <AddBtn></AddBtn>
       <AddToCartButtonComponent></AddToCartButtonComponent>
       <BackIconComponent></BackIconComponent>
-      <ButtonFormComponent></ButtonFormComponent>
+      <ButtonFormComponent></ButtonFormComponent> */}
     </div>
   );
 };
