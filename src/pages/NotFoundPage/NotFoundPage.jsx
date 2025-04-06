@@ -12,6 +12,7 @@ import AddBtn from "../../components/AddBtn(+)/AddBtn";
 import AddToCartButtonComponent from "../../components/AddToCartButtonComponent/AddToCartButtonComponent";
 import BackIconComponent from "../../components/BackIconComponent/BackIconComponent";
 import ButtonFormComponent from "../../components/ButtonFormComponent/ButtonFormComponent";
+import CardNews from "../../components/CardNews/CardNews";
 
 const NotFoundPage = () => {
   return (
@@ -34,6 +35,7 @@ const NotFoundPage = () => {
       <AddToCartButtonComponent></AddToCartButtonComponent>
       <BackIconComponent></BackIconComponent>
       <ButtonFormComponent></ButtonFormComponent> */}
+      <CardNews></CardNews>
     </div>
   );
 };
