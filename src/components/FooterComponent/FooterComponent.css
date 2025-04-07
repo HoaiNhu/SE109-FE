@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--green50);
+  background-color: #09122C;
 }
 .footer-container {
   font-size: 1.6rem;
@@ -62,7 +62,7 @@
 .address__content,
 .phone__content,
 .email__content {
-  color: var(--brown100);
+  color: #F2BED1;
   line-height: 1.5;
   margin: 0; /* Đảm bảo không có margin mặc định */
 }
@@ -94,20 +94,20 @@
 .social__content {
   font-weight: 600;
   padding-left: 13px;
-  color: var(--brown100);
+  color: #F2BED1;
 }
 /* ==============================policy======================== */
 .footer__policy {
   width: 300px;
   height: auto;
-  color: var(--brown100);
+  color: #F2BED1;
   /* margin: 0 0 0 20px; */
   /* right: 0; */
 }
 
 .policy__item a {
   text-decoration: none;
-  color: var(--brown100);
+  color: #F2BED1;
 }
 
 .policy__item a:hover {
@@ -131,7 +131,7 @@
 
 .footer__copyright-text {
   padding: 40px 0 18px;
-  color: var(--brown100);
+  color: #F2BED1;
   text-align: center;
   line-height: 1.86;
 }

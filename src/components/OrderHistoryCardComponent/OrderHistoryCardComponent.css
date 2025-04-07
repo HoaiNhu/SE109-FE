@@ -9,7 +9,7 @@
 
 .order-footer {
   margin-top: 20px;
-  background-color: var(--green100);
+  background-color: #F2BED1;
   padding: 20px;
   border-radius: 0 0 10px 10px; /* Loại bỏ border-radius để tràn ra ngoài */
   position: relative;
@@ -26,5 +26,5 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--brown100);
+  color: #09122C;
 }

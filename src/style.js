@@ -13,7 +13,7 @@ const Styles = {
 
   title: {
     fontSize: "60px",
-    color: "#023E73",
+    color: "#F2BED1",
   },
 
   text: {

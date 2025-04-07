@@ -67,7 +67,7 @@ const HeaderComponent = () => {
   //Click Search
   const handleSearch = (query) => {
     if (!query.trim()) {
-      alert("Vui lòng nhập từ khóa để tìm kiếm!");
+      alert("Please enter a keyword to search!");
       return;
     }
     navigate(`/search?search=${encodeURIComponent(query.trim())}`);
@@ -86,14 +86,14 @@ const HeaderComponent = () => {
             className="text-start"
             onClick={handleUserInfo}
           >
-            Thông tin người dùng
+            Profile
           </SideMenuComponent>
           <SideMenuComponent
             variant="link"
             className="text-start"
             onClick={handleLogout}
           >
-            Đăng xuất
+            Log out
           </SideMenuComponent>
         </div>
       </Popover.Body>
@@ -157,17 +157,17 @@ const HeaderComponent = () => {
                       ) : (
                         <UserIconComponent />
                       )}
-                      <span style={{color:"var(--brown100)"}}>{user.userName || user.userEmail || "User"}</span>
+                      <span style={{color:"#09122C)"}}>{user.userName || user.userEmail || "User"}</span>
                     </div>
                   </OverlayTrigger>
                 ) : (
                   <div className="d-flex gap-2">
                     <Link to="/signup" className={styles.btn__signup}>
-                      Đăng kí
+                      Sign up
                     </Link>
                     <div className={styles.btn__signup}>
                       <ButtonComponent onClick={handleNavigationLogin}>
-                        Đăng nhập
+                        Log in
                       </ButtonComponent>
                     </div>
                   </div>
@@ -181,38 +181,38 @@ const HeaderComponent = () => {
                 {/* nav admin */}
                 {user?.isAdmin ? (
                   <>
-                    <ButtonNoBGComponent to="/">Trang chủ</ButtonNoBGComponent>
+                    <ButtonNoBGComponent to="/">Home</ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/admin/products">
-                      Sản phẩm
+                      Product
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/admin/news">
-                      Tin tức
+                      News
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/introduce">
-                      Giới thiệu
+                      Our Story
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/admin/introduce">
-                      Liên hệ
+                      Contact
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/admin/store-info">
-                      Quản lí
+                      Manage
                     </ButtonNoBGComponent>
                   </>
                 ) : (
                   // nav user
                   <>
-                    <ButtonNoBGComponent to="/">Trang chủ</ButtonNoBGComponent>
+                    <ButtonNoBGComponent to="/">Home</ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/products">
-                      Sản phẩm
+                      Product
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/news">
-                      Tin tức
+                      News
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/introduce">
-                      Giới thiệu
+                      Our Story
                     </ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/contact">
-                      Liên hệ
+                      Contact
                     </ButtonNoBGComponent>
                   </>
                 )}

@@ -31,19 +31,19 @@ const FooterComponent = () => {
                     >
                       <path
                         d="M8.3335 21.2659C8.3335 19.003 8.3335 17.8715 8.79093 16.877C9.24837 15.8824 10.1074 15.146 11.8256 13.6733L13.4922 12.2448C16.5978 9.58289 18.1505 8.25195 20.0002 8.25195C21.8498 8.25195 23.4025 9.58289 26.5081 12.2448L28.1747 13.6733C29.8929 15.146 30.752 15.8824 31.2094 16.877C31.6668 17.8715 31.6668 19.003 31.6668 21.2659V28.3332C31.6668 31.4759 31.6668 33.0473 30.6905 34.0236C29.7142 34.9999 28.1429 34.9999 25.0002 34.9999H15.0002C11.8575 34.9999 10.2861 34.9999 9.30981 34.0236C8.3335 33.0473 8.3335 31.4759 8.3335 28.3332V21.2659Z"
-                        stroke="#3A060E"
+                        stroke="#F2BED1"
                         stroke-width="2"
                       />
                       <path
                         d="M24.1668 35V26C24.1668 25.4477 23.7191 25 23.1668 25H16.8335C16.2812 25 15.8335 25.4477 15.8335 26V35"
-                        stroke="#3A060E"
+                        stroke="#F2BED1"
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
                     </svg>
                     <p className="address__content">
-                      Địa chỉ: Đường Mạc Đĩnh Chi, khu phố Tân Hòa, Dĩ An, Bình Dương{" "}
+                      Address: Mac Dinh Chi Street, Tan Hoa Quarter, Di An City, Binh Duong Province{" "}
                     </p>
                   </div>
                 </li>
@@ -59,7 +59,7 @@ const FooterComponent = () => {
                     >
                       <path
                         d="M17.7071 13.7071L20.3552 16.3552C20.7113 16.7113 20.7113 17.2887 20.3552 17.6448C18.43 19.57 15.3821 19.7866 13.204 18.153L11.6286 16.9714C9.88504 15.6638 8.33622 14.115 7.02857 12.3714L5.84701 10.796C4.21341 8.61788 4.43001 5.56999 6.35523 3.64477C6.71133 3.28867 7.28867 3.28867 7.64477 3.64477L10.2929 6.29289C10.6834 6.68342 10.6834 7.31658 10.2929 7.70711L9.27175 8.72825C9.10946 8.89054 9.06923 9.13846 9.17187 9.34373C10.3585 11.7171 12.2829 13.6415 14.6563 14.8281C14.8615 14.9308 15.1095 14.8905 15.2717 14.7283L16.2929 13.7071C16.6834 13.3166 17.3166 13.3166 17.7071 13.7071Z"
-                        stroke="#3A060E"
+                        stroke="#F2BED1"
                         stroke-width="2"
                       />
                     </svg>
@@ -82,12 +82,12 @@ const FooterComponent = () => {
                         width="20"
                         height="15"
                         rx="2"
-                        stroke="#3A060E"
+                        stroke="#F2BED1"
                         stroke-width="2"
                       />
                       <path
                         d="M5 11.25L14.1056 15.8028C14.6686 16.0843 15.3314 16.0843 15.8944 15.8028L25 11.25"
-                        stroke="#3A060E"
+                        stroke="#F2BED1"
                         stroke-width="2"
                       />
                     </svg>
@@ -99,7 +99,7 @@ const FooterComponent = () => {
 
             {/* social */}
             <div className="footer__social">
-              <p className="social__content">Liên hệ với Avocado:</p>
+              <p className="social__content">Contact NNN. :</p>
               <ul className="social__icon">
                 <li className="footer__icon">
                   <svg
@@ -240,31 +240,33 @@ const FooterComponent = () => {
 
             {/* policies */}
             <div className="footer__policy">
-              <p className="policy__title">Các chính sách</p>
+              <p className="policy__title">Our Policies:</p>
               <ul className="footer__policy--list">
                 <li className="policy__item">
                   <a href="#" className="policy__link">
-                    Chính sách và quy định chung
+                  General Policies and Regulations
                   </a>
                 </li>
                 <li className="policy__item">
                   <a href="#" className="policy__link">
-                    Chính giao dịch, thanh toán
+                  Transaction and Payment Policy
                   </a>
                 </li>
                 <li className="policy__item">
                   <a href="#" className="policy__link">
-                    Chính sách đổi trả
+                  Return and Exchange Policy
+
+
                   </a>
                 </li>
                 <li className="policy__item">
                   <a href="#" className="policy__link">
-                    Chính bảo mật
+                  Privacy Policy
                   </a>
                 </li>
                 <li className="policy__item">
                   <a href="#" className="policy__link">
-                    Chính sách vận chuyển
+                  Shipping Policy
                   </a>
                 </li>
               </ul>
