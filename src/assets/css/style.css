@@ -4,7 +4,7 @@
 
 :root {
   /* color */
-  --brown100: #3a060e;
+  --brown100: #3a0605;
   --brown50: #3a060580;
   --brown30: #3a060e4d;
   --green100: #b1e321;
@@ -18,11 +18,19 @@
   --grey: #ccc;
   --shadow: #203c1640;
   --button-width: 13rem;
-  --button-height: 4.4rem;
+  --button-height: 5.4rem;
   --search-box-width: 44rem;
   --search-box-height: 5.2rem;
   --font-size: 1.6rem;
   --font-size-title: 4rem;
+  --color1: #fff;
+  --color2: #000;
+  --color3: #fef5ed;
+  --color4: #ffefef;
+  --color5: #f3d0d7;
+  --color6: #f2bed1;
+  --color7: #e53888;
+  --color8: #09122c;
 }
 
 html {
