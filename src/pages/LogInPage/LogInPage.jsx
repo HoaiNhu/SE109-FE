@@ -40,7 +40,7 @@ const LogInPage = () => {
       setShowLoading(false);
       setStatusMessage({
         type: "Success",
-        message: "Đăng nhập thành công! Đang chuyển đến trang chủ...",
+        message: "Login successful! Redirecting to the homepage...",
       });
       setTimeout(() => {
         navigate("/");
@@ -63,7 +63,7 @@ const LogInPage = () => {
       // setShowLoading(false);
       const errorMessage =
         mutation.error?.message?.message ||
-        "Đăng nhập thất bại. Vui lòng thử lại.";
+        "Login failed. Please try again.";
       setStatusMessage({
         type: "Error",
         message:
@@ -130,7 +130,7 @@ const LogInPage = () => {
         </div>
         {/* logIn left */}
         <div className="login__left">
-          <h1 className="login__title">ĐĂNG NHẬP</h1>
+          <h1 className="login__title">LOG IN</h1>
           {/* Hiển thị spinner loading */}
           <Loading isLoading={showLoading} />
           {!showLoading && (
@@ -140,7 +140,7 @@ const LogInPage = () => {
                 name="userEmail"
                 label="Email"
                 type="email"
-                placeholder="Nhập email"
+                placeholder="Enter email"
                 value={formData.userEmail}
                 // onChange={handleChange}
                 onChange={handleUserEmailChange}
@@ -150,7 +150,7 @@ const LogInPage = () => {
                 name="userPassword"
                 label="Password"
                 type="password"
-                placeholder="Nhập mật khẩu"
+                placeholder="Enter password"
                 value={formData.userPassword}
                 // onChange={handleChange}
                 onChange={handleUserPasswordChange}
@@ -173,25 +173,25 @@ const LogInPage = () => {
               <div className="login__extend">
                 <label className="remember__password">
                   <input className="remember__checkbox" type="checkbox" />
-                  Ghi nhớ mật khẩu
+                  Remember password
                 </label>
                 <div
                   onClick={handleForgotPassword}
                   className="forgot__password"
                 >
-                  Quên mật khẩu?
+                  Forgot password?
                 </div>
               </div>
               <ButtonFormComponent type="submit" disabled={!isFormValid}>
-                Đăng nhập
+                Log in
               </ButtonFormComponent>
             </form>
           )}
           <div className="case__signup">
-            Bạn chưa có tài khoản?
+          Have you not an account?
             <u>
               <Link to="./signup" className="btn__goto__signup">
-                Đăng ký
+                Sign up
               </Link>
             </u>
           </div>

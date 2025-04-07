@@ -35,7 +35,7 @@ const SignUpPage = () => {
       setShowLoading(false);
       setStatusMessage({
         type: "Success",
-        message: "Đăng ký thành công! Đang chuyển đến trang đăng nhập...",
+        message: "Registration successful! Redirecting to the login page...",
       });
       setTimeout(() => {
         navigate("/login");
@@ -44,7 +44,7 @@ const SignUpPage = () => {
       setShowLoading(false);
       const errorMessage =
         mutation.error?.message?.message ||
-        "Đăng ký thất bại. Vui lòng thử lại.";
+        "Registration failed. Please try again.";
       setStatusMessage({
         type: "Error",
         message:
@@ -100,7 +100,7 @@ const SignUpPage = () => {
           <img className="signup__logo" src={img2} alt="Signup logo" />
         </div>
         <div className="signup__right">
-          <h1 className="signup__title">ĐĂNG KÍ</h1>
+          <h1 className="signup__title">SIGN UP</h1>
 
           <Loading isLoading={showLoading} />
           {!showLoading && (
@@ -109,7 +109,7 @@ const SignUpPage = () => {
                 name="familyName"
                 label="FamilyName"
                 type="text"
-                placeholder="Họ"
+                placeholder="Last name"
                 value={formData.familyName}
                 onChange={handleChange}
               />
@@ -117,7 +117,7 @@ const SignUpPage = () => {
                 name="userName"
                 label="Name"
                 type="text"
-                placeholder="Tên"
+                placeholder="First name"
                 value={formData.userName}
                 onChange={handleChange}
               />
@@ -125,7 +125,7 @@ const SignUpPage = () => {
                 name="userPhone"
                 label="Phone"
                 type="tel"
-                placeholder="Số điện thoại"
+                placeholder="Phone number"
                 value={formData.userPhone}
                 onChange={handleChange}
               />
@@ -141,7 +141,7 @@ const SignUpPage = () => {
                 name="userPassword"
                 label="Password"
                 type="password"
-                placeholder="Nhập mật khẩu"
+                placeholder="Password"
                 value={formData.userPassword}
                 onChange={handleChange}
               />
@@ -149,20 +149,20 @@ const SignUpPage = () => {
                 name="userConfirmPassword"
                 label="ConfirmPassword"
                 type="password"
-                placeholder="Xác nhận mật khẩu"
+                placeholder="Confirm password"
                 value={formData.userConfirmPassword}
                 onChange={handleChange}
               />
               <ButtonFormComponent type="submit" disabled={!isValid()}>
-                Đăng kí tài khoản
+                Sign up
               </ButtonFormComponent>
             </form>
           )}
           <div className="case__login">
-            Bạn đã có tài khoản?
+          Have you an account ?
             <u>
               <Link to="./login" className="btn__goto__login">
-                Đăng nhập
+                Log in
               </Link>
             </u>
           </div>

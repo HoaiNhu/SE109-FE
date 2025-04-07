@@ -1,5 +1,5 @@
-.bg-white {
-  width: max-content;
+.headerBackground {
+  background-color: var(--color8); /* hoặc màu xanh mà TyTy muốn */
 }
 
 .sticky-top {
@@ -48,8 +48,8 @@ img {
   padding: 8px 8px;
   justify-content: center;
   align-items: center;
-  background: var(--white);
-  color: #09122C;
+  background: var(--color8);
+  color: #fff;
   border: none;
   font-size: 1.6rem;
   transition-duration: 0.25s;
@@ -67,7 +67,7 @@ img {
   align-items: center;
   margin: 0 20px 0;
   padding: 8px;
-  color: #09122C;
+  color: #fff;
   transition: 0.25s;
 }
 
@@ -94,7 +94,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--white);
+  background-color: var(--color8);
   gap: 10px;
 }
 

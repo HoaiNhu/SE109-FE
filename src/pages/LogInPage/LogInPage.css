@@ -1,5 +1,5 @@
 .container-login {
-  background-color: var(--white);
+  background-color: var(--color8);
 }
 
 .login-container {
@@ -43,14 +43,14 @@
   padding: 20px;
   border: none;
   border-radius: 20px;
-  box-shadow: 0px 2px 4px 0px var(--grey5);
-  background-color: var(--grey5);
+  box-shadow: 0px 2px 4px 0px var(--color8);
+  background-color: var(--color8);
 }
 
 .login__title {
   margin-bottom: 1.6rem;
   text-align: center;
-  color: var(--brown100);
+  color: var(--color6);
   font-weight: 600;
   font-size: var(--font-size-title);
 }
@@ -66,7 +66,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 1.4rem;
-  color: var(--brown100);
+  color: var(--color6);
   margin-bottom: 10px;
 }
 
@@ -75,6 +75,7 @@
   align-items: center;
   padding: 8px;
   cursor: pointer;
+  color: var(--white);
 }
 
 .remember__checkbox {
@@ -84,7 +85,7 @@
 .forgot__password {
   text-align: right;
   font-size: 1.4rem;
-  color: var(--brown100);
+  color: var(--white);
   text-decoration: none;
   cursor: pointer;
   padding: 8px;
@@ -94,13 +95,19 @@
   text-align: center;
   margin-top: 15px;
   font-size: 1.4rem;
-  color: var(--brown100);
+  color: var(--white);
 }
 
 .btn__goto__signup {
-  color: var(--brown100);
+  color: var(--white);
   text-decoration: none;
   font-style: italic;
   padding: 8px;
   /* color: var(--green100); */
+}
+
+body {
+  background-color: var(--color8); 
+  margin: 0;
+  padding: 0;
 }

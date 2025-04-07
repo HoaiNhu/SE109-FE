@@ -19,12 +19,12 @@ const ForgotPassword = () => {
 
     // Kiểm tra email có hợp lệ hay không
     if (!emailValue) {
-      alert("Vui lòng nhập email!");
+      alert("Please enter your email!");
       return;
     }
 
     if (!/\S+@\S+\.\S+/.test(emailValue)) {
-      alert("Email không hợp lệ!");
+      alert("Invalid email!");
       return;
     }
 
@@ -49,23 +49,23 @@ const ForgotPassword = () => {
         </div>
         {/* forgot-password left */}
         <div className="forgot-password__left">
-          <h1 className="forgot-password__title">QUÊN MẬT KHẨU</h1>
+          <h1 className="forgot-password__title">FORGOT PASSWORD</h1>
           <form className="forgot-password__form">
             <FormComponent
               id="emailInput"
               label="Email"
               type="email"
-              placeholder="Nhập email"
+              placeholder="Enter email"
             />
 
             {/* back to login */}
             <div className="forgot-password__extend">
               <div onClick={handleBackLogin} className="forgot-password">
-                Quay lại đăng nhập
+              Return to Login
               </div>
             </div>
             <ButtonFormComponent onClick={handleSendEmail}>
-              Gửi
+              Submit
             </ButtonFormComponent>
           </form>
         </div>

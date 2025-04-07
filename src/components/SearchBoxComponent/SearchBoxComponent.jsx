@@ -40,7 +40,7 @@ const SearchBoxComponent = ({ onSearch, onButtonClick }) => {
         className='search__button'
         onClick={() => onButtonClick(query)}
       >
-        Tìm kiếm
+        Search
       </ButtonComponent>
     </div>
   );

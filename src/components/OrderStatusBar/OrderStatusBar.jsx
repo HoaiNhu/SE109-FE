@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './OrderStatusBar.css';
 
 const statuses = [
-  { label: 'Đặt mua', value: 'ordered' },
-  { label: 'Đang xử lý', value: 'processing' },
-  { label: 'Đang giao', value: 'in-transit' },
-  { label: 'Đã giao', value: 'delivered' },
-  { label: 'Đã hủy', value: 'cancelled' },
+  { label: 'Ordered', value: 'ordered' },
+  { label: 'Processing', value: 'processing' },
+  { label: 'In-transit', value: 'in-transit' },
+  { label: 'Delivered', value: 'delivered' },
+  { label: 'Cancelled', value: 'cancelled' },
 ];
 
 const OrderStatusBar = () => {

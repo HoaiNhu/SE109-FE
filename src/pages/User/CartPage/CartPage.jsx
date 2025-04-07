@@ -95,7 +95,7 @@ const CartPage = () => {
         >
           <BackIconComponent />
         </button>
-        <h1 className="titleCart">Giỏ hàng</h1>
+        <h1 className="titleCart">Cart</h1>
       </div>
 
       <div className="product_area">
@@ -108,10 +108,10 @@ const CartPage = () => {
                   onChange={toggleSelectAll}
                 />
               </th>
-              <th className="ProductInforHear">Thông tin sản phẩm</th>
-              <th className="PriceHeader">Đơn giá</th>
-              <th className="QuantityHeader">Số lượng</th>
-              <th className="MoneyHeader">Thành tiền</th>
+              <th className="ProductInforHear">Information</th>
+              <th className="PriceHeader">Price</th>
+              <th className="QuantityHeader">Quantity</th>
+              <th className="MoneyHeader">Cost</th>
               <th></th>
             </tr>
           </thead>
@@ -161,7 +161,7 @@ const CartPage = () => {
 
         <div className="Btnarea">
           <div className="total-holder">
-            <p className="tong">Tổng tiền:</p>
+            <p className="tong">Order Total:</p>
             <p className="total">{totalAmount.toLocaleString()} VND</p>
           </div>
           <div className="Btnholder">
@@ -169,14 +169,14 @@ const CartPage = () => {
               className="Buy_more"
               onClick={() => handleNavigate("/products")}
             >
-              Mua thêm
+              Buy more
             </button>
             <ButtonComponent
               className="Buy_btn"
               onClick={handleBuyNow}
               disabled={selectedProducts.length === 0}
             >
-              Mua ngay
+              Pay
             </ButtonComponent>
           </div>
         </div>

@@ -101,7 +101,7 @@ const HeaderComponent = () => {
   );
 
   return (
-    <div className="bg-white sticky-top bg-shadow">
+    <div className={`sticky-top bg-shadow ${styles.headerBackground}`}>
       <div
         className="container-xl text-center "
         style={{ width: "width-screen" }}
@@ -157,7 +157,7 @@ const HeaderComponent = () => {
                       ) : (
                         <UserIconComponent />
                       )}
-                      <span style={{color:"#09122C)"}}>{user.userName || user.userEmail || "User"}</span>
+                      <span style={{color:"#fff"}}>{user.userName || user.userEmail || "User"}</span>
                     </div>
                   </OverlayTrigger>
                 ) : (

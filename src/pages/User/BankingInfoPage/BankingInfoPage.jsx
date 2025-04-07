@@ -22,7 +22,7 @@ const BankingInfoPage = () => {
         <div className="title-row">
           <BackIconComponent handleBack={handleBack} />
 
-          <h2 className="title__content">Thông tin chuyển khoản</h2>
+          <h2 className="title__content">Transfer information</h2>
         </div>
 
         <div className="container-banking">
@@ -34,19 +34,19 @@ const BankingInfoPage = () => {
                 className="qr-info d-flex flex-column align-items-center"
                 style={{ marginTop: "20px auto" }}
               >
-                <label className="owner-name">Lê Văn A</label>
+                <label className="owner-name">Le Van A</label>
 
                 <label className="bank-name">BIDV </label>
-                <label className="bank-number">STK: 012345</label>
+                <label className="bank-number">Bank account number: 012345</label>
               </div>
             </section>
             {/* item 2 */}
             <section className="item-banking">
               <img className="img-banking" src={qr2} alt="QR banking 2" />
               <div className="qr-info d-flex flex-column align-items-center">
-                <label className="owner-name">Lê Văn A</label>
+                <label className="owner-name">Le Van A</label>
                 <label className="bank-name">MOMO </label>
-                <label className="bank-number">Số momo: 012345</label>
+                <label className="bank-number">Momo account number: 012345</label>
               </div>
             </section>
           </div>

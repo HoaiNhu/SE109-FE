@@ -11,7 +11,7 @@
 }
 
 .ProName {
-  color: #3a060e;
+  color: var(--color8);
 
   /* Font_Title */
   font-size: 2rem;
@@ -23,7 +23,7 @@
 }
 
 .ProSize {
-  color: #3a060e;
+  color: var(--color8);
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;

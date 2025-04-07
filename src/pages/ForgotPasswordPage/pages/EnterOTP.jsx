@@ -18,14 +18,14 @@ const EnterOTP = () => {
 
     // Kiểm tra OTP có hợp lệ hay không
     if (otp.length !== otpInputs.length) {
-      alert("Vui lòng nhập đầy đủ mã OTP!");
+      alert("Please enter the complete OTP!");
       return;
     }
 
     // Thêm logic kiểm tra OTP hợp lệ từ server nếu cần (giả sử OTP đúng)
     const isValidOTP = true; // Thay bằng logic thực tế
     if (!isValidOTP) {
-      alert("Mã OTP không hợp lệ!");
+      alert("Invalid OTP code!");
       return;
     }
 
@@ -41,7 +41,7 @@ const EnterOTP = () => {
         </div>
         {/* enter-otp left */}
         <div className="enter-otp__left">
-          <h1 className="enter-otp__title">QUÊN MẬT KHẨU</h1>
+          <h1 className="enter-otp__title">FORGOT PASSWORD</h1>
           <form className="enter-otp__form">
             <div className="otp__input">
               <OTPComponent></OTPComponent>
@@ -52,11 +52,11 @@ const EnterOTP = () => {
             {/* back to login */}
             <div className="enter-otp__extend">
               <div onClick={handleSendBackOTP} className="enter-otp">
-                Bạn chưa nhận được OTP? <b>Gửi lại</b>
+              You have not received OTP yet? <b>Resend</b>
               </div>
             </div>
             <ButtonFormComponent onClick={handleEnterOTP}>
-              Xác nhận
+              Submit
             </ButtonFormComponent>
           </form>
         </div>

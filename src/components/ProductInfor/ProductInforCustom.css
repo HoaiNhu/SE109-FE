@@ -21,7 +21,7 @@
 
 .ProName1 {
   width: 200px;
-  color: #3a060e;
+  color: var(--color8);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -30,7 +30,7 @@
 }
 
 .ProSize1 {
-  color: #3a060e;
+  color: var(--color8);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -44,7 +44,7 @@
   margin-left: 23px;
 }
 .p1 {
-  color: var(--Color1, #3a060e);
+  color: var(--Color1, var(--color8));
 
   /* Font_Text */
   font-family: Poppins;
@@ -54,7 +54,7 @@
   line-height: normal;
 }
 .p2 {
-  color: #3a060e;
+  color: var(--color8);
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;

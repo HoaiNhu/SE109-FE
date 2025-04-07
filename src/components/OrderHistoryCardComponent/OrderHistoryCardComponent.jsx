@@ -34,15 +34,15 @@ const OrderHistoryCardComponent = ({ order }) => {
             <ProductRowComponent key={index} product={item} />
           ))
         ) : (
-          <div>Không có sản phẩm nào trong đơn hàng này.</div>
+          <div>No products found in this order.</div>
         )}
 
         <div className="order-footer d-flex justify-content-between align-items-center">
           <ButtonComponent className="btn-detail" onClick={() => handleViewDetails(order._id)}   >
-            Chi tiết
+            Details
           </ButtonComponent>
           <div className="order-total d-flex text-center gap-5">
-            <label>Tổng số tiền: </label>{" "}
+            <label>Order Total: </label>{" "}
             <div>{totalAmount.toLocaleString()} VND</div>
           </div>
         </div>

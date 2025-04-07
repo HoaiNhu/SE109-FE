@@ -7,11 +7,11 @@
 }
 
 .back-icon {
-  color: var(--brown100);
+  color: var(--color8);
 }
 
 .back-icon:hover {
-  color: var(--brown50);
+  color: var(--color8);
 }
 
 h2 {
@@ -43,4 +43,14 @@ h2 {
   width: 26rem;
   height: 26rem;
   flex-shrink: 0;
+}
+
+body {
+  background-color: var(--color8); /* Màu xanh lá */
+  margin: 0;
+  padding: 0;
+}
+
+.title__content{
+  color: var(--color6)
 }

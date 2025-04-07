@@ -1,5 +1,5 @@
 .container-forgot-password {
-  background-color: var(--white);
+  background-color: var(--color8);
 }
 
 .forgot-password-container {
@@ -44,14 +44,14 @@
   padding: 20px;
   border: none;
   border-radius: 20px;
-  box-shadow: 0px 2px 4px 0px var(--grey5);
-  background-color: var(--grey5);
+  box-shadow: 0px 2px 4px 0px var(--color8);
+  background-color: var(--color8);
 }
 
 .forgot-password__title {
   margin-bottom: 50px;
   text-align: center;
-  color: var(--brown100);
+  color: var(--color6);
   font-weight: 700;
   font-size: var(--font-size-title);
 }
@@ -67,14 +67,14 @@
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  color: var(--brown100);
+  color: var(--white);
   margin-bottom: 10px;
 }
 
 .forgot__password {
   text-align: right;
   font-size: 1.4rem;
-  color: var(--brown100);
+  color: var(--color8);
   text-decoration: none;
   cursor: pointer;
   padding: 8px;
@@ -82,5 +82,5 @@
 }
 
 .forgot-password:hover {
-  color: var(--green100);
+  color: var(--color6);
 }

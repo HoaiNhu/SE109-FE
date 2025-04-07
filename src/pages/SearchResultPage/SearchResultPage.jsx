@@ -40,7 +40,7 @@ const SearchResultPage = () => {
         const productList = Array.isArray(response.data) ? response.data : [];
         setProducts(productList);
       } catch (err) {
-        setError("Đã có lỗi xảy ra khi tìm kiếm sản phẩm.");
+        setError("An error occurred while searching for products.");
       } finally {
         setLoading(false);
       }
@@ -51,7 +51,7 @@ const SearchResultPage = () => {
 
   return (
     <div className="products-page">
-      <h2>Kết quả tìm kiếm cho {query}</h2>
+      <h2>Search results for {query}</h2>
       <div className=" container product__list">
               {products.length > 0 ? (
                 products.map((product) => {
@@ -80,7 +80,7 @@ const SearchResultPage = () => {
                   );
                 })
               ) : (
-                <p>Không có sản phẩm nào</p>
+                <p>No products found.</p>
               )}
             </div>
     </div>

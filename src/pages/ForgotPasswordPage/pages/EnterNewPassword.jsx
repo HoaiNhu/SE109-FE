@@ -28,20 +28,20 @@ const EnterNewPassword = () => {
         </div>
         {/* new-password left */}
         <div className="new-password__left">
-          <h1 className="new-password__title">QUÊN MẬT KHẨU</h1>
+          <h1 className="new-password__title">FORGOT PASSWORD</h1>
           <form className="new-password__form">
             <FormComponent
               id="passwordInput"
               label="Password"
               type="password"
-              placeholder="Nhập mật khẩu mới"
+              placeholder="Enter the new password"
             />
 
             <FormComponent
               id="passwordConfirmInput"
               label="PasswordConfirm"
               type="password"
-              placeholder="Nhập lại mật khẩu"
+              placeholder="Confirm the new password"
             />
 
             {/* back to login */}
@@ -49,7 +49,7 @@ const EnterNewPassword = () => {
               className="btn__confirm"
               onClick={handleSendNewPassword}
             >
-              Xác nhận
+              Submit
             </ButtonFormComponent>
           </form>
         </div>
