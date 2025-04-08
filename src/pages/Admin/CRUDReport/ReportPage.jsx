@@ -131,7 +131,7 @@ const ReportPage = () => {
       orderDate: new Date(order.createdAt).toLocaleDateString(),
       completionDate: order.deliveryDate
         ? new Date(order.deliveryDate).toLocaleDateString()
-        : "Chưa hoàn thành",
+        : "Incomplete",
       totalPrice: order.totalPrice,
     }));
   };
@@ -164,23 +164,23 @@ const ReportPage = () => {
   const isSelected = (id) => selectedRows.includes(id);
 
   const days = Array.from({ length: 31 }, (_, i) => ({
-    label: `Ngày ${i + 1}`,
+    label: `Date ${i + 1}`,
     value: i + 1,
   }));
 
   const months = Array.from({ length: 12 }, (_, i) => ({
-    label: `Tháng ${i + 1}`,
+    label: `Month ${i + 1}`,
     value: i + 1,
   }));
 
   const years = Array.from({ length: 7 }, (_, i) => ({
-    label: `Năm ${2020 + i}`,
+    label: `Year ${2020 + i}`,
     value: 2020 + i,
   }));
 
   const tables = [
-    { label: "Bảng sản phẩm", value: "product" },
-    { label: "Bảng đơn hàng", value: "order" },
+    { label: "Product Table", value: "product" },
+    { label: "Order Table", value: "order" },
   ];
 
   const handleView = () => {
@@ -255,23 +255,23 @@ const ReportPage = () => {
           {/* side menu */}
           <div className="side-menu__report">
             <SideMenuComponent onClick={ClickInfor}>
-              Thông tin cửa hàng
+              Store information
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickOrder}>Đơn hàng</SideMenuComponent>
             <SideMenuComponent onClick={ClickDiscount}>
-              Khuyến mãi
+              Promotion
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickStatus}>
-              Trạng thái
+              Status
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickCategory}>
-              Loại sản phẩm
+              Product category
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickUser}>
-              Danh sách người dùng
+              User list
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickReport}>
-              Thống kê
+              Statistic
             </SideMenuComponent>
           </div>
 
@@ -279,28 +279,28 @@ const ReportPage = () => {
             <div className="report-list__action">
               <div className="report-dropdown-container">
                 <ReportDropdown
-                  title="Chọn ngày"
+                  title="Choose date"
                   options={days}
                   selectedValue={selectedDay}
                   onSelect={(value) => setSelectedDay(value)}
                   className="report-dropdown"
                 />
                 <ReportDropdown
-                  title="Chọn tháng"
+                  title="Choose month"
                   options={months}
                   selectedValue={selectedMonth}
                   onSelect={(value) => setSelectedMonth(value)}
                   className="report-dropdown"
                 />
                 <ReportDropdown
-                  title="Chọn năm"
+                  title="Choose year"
                   options={years}
                   selectedValue={selectedYear}
                   onSelect={(value) => setSelectedYear(value)}
                   className="report-dropdown"
                 />
                 <ReportDropdown
-                  title="Chọn bảng"
+                  title="Choose table"
                   options={tables}
                   selectedValue={selectedTable}
                   onSelect={(value) => setSelectedTable(value)}
@@ -308,7 +308,7 @@ const ReportPage = () => {
                 />
                 <div className="btn__action">
                   <ButtonComponent className="btn-view" onClick={handleView}>
-                    Xem
+                  View Statistics 
                   </ButtonComponent>
                 </div>
               </div>
@@ -319,7 +319,7 @@ const ReportPage = () => {
                 <div class="report-title">
                   <table>
                     <tr>
-                      <th>TỔNG DOANH THU</th>
+                      <th>TOTAL REVENUE</th>
                     </tr>
                   </table>
                 </div>
@@ -337,7 +337,7 @@ const ReportPage = () => {
                 <div class="report-title">
                   <table>
                     <tr>
-                      <th>TỔNG SẢN PHẨM BÁN RA</th>
+                      <th>TOTAL PRODUCTS SOLD</th>
                     </tr>
                   </table>
                 </div>
@@ -354,7 +354,7 @@ const ReportPage = () => {
 
             {/* table thống kê theo sản phẩm */}
             <div className="table-container">
-              <h3 style={{ padding: "10px 20px" }}>Thống kê theo sản phẩm</h3>
+              <h3 style={{ padding: "10px 20px" }}>Statistics by Product</h3>
               <table className="promo-table">
                 <thead>
                   <tr>
@@ -364,13 +364,13 @@ const ReportPage = () => {
                         onChange={toggleSelectAll}
                       />
                     </th>
-                    <th>STT</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Đơn giá</th>
-                    <th>Số lượng</th>
-                    <th>Tổng thu</th>
-                    <th>Tỉ lệ</th>
+                    <th>No.</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total revenue</th>
+                    <th>Percentage</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -402,7 +402,7 @@ const ReportPage = () => {
 
             {/* Bảng thống kê theo đơn hàng */}
             <div className="table-container">
-              <h3 style={{ padding: "10px 20px" }}>Thống kê theo đơn hàng</h3>
+              <h3 style={{ padding: "10px 20px" }}>Statistics by Order</h3>
               <table className="promo-table">
                 <thead>
                   <tr>
@@ -412,12 +412,12 @@ const ReportPage = () => {
                         onChange={toggleSelectAll}
                       />
                     </th>
-                    <th>STT</th>
-                    <th>Mã đơn</th>
-                    <th>Tổng sản phẩm</th>
-                    <th>Thời gian đặt</th>
-                    <th>Thời gian hoàn thành</th>
-                    <th>Tổng tiền</th>
+                    <th>No.</th>
+                    <th>Order ID</th>
+                    <th>Total products</th>
+                    <th>Order time</th>
+                    <th>Completion time</th>
+                    <th>Total amount</th>
                   </tr>
                 </thead>
                 <tbody>

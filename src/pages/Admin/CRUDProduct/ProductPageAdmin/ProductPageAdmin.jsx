@@ -136,14 +136,14 @@ const ProductPageAdmin = () => {
       <div className="productadmin">
         {/* productadmin top */}
         <div className="product__top">
-            <h1 className="product__title">SẢN PHẨM</h1>
+            <h1 className="product__title">JEWELRY ITEMS</h1>
             {/* Hiển thị tên category nếu có */}
             {currentCategory ? (
               <p className="product__current-category">
                 {categories.find((cat) => cat._id === currentCategory)?.categoryName}
               </p>
             ) : (
-              <p className="product__current-category">Tất cả sản phẩm</p>
+              <p className="product__current-category">All Products</p>
             )}
           </div>
         <div style={{ marginLeft: 1222 }}>
@@ -155,7 +155,7 @@ const ProductPageAdmin = () => {
           <div className="side-menu__category">
             {/* Thêm "Tất cả sản phẩm" */}
             <SideMenuComponent onClick={handleAllProductsClick}>
-              Tất cả sản phẩm
+            All Products
             </SideMenuComponent>
             {Array.isArray(categories) && categories.length > 0 ? (
               categories.map((category) => (
@@ -168,7 +168,7 @@ const ProductPageAdmin = () => {
                 </SideMenuComponent>
               ))
             ) : (
-              <p>Không có loại sản phẩm</p>
+              <p>No product categories available.</p>
             )}
           </div>
 
@@ -194,7 +194,7 @@ const ProductPageAdmin = () => {
                 );
               })
             ) : (
-              <p>Không có sản phẩm nào</p>
+              <p>No products available.</p>
             )}
           </div>
         </div>

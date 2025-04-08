@@ -1,7 +1,7 @@
 .productadmin {
   margin: 40px 0;
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 /* ========================== top========================== */
@@ -27,7 +27,7 @@
 /* ========================Side menu======================== */
 .side-menu__category {
   margin-right: 20px;
-  background-color: var(--white);
+  background-color: var(--color8);
 }
 
 /* =========================productadmin list ==================== */
@@ -45,7 +45,7 @@
   background: none;
   margin-bottom: 10px;
   padding: 10px;
-  color: var(--brown100);
+  color: var(--white);
 }
 
 .PageNumberHolder {

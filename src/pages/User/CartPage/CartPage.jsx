@@ -95,7 +95,7 @@ const CartPage = () => {
         >
           <BackIconComponent />
         </button>
-        <h1 className="titleCart">Cart</h1>
+        <h1 className="titleCart">CART</h1>
       </div>
 
       <div className="product_area">

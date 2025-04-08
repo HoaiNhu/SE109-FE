@@ -33,7 +33,7 @@ h2 {
 .item-banking {
   width: 35rem;
   height: auto;
-  box-shadow: 0 0 4px 0 var(--shadow);
+  /* box-shadow: 0 0 4px 0 var(--shadow); */
   text-align: center;
   padding: 10px;
   border-radius: 15px;
@@ -46,7 +46,7 @@ h2 {
 }
 
 body {
-  background-color: var(--color8); /* Màu xanh lá */
+  background-color: var(--color8); 
   margin: 0;
   padding: 0;
 }

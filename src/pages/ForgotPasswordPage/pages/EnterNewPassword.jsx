@@ -10,7 +10,7 @@ const EnterNewPassword = () => {
   const nav = useNavigate();
 
   const handleSendNewPassword = () => {
-    alert("Đổi mật khẩu thành công");
+    alert("Password changed successfully!");
     nav("/login");
   };
 

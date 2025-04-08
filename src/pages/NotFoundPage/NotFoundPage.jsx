@@ -21,9 +21,9 @@ const NotFoundPage = () => {
   return (
     <div className="bg">
       <h1>This page is unavailable</h1>
-      <ButtonComponent>Đăng nhập</ButtonComponent>
+      <ButtonComponent>Log in</ButtonComponent>
       <SearchBoxComponent></SearchBoxComponent>
-      <ButtonNoBGComponent className="custom_btn">home</ButtonNoBGComponent>
+      <ButtonNoBGComponent className="custom_btn">Home</ButtonNoBGComponent>
       {/* <FormComponent
         id="emailInput"
         label="Email"

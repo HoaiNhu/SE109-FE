@@ -52,13 +52,13 @@ const AddStatusPage = () => {
       });
       setStatusMessage({
         type: "Success",
-        message: "Thêm trạng thái thành công!",
+        message: "Status added successfully!",
       });
     } else if (mutation.isError) {
       const errorMessage =
         mutation.error?.message.message ||
         JSON.stringify(mutation.error) ||
-        "Lỗi khi thêm trạng thái.";
+        "Failed to add status.";
       console.log("errorMessage", errorMessage);
       setStatusMessage({
         type: "Error",
@@ -92,26 +92,26 @@ const AddStatusPage = () => {
         <div className="add-status__container">
           {/* side menu */}
           <div className="side-menu__status">
-            <SideMenuComponent>Thông tin cửa hàng</SideMenuComponent>
-            <SideMenuComponent>Đơn hàng</SideMenuComponent>
-            <SideMenuComponent>Khuyến mãi</SideMenuComponent>
-            <SideMenuComponent>Trạng thái</SideMenuComponent>
-            <SideMenuComponent>Loại sản phẩm </SideMenuComponent>
-            <SideMenuComponent>Danh sách người dùng</SideMenuComponent>
-            <SideMenuComponent>Thống kê</SideMenuComponent>
+            <SideMenuComponent>Store information</SideMenuComponent>
+            <SideMenuComponent>Order</SideMenuComponent>
+            <SideMenuComponent>Promotion</SideMenuComponent>
+            <SideMenuComponent>Status</SideMenuComponent>
+            <SideMenuComponent>Category</SideMenuComponent>
+            <SideMenuComponent>User list</SideMenuComponent>
+            <SideMenuComponent>Statistic</SideMenuComponent>
           </div>
 
           <div className="add-status__content">
             <div className="status__info">
               <div className="add-status__title">
-                <h2>Thêm trạng thái</h2>
+                <h2>Add status</h2>
               </div>
 
               <Loading isLoading={showLoading} />
               {!showLoading && (
                 <div className="content">
                   <div className="content__item">
-                    <label className="id__title">Mã trạng thái</label>
+                    <label className="id__title">Code</label>
                     <FormComponent
                       placeholder="S5"
                       name="statusCode"
@@ -120,9 +120,9 @@ const AddStatusPage = () => {
                     ></FormComponent>
                   </div>
                   <div className="content__item">
-                    <label className="name__title">Tên trạng thái</label>
+                    <label className="name__title">Name</label>
                     <FormComponent
-                      placeholder="Đã đánh giá"
+                      placeholder="Enter name"
                       name="statusName"
                       value={formData.statusName}
                       onChange={handleChange}
@@ -130,10 +130,10 @@ const AddStatusPage = () => {
                   </div>
                   <div className="content__item">
                     <label className="description__title">
-                      Mô tả trạng thái
+                      Description
                     </label>
                     <FormComponent
-                      placeholder="Đã đánh giá"
+                      placeholder="Enter description"
                       name="statusDescription"
                       value={formData.statusDescription}
                       onChange={handleChange}
@@ -144,9 +144,9 @@ const AddStatusPage = () => {
               {/* button */}
               <div className="btn__add-status">
                 <ButtonComponent type="submit" onClick={handleSubmit}>
-                  Thêm
+                  Save
                 </ButtonComponent>
-                <ButtonComponent onClick={handleExit}>Thoát</ButtonComponent>
+                <ButtonComponent onClick={handleExit}>Exit</ButtonComponent>
               </div>
             </div>
           </div>

@@ -70,13 +70,13 @@ const UpdateStatusPage = () => {
     if (mutation.isSuccess) {
       setStatusMessage({
         type: "Success",
-        message: "Cập nhật trạng thái thành công!",
+        message: "Status updated successfully!",
       });
     } else if (mutation.isError) {
       const errorMessage =
         mutation.error?.message.message ||
         JSON.stringify(mutation.error) ||
-        "Lỗi khi cập nhật trạng thái.";
+        "Failed to update status.";
       console.log("errorMessage", errorMessage);
       setStatusMessage({
         type: "Error",
@@ -103,13 +103,13 @@ const UpdateStatusPage = () => {
         <div className="update-status__container">
           {/* side menu */}
           <div className="side-menu__status">
-            <SideMenuComponent>Thông tin cửa hàng</SideMenuComponent>
-            <SideMenuComponent>Đơn hàng</SideMenuComponent>
-            <SideMenuComponent>Khuyến mãi</SideMenuComponent>
-            <SideMenuComponent>Trạng thái</SideMenuComponent>
-            <SideMenuComponent>Loại sản phẩm </SideMenuComponent>
-            <SideMenuComponent>Danh sách người dùng</SideMenuComponent>
-            <SideMenuComponent>Thống kê</SideMenuComponent>
+          <SideMenuComponent>Store information</SideMenuComponent>
+            <SideMenuComponent>Order</SideMenuComponent>
+            <SideMenuComponent>Promotion</SideMenuComponent>
+            <SideMenuComponent>Status</SideMenuComponent>
+            <SideMenuComponent>Category</SideMenuComponent>
+            <SideMenuComponent>User list</SideMenuComponent>
+            <SideMenuComponent>Statistic</SideMenuComponent>
           </div>
 
           <iv className="update-status__content">
@@ -118,34 +118,34 @@ const UpdateStatusPage = () => {
                 className="update-status__title d-flex "
                 style={{ justifyContent: "space-between" }}
               >
-                <h2>Sửa trạng thái</h2>
+                <h2>Update status</h2>
                 <EditIconComponent onClick={handleEditClick} />
               </div>
 
               <div className="content">
                 <div className="content__item">
-                  <label className="id__title">Mã trạng thái</label>
+                  <label className="id__title">Code</label>
                   <FormComponent
-                    placeholder="Nhập mã trạng thái"
+                    placeholder="Enter code"
                     name="statusCode"
                     value={formValues.statusCode}
                     onChange={handleInputChange}
                   ></FormComponent>
                 </div>
                 <div className="content__item" style={{ position: "relative" }}>
-                  <label className="name__title">Tên trạng thái</label>
+                  <label className="name__title">Name</label>
 
                   <FormComponent
-                    placeholder="Nhập tên trạng thái"
+                    placeholder="Enter name"
                     name="statusName"
                     value={formValues.statusName}
                     onChange={handleInputChange}
                   ></FormComponent>
                 </div>
                 <div className="content__item">
-                  <label className="description__title">Mô tả trạng thái</label>
+                  <label className="description__title">Description</label>
                   <FormComponent
-                    placeholder="Nhập mô tả"
+                    placeholder="Enter description"
                     name="statusDescription"
                     value={formValues.statusDescription}
                     onChange={handleInputChange}
@@ -156,9 +156,9 @@ const UpdateStatusPage = () => {
               {/* button */}
               <div className="btn__update-status">
                 {/* {isEditing && ( */}
-                <ButtonComponent onClick={handleUpdate}>Lưu</ButtonComponent>
+                <ButtonComponent onClick={handleUpdate}>Save</ButtonComponent>
                 {/* )} */}
-                <ButtonComponent onClick={handleExit}>Thoát</ButtonComponent>
+                <ButtonComponent onClick={handleExit}>Exit</ButtonComponent>
               </div>
             </div>
           </iv>

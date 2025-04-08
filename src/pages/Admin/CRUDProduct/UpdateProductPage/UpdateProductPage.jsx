@@ -93,15 +93,15 @@ const UpdateProductPage = () => {
           const result = await response;
          
           if (result.status === "OK") {
-            alert("Cập nhật thành công!");
+            alert("Jewelry item updated successfully!");
             navigate('/admin/products')
             // Reset form
             //setProduct({productName: "", productPrice: "", productCategory:null, productImage:null, productSize:"" });
           } else {
-            alert(`Thêm bánh thất bại: ${result.message}`);
+            alert(`Failed to update jewelry item:  ${result.message}`);
           }
         } catch (error) {
-          alert("Đã xảy ra lỗi khi thêm bánh!");
+          alert("An error occurred while updating the jewelry item!");
           console.error(error);
         }
         return response;
@@ -154,7 +154,7 @@ const UpdateProductPage = () => {
   return (
     <div>
       <div className="container-xl update-product">
-        <h1 className="update-product__title">Cập nhật sản phẩm</h1>
+        <h1 className="update-product__title">Update jewelry item</h1>
 
         {/* update information */}
         <div className="update-product__information">
@@ -171,7 +171,7 @@ const UpdateProductPage = () => {
                   />
                 ) : (
                   <div className="product__image-placeholder">
-                    Chọn hình ảnh
+                    Choose image
                   </div>
                 )}
                 <input
@@ -203,7 +203,7 @@ const UpdateProductPage = () => {
             {/* info right */}
             <div className="info__right">
               <div className="col product-name">
-                <label className="label-name">Tên sản phẩm</label>
+                <label className="label-name">Name</label>
                 <FormComponent
                 name="productName"
                   value={product.productName}
@@ -212,7 +212,7 @@ const UpdateProductPage = () => {
               </div>
 
               <div className="product-price">
-                <label className="label-price">Giá sản phẩm</label>
+                <label className="label-price">Price</label>
                 <FormComponent
                 name="productPrice"
                   value={product.productPrice}
@@ -221,16 +221,16 @@ const UpdateProductPage = () => {
               </div>
 
               <div className="product-category">
-                <label className="label-category">Loại sản phẩm</label>
+                <label className="label-category">Category</label>
                 <select
                   name="productCategory"
                   value={product.productCategory}
                   onChange={handleInputChange}
                   className="choose-property"
                   style={{ width: "36rem", height: "6rem", border: "none", color: "grey", borderRadius: "50px", boxShadow: "0px 2px 4px 0px #203c1640", padding: "15px" }}
-                  placeholder="Chọn loại sản phẩm"
+                  placeholder="Choose category"
                 >
-                  <option value="" disabled>Chọn loại sản phẩm</option>
+                  <option value="" disabled>Choose category</option>
                   {Array.isArray(categories) && categories.length > 0 ? (
                     categories.map((category) => (
                       <option key={category._id} value={category._id}>
@@ -238,13 +238,13 @@ const UpdateProductPage = () => {
                       </option>
                     ))
                   ) : (
-                    <option disabled>Không có loại sản phẩm</option>
+                    <option disabled>No product categories available.</option>
                   )}
                 </select>
               </div>
 
               <div className="product-size">
-                <label className="label-size">Kích thước sản phẩm</label>
+                <label className="label-size">Size</label>
                 <div className="item__size">
                   <SizeComponent
                    name="productSize"
@@ -275,7 +275,7 @@ const UpdateProductPage = () => {
           </div>
           {/* info bot */}
           <div className="info__bot">
-            <label className="label-description">Mô Tả</label>
+            <label className="label-description">Description</label>
             <textarea
             name="productDescription"
               className="product-description"
@@ -283,16 +283,16 @@ const UpdateProductPage = () => {
               onChange={(e) =>
                 setProduct({ ...product, productDescription: e.target.value })
               }
-              placeholder="Nhập mô tả sản phẩm"
+              placeholder="Enter description"
               required
             />
           </div>
         </div>
         {/* submit */}
         <div className="btn-submit">
-          <ButtonComponent onClick={handleSubmit}>Lưu</ButtonComponent>
-          <ButtonComponent onClick={() => handleDelete(product.productId)}>Xóa</ButtonComponent>
-          <ButtonComponent onClick={()=> navigate("/admin/products")}>Thoát</ButtonComponent>
+          <ButtonComponent onClick={handleSubmit}>Save</ButtonComponent>
+          <ButtonComponent onClick={() => handleDelete(product.productId)}>Delete</ButtonComponent>
+          <ButtonComponent onClick={()=> navigate("/admin/products")}>Exit</ButtonComponent>
         </div>
       </div>
     </div>

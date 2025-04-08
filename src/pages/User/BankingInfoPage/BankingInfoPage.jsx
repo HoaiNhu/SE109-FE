@@ -54,7 +54,7 @@ const BankingInfoPage = () => {
             onClick={handleDone}
             style={{ width: "50%", margin: "30px auto" }}
           >
-            Xong
+            Done
           </ButtonComponent>
         </div>
       </div>

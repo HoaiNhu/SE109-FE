@@ -108,7 +108,7 @@ const StatusListPage = () => {
       dispatch(setDetailStatus(selectedStatus)); // Lưu trạng thái vào Redux
       navigate("/admin/update-status"); // Điều hướng đến trang sửa
     } else {
-      alert("Vui lòng chọn một trạng thái để sửa.");
+      alert("Please select a status to edit.");
     }
   };
 
@@ -121,11 +121,11 @@ const StatusListPage = () => {
     if (mutation.isSuccess) {
       setStatusMessage({
         type: "Success",
-        message: "Lấy danh sách trạng thái thành công!",
+        message: "Status list retrieved successfully!",
       });
     } else if (mutation.isError) {
       const errorMessage =
-        mutation.error?.message.message || "Lỗi khi lấy danh sách trạng thái.";
+        mutation.error?.message.message || "Failed to retrieve status list.";
       setStatusMessage({
         type: "Error",
         message: errorMessage,
@@ -149,11 +149,11 @@ const StatusListPage = () => {
 
   const handleDeleteStatus = async () => {
     if (selectedRows.length === 0) {
-      alert("Vui lòng chọn ít nhất một trạng thái để xóa.");
+      alert("Please select at least one status to delete.");
       return;
     }
 
-    if (window.confirm("Bạn có chắc chắn muốn xóa các trạng thái đã chọn?")) {
+    if (window.confirm("Are you sure you want to delete the selected statuses?")) {
       try {
         await Promise.all(
           selectedRows.map(async (code) => {
@@ -163,7 +163,7 @@ const StatusListPage = () => {
             console.log("Status to delete:", statusToDelete);
             if (!statusToDelete) {
               throw new Error(
-                `Không tìm thấy trạng thái với statusCode: ${code}`
+                `No status found with statusCode: ${code}`
               );
             }
 
@@ -177,7 +177,7 @@ const StatusListPage = () => {
 
         setStatusMessage({
           type: "Success",
-          message: "Xóa trạng thái thành công!",
+          message: "Status deleted successfully!",
         });
 
         setSelectedRows([]);
@@ -189,7 +189,7 @@ const StatusListPage = () => {
           message:
             typeof error.message === "string"
               ? error.message
-              : JSON.stringify(error.message) || "Xóa trạng thái thất bại.",
+              : JSON.stringify(error.message) || "Failed to delete status.",
         });
       }
     }
@@ -210,48 +210,48 @@ const StatusListPage = () => {
           {/* side menu */}
           <div className="side-menu__status">
             <SideMenuComponent className="btn-menu" onClick={ClickInfor}>
-              Thông tin cửa hàng
+              Store information 
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
-              Đơn hàng
+              Order
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
-              Khuyến mãi
+              Promotion
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
-              Trạng thái
+              Status
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
-              Loại sản phẩm
+              Category
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickUser}>
-              Danh sách người dùng
+              User list
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickReport}>
-              Thống kê
+              Statistic
             </SideMenuComponent>
           </div>
           {/* status list */}
           <div className="status-list__content">
             <div className="status-list__action">
               <h2 className="status-list__title">
-                Trạng thái đơn hàng hiện có
+              Current Order Statuses
               </h2>
               <div className="btn__action">
                 <ButtonComponent
                   className="btn btn-delete"
                   onClick={handleDeleteStatus}
                 >
-                  Xóa
+                  Delete
                 </ButtonComponent>
                 <ButtonComponent className="btn btn-edit" onClick={handleEdit}>
-                  Sửa
+                  Update
                 </ButtonComponent>
                 <ButtonComponent
                   className="btn btn-add"
                   onClick={handleAddStatus}
                 >
-                  Thêm
+                  Add
                 </ButtonComponent>
               </div>
             </div>
@@ -266,10 +266,10 @@ const StatusListPage = () => {
                         onChange={toggleSelectAll}
                       />
                     </th>
-                    <th>STT</th>
-                    <th>Mã khuyến mãi</th>
-                    <th>Tên khuyến mãi</th>
-                    <th>Mô tả</th>
+                    <th>No.</th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Description</th>
                     <th></th>
                   </tr>
                 </thead>

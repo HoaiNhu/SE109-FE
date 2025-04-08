@@ -11,7 +11,7 @@ import Loading from "../../../../components/LoadingComponent/Loading";
 import { useNavigate } from "react-router-dom";
 
 const AddProductPage = () => {
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const accessToken = localStorage.getItem("access_token");
   const [stateproduct, setstateProduct] = useState({
     productName: "",
@@ -107,15 +107,15 @@ const AddProductPage = () => {
         const result = await response;
         //console.log("RESKLT",result);
         if (result.status === "OK") {
-          alert("Thêm bánh thành công!");
+          alert("Jewelry item added successfully!");
           navigate('/admin/products')
           // Reset form
           //setProduct({productName: "", productPrice: "", productCategory:null, productImage:null, productSize:"" });
         } else {
-          alert(`Thêm bánh thất bại: ${result.message}`);
+          alert(`Failed to add jewelry item: ${result.message}`);
         }
       } catch (error) {
-        alert("Đã xảy ra lỗi khi thêm bánh!");
+        alert("An error occurred while adding the jewelry item!");
         console.error(error);
       }
       return response;
@@ -177,14 +177,14 @@ const AddProductPage = () => {
   return (
     <div>
       <div className="container-xl add-product">
-        <h1 className="add-product__title">Thêm sản phẩm</h1>
+        <h1 className="add-product__title">Add jewelry item</h1>
         <Loading isLoading={isLoading} />
         <div className="add-product__information">
           {/* Info top */}
           <div className="info__top">
             {/* Info left */}
             <div className="info__left">
-           
+
               <input
                 // className="product__image"
                 type="file"
@@ -193,18 +193,18 @@ const AddProductPage = () => {
                 required
               />
               <div className="product__image">
-              {previewImage && (
-                <img
-                  src={previewImage}
-                  alt="Preview"
-                  className="product-preview"
-                  style={{
-                    width: "36rem",
-                    height: "40rem",
-                    borderRadius: "15px"
-                  }}
-                />
-              )}
+                {previewImage && (
+                  <img
+                    src={previewImage}
+                    alt="Preview"
+                    className="product-preview"
+                    style={{
+                      width: "36rem",
+                      height: "40rem",
+                      borderRadius: "15px"
+                    }}
+                  />
+                )}
               </div>
               {/* <div className="icon__add-image">
                 <svg
@@ -226,11 +226,11 @@ const AddProductPage = () => {
             {/* Info right */}
             <div className="info__right">
               <div className="product-name">
-                <label>Tên sản phẩm</label>
+                <label>Name</label>
                 <FormComponent
                   style={{ width: "36rem", height: "6rem" }}
                   className="choose-property"
-                  placeholder="Nhập tên sản phẩm"
+                  placeholder="Enter name"
                   name="productName"
                   value={stateproduct.productName}
                   onChange={handleInputChange}
@@ -239,11 +239,11 @@ const AddProductPage = () => {
               </div>
 
               <div className="product-price">
-                <label>Giá sản phẩm</label>
+                <label>Price</label>
                 <FormComponent
                   style={{ width: "36rem", height: "6rem" }}
                   className="choose-property"
-                  placeholder="Nhập giá sản phẩm"
+                  placeholder="Enter price"
                   name="productPrice"
                   value={stateproduct.productPrice}
                   onChange={handleInputChange}
@@ -252,16 +252,16 @@ const AddProductPage = () => {
               </div>
 
               <div className="product-category">
-                <label>Chọn loại sản phẩm</label>
+                <label>Category</label>
                 <select
                   name="productCategory"
                   value={stateproduct.productCategory}
                   onChange={handleInputChange}
                   className="choose-property"
-                  style={{ width: "36rem", height: "6rem", border: "none", color: "grey", borderRadius: "50px", boxShadow: "0px 2px 4px 0px #203c1640", padding: "15px" }}
-                  placeholder="Chọn loại sản phẩm"
+                  style={{ marginBottom: "-15px",marginTop: "5px", width: "36rem", height: "6rem", border: "none", color: "grey", borderRadius: "50px", boxShadow: "0px 2px 4px 0px #203c1640", padding: "15px" }}
+                  placeholder="Choose category"
                 >
-                  <option value="" disabled>Chọn loại sản phẩm</option>
+                  <option value="" disabled>Choose category</option>
                   {Array.isArray(categories) && categories.length > 0 ? (
                     categories.map((category) => (
                       <option key={category._id} value={category._id}>
@@ -269,7 +269,7 @@ const AddProductPage = () => {
                       </option>
                     ))
                   ) : (
-                    <option disabled>Không có loại sản phẩm</option>
+                    <option disabled>No product categories available</option>
                   )}
                 </select>
 
@@ -277,11 +277,11 @@ const AddProductPage = () => {
 
 
               <div className="product-size">
-                <label>Kích thước sản phẩm</label>
+                <label>Size</label>
                 <FormComponent
                   style={{ width: "36rem", height: "6rem" }}
                   className="choose-property"
-                  placeholder="Nhập kích thước sản phẩm"
+                  placeholder="Enter size"
                   name="productSize"
                   value={stateproduct.productSize}
                   onChange={handleInputChange}
@@ -292,21 +292,21 @@ const AddProductPage = () => {
           </div>
 
           <div className="info__bot">
-            <label htmlFor="description">Mô Tả</label>
+            <label htmlFor="description">Description</label>
             <textarea
               className="product-description"
               name="productDescription"
               value={stateproduct.productDescription}
               onChange={handleInputChange}
-              placeholder="Nhập mô tả sản phẩm"
+              placeholder="Enter description"
               required
             />
           </div>
         </div>
 
         <div className="btn-submit">
-          <ButtonComponent onClick={handleSubmit}>Thêm</ButtonComponent>
-          <ButtonComponent onClick={()=> navigate("/admin/products")}>Thoát</ButtonComponent>
+          <ButtonComponent onClick={handleSubmit}>Save</ButtonComponent>
+          <ButtonComponent onClick={() => navigate("/admin/products")}>Exit</ButtonComponent>
         </div>
 
       </div>

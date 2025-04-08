@@ -3,7 +3,7 @@
   font-weight: 700;
   margin: 50px 0;
   text-align: center;
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 .info__top {
@@ -15,9 +15,6 @@
 }
 
 /* =========================left===================== */
-/* .info__left {
-    display: flex;
-  } */
 
 .product__image-container {
   position: relative;
@@ -30,6 +27,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .product__image-placeholder {
@@ -72,7 +70,7 @@
 
 label {
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color6);
   font-weight: 600;
 }
 
@@ -109,8 +107,7 @@ label {
 
 /* ====================================bot=========================== */
 .label-description {
-  color: var(--green100);
-  background-color: var(--brown100);
+  color: var(--color6);
   padding: 8px;
   border-radius: 15px 15px 0 0;
   width: 10rem;

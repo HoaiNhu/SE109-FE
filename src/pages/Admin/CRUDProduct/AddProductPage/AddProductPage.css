@@ -3,7 +3,7 @@
   font-weight: 700;
   margin: 50px 0;
   text-align: center;
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 .info__top {
@@ -20,10 +20,10 @@
 .product__image {
   width: 36rem;
   height: 40rem;
-  box-shadow: 0 0 4px 0 var(--shadow);
   border-radius: 15px;
-  background: var(--grey9);
+  background: var(--color8) !important;
   cursor: pointer;
+  border: 1px solid var(--white);
 }
 
 .icon__add-image {
@@ -35,25 +35,48 @@
 /* =========================right===================== */
 .info__right {
   width: 75rem;
-  height: 40rem;
-  box-shadow: 0 0 4px 0 var(--shadow);
+  height: 48rem; /* Tăng chiều cao để đủ chỗ */
+  box-shadow: 0 0 4px 0 var(--color5);
   border-radius: 15px;
-  background: var(--grey9);
-  padding: 30px;
+  background: var(--color8) !important;
+  border: 1px solid var(--white);
+  margin-top: 20px;
+  padding: 30px; /* Padding đều bên trong */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Các trường cách đều */
+}
+
+.product-name,
+.product-price,
+.product-category,
+.product-size {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Điều chỉnh select trong product-category */
+.product-category select.choose-property {
+  width: 36rem;
+  height: 6rem;
+  border: none;
+  color: grey;
+  border-radius: 50px;
+  box-shadow: 0px 2px 4px 0px #203c1640;
+  padding: 15px;
+}
+
+.product-size {
+  margin-bottom: 10px; /* Trường cuối không cần margin dưới */
 }
 
 label {
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color6);
   font-weight: 500;
 }
 
-.product-name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-}
 
 .product-code {
   display: flex;
@@ -62,42 +85,23 @@ label {
   padding-bottom: 20px;
 }
 
-.product-price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-}
-
-.product-category {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-}
-
-.product-size {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
 
 /* ====================================bot=========================== */
 textarea {
   resize: vertical;
   line-height: 1.5;
   padding: 10px 15px;
+  color: var(--white)
 }
 .product-description {
   width: 100%;
   height: 32rem;
   box-shadow: 0 0 4px 0 var(--shadow);
   border-radius: 15px;
-  background: var(--grey9);
+  background: var(--color8) !important;
   margin: 10px 0 30px;
-  border: none;
   outline: none;
+  border: 1px solid var(--white) !important;
 }
 
 /* ======================btn========================= */
@@ -108,3 +112,4 @@ textarea {
   padding: 0 0 30px 20px;
   gap: 20px;
 }
+
