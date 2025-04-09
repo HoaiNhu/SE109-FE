@@ -35,6 +35,7 @@ h2 {
   align-items: center;
 
   padding: 10px;
+  margin-right: 10px;
 }
 
 .category-list__title {
@@ -54,7 +55,7 @@ h2 {
   max-width: 1000px;
   margin: 20px auto;
   padding: 10px;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 15px;
   box-shadow: 0px 0px 4px 0px var(--shadow);
 }
@@ -77,16 +78,16 @@ h2 {
 }
 
 .promo-table tbody tr:hover {
-  background-color: var(--grey9); /* Màu nền khi hover */
+  background-color: var(--grey9);
 }
 
 .promo-table tbody tr.highlight {
-  background-color: var(--green50); /* Màu nền sáng lên */
-  transition: background-color 0.3s ease; /* Hiệu ứng mượt */
+  background-color: var(--color5);
+  transition: background-color 0.3s ease;
 }
 
 .promo-table tbody tr.highlight:hover {
-  background-color: var(--green50); /* Màu nền sáng hơn khi hover */
+  background-color: var(--color5);
 }
 
 .delete-btn {
@@ -94,7 +95,7 @@ h2 {
   border: none;
   cursor: pointer;
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color2);
 }
 
 .delete-btn:hover {

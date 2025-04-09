@@ -1,18 +1,18 @@
 .update-contact__title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin: 50px 0;
-    text-align: center;
-    color: var(--brown100);
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 50px 0;
+  text-align: center;
+  color: var(--color6);
 }
 
 .info__top-contact {
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    gap: 20px;
-    margin-bottom: 30px;
-    margin-left: 30px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 20px;
+  margin-bottom: 30px;
+  margin-left: 30px;
 }
 
 /* =========================left===================== */
@@ -21,102 +21,102 @@
     } */
 
 .contact__image-container {
-    position: relative;
-    width: 38rem;
-    height: 42rem;
-    border: 1px dashed var(--grey9);
-    border-radius: 15px;
-    overflow: hidden;
-    background-color: var(--grey9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
-    margin-left: 20px;
+  position: relative;
+  width: 38rem;
+  height: 42rem;
+  border: 1px dashed var(--grey9);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--grey9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+  margin-left: 20px;
 }
 
 .contact__image-placeholder {
-    font-size: 1.4rem;
-    color: var(--brown100);
-    text-align: center;
+  font-size: 1.4rem;
+  color: var(--brown100);
+  text-align: center;
 }
 
 .contact__image-preview {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .contact__image {
-    width: 36rem;
-    height: 40rem;
-    box-shadow: 0 0 4px 0 var(--shadow);
-    border-radius: 15px;
-    background: var(--grey9);
-    cursor: pointer;
+  width: 36rem;
+  height: 40rem;
+  box-shadow: 0 0 4px 0 var(--shadow);
+  border-radius: 15px;
+  background: var(--grey9);
+  cursor: pointer;
 }
 
 .icon__update-image {
-    position: absolute;
-    /* Đặt absolute để định vị trong container */
-    top: 10px;
-    /* Khoảng cách từ trên */
-    right: 10px;
-    /* Khoảng cách từ phải */
-    cursor: pointer;
+  position: absolute;
+  /* Đặt absolute để định vị trong container */
+  top: 10px;
+  /* Khoảng cách từ trên */
+  right: 10px;
+  /* Khoảng cách từ phải */
+  cursor: pointer;
 }
 
 /* =========================right===================== */
 .info__right-contact {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 4px 0 var(--shadow);
-    border-radius: 15px;
-    background: var(--grey9);
-    padding: 30px;
-    display: flex;
-    margin-left: 50px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 4px 0 var(--shadow);
+  border-radius: 15px;
+  background: transparent;
+  padding: 30px;
+  display: flex;
+  margin-left: 50px;
 }
 
 .contact-field {
-    color: rgba(58, 6, 14, 0.75);
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 40px;
-    margin-bottom: 5px;
+  color: var(--color6);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 5px;
 }
-
-
-
 
 /* ======================btn========================= */
 .btn-submit {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    padding: 0 0 30px 20px;
-    gap: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0 0 30px 20px;
+  gap: 20px;
 }
-.contactHolder-field{
-    display: flex;
+.contactHolder-field {
+  display: flex;
 }
-.input-holder-contact{
+.input-holder-contact {
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.area1 {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.area2 {
+  margin-top: 60px;
+  margin-left: 5px;
+}
+.info__left-contact {
+  margin-left: 50px;
+}
 
-margin-right: 50px;
-margin-top: 10px;
+.info-form {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  text-align: left;
 }
-.area1{
-    margin-top: 10px;
-    margin-left: 5px;
-}
-.area2{
-    margin-top: 60px;
-    margin-left: 5px;
-}
-.info__left-contact{
-    margin-left: 50px;
-}
-

@@ -4,7 +4,10 @@ import SideMenuComponent from "../../../../components/SideMenuComponent/SideMenu
 import ButtonComponent from "../../../../components/ButtonComponent/ButtonComponent";
 import CheckboxComponent from "../../../../components/CheckboxComponent/CheckboxComponent";
 import { useNavigate } from "react-router-dom";
-import { getAllDiscount, deleteDiscount } from "../../../../services/DiscountService";
+import {
+  getAllDiscount,
+  deleteDiscount,
+} from "../../../../services/DiscountService";
 
 const DiscountListPage = () => {
   const accessToken = localStorage.getItem("access_token");
@@ -18,12 +21,15 @@ const DiscountListPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/category/get-all-category", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "http://localhost:3001/api/category/get-all-category",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
@@ -57,13 +63,12 @@ const DiscountListPage = () => {
       }
     };
     fetchDiscounts();
-  },[]);
+  }, []);
 
   const getCategoryNameById = (id) => {
     const category = categories.find((cat) => cat.id === id);
     return category ? category.categoryName : "Không xác định";
   };
- 
 
   const toggleSelectAll = () => {
     setSelectedRows(
@@ -86,9 +91,8 @@ const DiscountListPage = () => {
     });
   };
 
-  console.log("QWERTY", promos)
-  
-  
+  console.log("QWERTY", promos);
+
   const ClickInfor = () => navigate("/admin/store-info");
   const ClickOrder = () => navigate("/admin/order-list");
   const ClickDiscount = () => navigate("/admin/discount-list");
@@ -107,56 +111,56 @@ const DiscountListPage = () => {
       try {
         // Gọi API xóa khuyến mãi
         await deleteDiscount(selectedRows[0], accessToken); // Gửi chỉ 1 ID khuyến mãi
-        setPromos((prevPromos) => prevPromos.filter((promo) => promo.id !== selectedRows[0]));
+        setPromos((prevPromos) =>
+          prevPromos.filter((promo) => promo.id !== selectedRows[0])
+        );
         setSelectedRows([]); // Dọn dẹp danh sách đã chọn
         alert("Khuyến mãi đã được xóa.");
-        navigate('/admin/discount-list')
+        navigate("/admin/discount-list");
       } catch (error) {
         alert("Có lỗi xảy ra khi xóa khuyến mãi.");
       }
     }
   };
-  
-  
+
   return (
     <div>
       <div className="container-xl">
         <div className="discount-list__info">
           {/* Side menu */}
           <div className="side-menu__discount">
-            <SideMenuComponent className="btn-menu" onClick={ClickInfor}>
-              Thông tin cửa hàng
+            <SideMenuComponent onClick={ClickInfor}>
+              Store's Information
             </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
-              Đơn hàng
+            <SideMenuComponent onClick={ClickOrder}>Order</SideMenuComponent>
+            <SideMenuComponent onClick={ClickDiscount}>Promo</SideMenuComponent>
+            <SideMenuComponent onClick={ClickStatus}>Status</SideMenuComponent>
+            <SideMenuComponent onClick={ClickCategory}>
+              Category
             </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
-              Khuyến mãi
+            <SideMenuComponent onClick={ClickUser}>User</SideMenuComponent>
+            <SideMenuComponent onClick={ClickReport}>
+              Statistic
             </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
-              Trạng thái
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
-              Loại sản phẩm
-            </SideMenuComponent>
-            <SideMenuComponent onClick={ClickUser}>
-              Danh sách người dùng
-            </SideMenuComponent>
-            <SideMenuComponent onClick={ClickReport}>Thống kê</SideMenuComponent>
           </div>
 
           {/* Discount list */}
           <div className="discount-list__content">
             <div className="discount-list__action">
-              <h2 className="discount-list__title">Danh sách khuyến mãi</h2>
+              <h2 className="discount-list__title">Promo list</h2>
               <div className="btn__action">
-                <ButtonComponent className="btn btn-delete" onClick={handleDelete}>Xóa</ButtonComponent>
-               
+                <ButtonComponent
+                  className="btn btn-delete"
+                  onClick={handleDelete}
+                >
+                  Delete
+                </ButtonComponent>
+
                 <ButtonComponent
                   className="btn btn-add"
                   onClick={() => navigate("/admin/add-discount")}
                 >
-                  Thêm
+                  Add
                 </ButtonComponent>
               </div>
             </div>
@@ -172,13 +176,13 @@ const DiscountListPage = () => {
                         onChange={toggleSelectAll}
                       />
                     </th>
-                    <th>STT</th>
-                    <th>Mã khuyến mãi</th>
-                    <th>Tên khuyến mãi</th>
-                    <th>Giá trị khuyến mãi</th>
-                    <th>Loại sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
+                    <th>No.</th>
+                    <th>Promo code</th>
+                    <th>Promo name</th>
+                    <th>Promo value</th>
+                    <th>Category</th>
+                    <th>Start date</th>
+                    <th>End date</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -222,7 +226,7 @@ const DiscountListPage = () => {
                     ))
                   ) : (
                     <tr>
-                      <td colSpan="9">Không có khuyến mãi nào để hiển thị.</td>
+                      <td colSpan="9">No promotions available to display.</td>
                     </tr>
                   )}
                 </tbody>
