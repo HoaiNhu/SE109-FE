@@ -1,7 +1,7 @@
 .introduce {
   margin: 50px 0;
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color1);
 }
 
 /* ==========================introduce title===================== */
@@ -15,6 +15,7 @@
   font-size: 4rem;
   font-weight: 700;
   margin: 10px 0;
+  color: var(--color6);
 }
 
 /* ===========================introduce bot============================= */
@@ -43,24 +44,29 @@
   width: 50rem;
   height: 35rem;
   background-color: transparent;
-  border: 2px solid var(--green100);
+  border: 2px solid var(--color6);
   border-radius: 20px;
 }
 
 /* ===========================introduce right============================= */
 .introduce__right {
   min-width: 60rem;
-  margin: 20px 0 0 50px;
+  margin: 20px 50px 0 50px;
 }
 
 .introduce__paragraph--title {
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 2rem;
+  color: var(--color1);
 }
 
 .introduce__paragraph--content {
   text-align: justify;
   word-spacing: 5px;
   line-height: 1.75;
+}
+
+.introduce__welcome {
+  color: var(--color1);
 }

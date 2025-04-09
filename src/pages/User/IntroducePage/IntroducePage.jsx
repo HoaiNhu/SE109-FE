@@ -12,10 +12,8 @@ const IntroducePage = () => {
         <div className="introduce">
           {/* introduce top */}
           <div className="introduce__top">
-            <h1 className="introduce__title">GIỚI THIỆU</h1>
-            <h3 className="introduce__welcome">
-              Chào mừng bạn đến với Avocado Bakery
-            </h3>
+            <h1 className="introduce__title">INTRODUCES</h1>
+            <h3 className="introduce__welcome">Welcome to Avocado Jewelry</h3>
           </div>
 
           {/* introduce bot */}
@@ -29,16 +27,14 @@ const IntroducePage = () => {
             </div>
             {/* introduce right */}
             <div className="introduce__right">
-              <h4 className="introduce__paragraph--title">
-                Câu chuyện thương hiệu
-              </h4>
+              <h4 className="introduce__paragraph--title">The brand story</h4>
               <p className="introduce__paragraph--content">
-                Là một hệ thống đội ngũ nhân viên và lãnh đạo chuyên nghiệp, gồm
-                CBCNV và những người thợ đã có kinh nghiệm lâu năm trong các
-                công ty đầu ngành. Mô hình vận hành hoạt động công ty được bố
-                trí theo chiều ngang, làm gia tăng sự thuận tiện trong việc vận
-                hành cỗ máy kinh doanh và gia tăng sự phối hợp thống nhất giữa
-                các bộ phận trong công ty.
+                We are a professional team of employees and leaders, including
+                staff members and skilled artisans with years of experience in
+                leading companies within the industry. Our company operates with
+                a horizontal organizational structure, enhancing business
+                efficiency and fostering seamless collaboration among
+                departments.
               </p>
             </div>
           </div>
@@ -48,28 +44,26 @@ const IntroducePage = () => {
           <div className="introduce__bot">
             {/* introduce left */}
             <div className="introduce__right">
-              <h4 className="introduce__paragraph--title">
-                Sứ mệnh - tầm nhìn
-              </h4>
+              <h4 className="introduce__paragraph--title">Mission - Vision</h4>
               <p
                 className="introduce__paragraph--content"
                 style={{ marginRight: "10px" }}
               >
-                Avocado tự hào là một thương hiệu bánh ngọt Việt Nam chất lượng
-                cao, được xây dựng từ chính tình yêu và tâm huyết dành trọn cho
-                khách hàng. Với sứ mệnh mang đến những chiếc bánh thơm ngon,
-                tươi mới, và đầy sáng tạo, Avocado không chỉ là nơi cung cấp
-                bánh mà còn là cầu nối gắn kết những khoảnh khắc hạnh phúc của
-                mọi người. Từ nguyên liệu được chọn lọc kỹ lưỡng, quy trình sản
-                xuất nghiêm ngặt đến việc thiết kế từng chiếc bánh theo phong
-                cách tinh tế, chúng tôi luôn nỗ lực để mang lại trải nghiệm
-                tuyệt vời nhất cho khách hàng. Bất kể là bữa tiệc sinh nhật, lễ
-                cưới hay một buổi họp mặt ấm cúng, Avocado luôn đồng hành để tạo
-                nên những ký ức đáng nhớ và ý nghĩa nhất. Chúng tôi trân trọng
-                sự tin yêu của khách hàng và cam kết không ngừng sáng tạo để
-                mang đến những sản phẩm vượt trên cả mong đợi. Với Avocado, mỗi
-                chiếc bánh không chỉ là món ăn, mà còn là thông điệp của tình
-                yêu, sự tận tâm và chất lượng.
+                Avocado proudly stands as a high-quality Vietnamese jewelry
+                brand, built on passion and dedication to our customers. With a
+                mission to bring sophisticated, luxurious, and unique jewelry
+                designs, Avocado is not just a jewelry provider but a bridge
+                that helps you shine in every important moment. From carefully
+                selected precious materials and meticulous craftsmanship to
+                exquisitely designed jewelry, we strive to offer the finest
+                experience to our customers. Whether it's a meaningful gift, a
+                personal accessory, or a statement piece for special occasions,
+                Avocado is always by your side to create unforgettable and
+                distinctive impressions. We deeply appreciate our customers'
+                trust and are committed to continuous innovation and creativity,
+                bringing products that exceed expectations. At Avocado, every
+                piece of jewelry is not just an accessory but a symbol of love,
+                dedication, and timeless value .
               </p>
             </div>
             {/* introduce right */}
