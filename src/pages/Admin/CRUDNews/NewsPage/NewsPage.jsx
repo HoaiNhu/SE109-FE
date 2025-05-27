@@ -78,7 +78,7 @@ const NewsPageAdmin = () => {
     const selectedNews = news.find((news) => news._id === newsId);
 
     if (selectedNews) {
-      const {  newsImage, newsTitle, newsContent, _id } = selectedNews;
+      const { newsImage, newsTitle, newsContent, _id } = selectedNews;
       console.log("DETAIL", _id)
       navigate("/admin/news-detail", {
         state: { newsImage, newsTitle, newsContent, _id },
@@ -91,66 +91,66 @@ const NewsPageAdmin = () => {
   return (
     <div>
       <div className="productadmin__top">
-        <h1 className="productadmin__title">TIN TỨC</h1>
+        <h1 className="productadmin__title">NEWS</h1>
       </div>
       <div style={{ marginLeft: 1222 }}>
         <AddBtn path={"/admin/news/add-news"} />
       </div>
-      <div className='container-xl' 
-              style={{
-                display:'flex'
-              }}>
-      <div className='news-grid'>
-        
-        {news.length > 0 ? (
-          news.map((news) => {
-            const imageUrl = news.newsImage.startsWith("http")
-              ? news.newsImage
-              : `https://res.cloudinary.com/dlyl41lgq/image/upload/v2/${news.newsImage.replace("\\", "/")}`;
+      <div className='container-xl'
+        style={{
+          display: 'flex'
+        }}>
+        <div className='news-grid'>
 
-            //console.log("news image URL:", imageUrl);  // Debug URL ảnh
-            return (
-              
-              <div key={news._id} className="news-grid-item">
-             
-              <CardNews
-                 // Dùng _id làm key cho mỗi sản phẩm
-                className="col productadmin__item"
-                // type={"primary"}
-                img={imageUrl} // Sử dụng URL ảnh đã xử lý
-                title={news.newsTitle} // Hiển thị tên sản phẩm
-                detail={news.newsContent}
-                onClick={()=>handleDetail(news._id)}
-                newsId={news._id}
-              //description={news.newsDescription} // Mô tả sản phẩm
-              />
-              </div>
-            );
-          })
+          {news.length > 0 ? (
+            news.map((news) => {
+              const imageUrl = news.newsImage.startsWith("http")
+                ? news.newsImage
+                : `https://res.cloudinary.com/dlyl41lgq/image/upload/v2/${news.newsImage.replace("\\", "/")}`;
 
-        ) : (
-          <p>Không có tin tức nào</p>
-        )}
-        
+              //console.log("news image URL:", imageUrl);  // Debug URL ảnh
+              return (
+
+                <div key={news._id} className="news-grid-item">
+
+                  <CardNews
+                    // Dùng _id làm key cho mỗi sản phẩm
+                    className="col productadmin__item"
+                    // type={"primary"}
+                    img={imageUrl} // Sử dụng URL ảnh đã xử lý
+                    title={news.newsTitle} // Hiển thị tên sản phẩm
+                    detail={news.newsContent}
+                    onClick={() => handleDetail(news._id)}
+                    newsId={news._id}
+                  //description={news.newsDescription} // Mô tả sản phẩm
+                  />
+                </div>
+              );
+            })
+
+          ) : (
+            <p>Không có tin tức nào</p>
+          )}
 
 
-          </div>
-          </div>
 
-          {/* <div style={{display:'inline-flex', marginTop:50, marginLeft:120}}>
+        </div>
+      </div>
+
+      {/* <div style={{display:'inline-flex', marginTop:50, marginLeft:120}}>
        <DropdownComponent placeholder='Danh mục bài viết'
        className='CustomDropDown'
        ></DropdownComponent>
       </div> */}
-        <div className="PageNumberHolder">
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={(page) => fetchnews(page, 15)}
-          />
-        </div>
+      <div className="PageNumberHolder">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={(page) => fetchnews(page, 15)}
+        />
       </div>
-    
+    </div>
+
   )
 }
 
