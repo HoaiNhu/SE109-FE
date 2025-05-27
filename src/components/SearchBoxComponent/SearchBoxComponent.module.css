@@ -2,20 +2,20 @@
   width: var(--search-box-width);
   height: 4.4rem;
   border-radius: 50px;
-  background: #d9d9d900;
+  background: var(--white);
   border: none;
   font-size: 1.6rem;
   text-align: left;
   padding: 0 25px;
   outline: none;
-  color: var(--brown100);
+  color: var(--color2);
   /* box-shadow: 0 0 0 2px var(--green30); */
   box-shadow: 0 0 4px var(--green50), 0 0 15px var(--green30);
   margin-right: 10px;
 }
 
 .search__component::placeholder {
-  color: var(--brown30);
+  color: var(--color6);
   font-weight: 600;
   line-height: 1.75;
 }

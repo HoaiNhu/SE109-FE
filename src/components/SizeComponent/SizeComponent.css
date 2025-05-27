@@ -1,15 +1,15 @@
 .size-component {
-  padding: 8px 16px;
+  padding: 16px 32px;
   /* margin: 10px; */
   font-size: 1.2rem;
-  color: var(--brown100);
+  color: var(--color2);
   border-radius: 50px;
-  border: 1px solid var(--brown100);
+  border: 1px solid #F2BED1;
   background: var(--white);
   transition: 0.25s;
 }
 
 .size-component:hover {
-  border-color: var(--green100);
-  background: var(--green100);
+  border-color: var(--color6);
+  background: var(--color6);
 }

@@ -6,20 +6,20 @@
 
 .status-icon {
   flex-shrink: 0;
-  fill: var(--brown100); /* Mặc định màu nâu */
+  fill: var(--color6); /* Mặc định màu nâu */
 }
 
 .status-name {
   font-size: 1.6rem;
   font-weight: 600;
-  color: var(--brown100); /* Mặc định màu nâu */
+  color: var(--color6); /* Mặc định màu nâu */
 }
 
 /* Khi đơn hàng đã được giao */
 .status-delivered .status-name {
-  color: var(--green100); /* Màu xanh cho chữ */
+  color: var(--color8); /* Màu xanh cho chữ */
 }
 
 .status-delivered .status-icon {
-  fill: var(--green100); /* Màu xanh cho icon */
+  fill: var(--color8); /* Màu xanh cho icon */
 }

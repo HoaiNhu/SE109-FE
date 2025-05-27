@@ -44,8 +44,10 @@ const OrderInformationPage = () => {
         product: product.id, // Gắn ID của sản phẩm vào trường `product`
         quantity: product.quantity, // Số lượng
         total:
-          parseFloat(product.price.replace(/[^0-9.-]+/g, "")) *
-          product.quantity, // Tính tổng tiền
+          typeof product.price === "number"
+            ? product.price * product.quantity
+            : parseFloat(product.price.toString().replace(/[^0-9.-]+/g, "")) *
+              product.quantity,
       })),
       shippingAddress, // Thông tin giao hàng
       paymentMethod: "Online Payment", // Phương thức thanh toán
@@ -121,7 +123,7 @@ const OrderInformationPage = () => {
         const price =
           typeof product.price === "number"
             ? product.price
-            : parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+            : parseFloat(product.price.toString().replace(/[^0-9.-]+/g, ""));
 
         // if (typeof product.price === "number") {
         //   price = product.price; // Nếu là số, dùng trực tiếp

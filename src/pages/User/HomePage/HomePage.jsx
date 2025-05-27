@@ -317,6 +317,8 @@ const HomePage = () => {
         >
           {products.map((product) => (
             <CardProduct
+            key={product._id}
+              id={product._id} // Thêm prop id vào đây
               type="secondary"
               img={product.productImage}
               title={product.productName}
@@ -410,6 +412,8 @@ const HomePage = () => {
         >
           {products.map((product) => (
             <CardProduct
+            key={product._id}
+              id={product._id} // Thêm prop id vào đây
               type={"primary"}
               img={product.productImage}
               title={product.productName}
