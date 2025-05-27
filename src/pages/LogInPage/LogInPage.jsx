@@ -62,8 +62,7 @@ const LogInPage = () => {
     } else if (mutation.isError) {
       // setShowLoading(false);
       const errorMessage =
-        mutation.error?.message?.message ||
-        "Login failed. Please try again.";
+        mutation.error?.message?.message || "Login failed. Please try again.";
       setStatusMessage({
         type: "Error",
         message:
@@ -188,9 +187,9 @@ const LogInPage = () => {
             </form>
           )}
           <div className="case__signup">
-          Have you not an account?
+            Have you not an account?
             <u>
-              <Link to="./signup" className="btn__goto__signup">
+              <Link to="/signup" className="btn__goto__signup">
                 Sign up
               </Link>
             </u>
