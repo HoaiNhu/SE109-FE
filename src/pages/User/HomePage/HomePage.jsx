@@ -159,9 +159,9 @@ const HomePage = () => {
         limit,
       }).toString();
 
-      let url = `http://localhost:3001/api/product/get-all-product?${queryParams}`;
+      let url = `${process.env.REACT_APP_API_URL_BACKEND}/product/get-all-product?${queryParams}`;
       if (categoryId) {
-        url = `http://localhost:3001/api/product/get-product-by-category/${categoryId}?${queryParams}`;
+        url = `${process.env.REACT_APP_API_URL_BACKEND}/product/get-product-by-category/${categoryId}?${queryParams}`;
       }
 
       const response = await fetch(url, {

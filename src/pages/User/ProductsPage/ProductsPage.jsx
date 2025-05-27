@@ -15,10 +15,9 @@ const ProductsPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-
   // Lấy categoryId từ state truyền qua navigation
   const previousCategoryId = location.state?.categoryIds || null;
-  console.log("GHJ",previousCategoryId)
+  console.log("GHJ", previousCategoryId);
   //=========Danh mục sản phẩm=======
   useEffect(() => {
     const fetchCategories = async () => {
@@ -91,8 +90,8 @@ const ProductsPage = () => {
   useEffect(() => {
     if (previousCategoryId) {
       setCurrentCategory(previousCategoryId); // Lưu categoryId để lọc sản phẩm
-    setCurrentPage(0); // Reset trang về 0 khi chuyển qua category mới
-    fetchProducts(0, 9, previousCategoryId); // Fetch sản phẩm theo category
+      setCurrentPage(0); // Reset trang về 0 khi chuyển qua category mới
+      fetchProducts(0, 9, previousCategoryId); // Fetch sản phẩm theo category
     } else {
       fetchProducts(0, 9); // Nếu không có categoryId thì fetch tất cả sản phẩm
     }
@@ -138,12 +137,29 @@ const ProductsPage = () => {
 
   // Khi nhấn vào sản phẩm
   const handleDetail = (productId) => {
-    const selectedProduct = products.find((product) => product._id === productId);
+    const selectedProduct = products.find(
+      (product) => product._id === productId
+    );
 
     if (selectedProduct) {
-      const { productName, productSize, productImage, productCategory, productDescription, productPrice } = selectedProduct;
+      const {
+        productName,
+        productSize,
+        productImage,
+        productCategory,
+        productDescription,
+        productPrice,
+      } = selectedProduct;
       navigate("/view-product-detail", {
-        state: { productId, productName, productSize, productImage, productDescription, productCategory, productPrice },
+        state: {
+          productId,
+          productName,
+          productSize,
+          productImage,
+          productDescription,
+          productCategory,
+          productPrice,
+        },
       });
     } else {
       alert("Product not found!");
@@ -160,7 +176,10 @@ const ProductsPage = () => {
             {/* Hiển thị tên category nếu có */}
             {currentCategory ? (
               <p className="product__current-category">
-                {categories.find((cat) => cat._id === currentCategory)?.categoryName}
+                {
+                  categories.find((cat) => cat._id === currentCategory)
+                    ?.categoryName
+                }
               </p>
             ) : (
               <p className="product__current-category">Tất cả sản phẩm</p>
@@ -172,8 +191,8 @@ const ProductsPage = () => {
             {/* side menu */}
             <div className="side-menu__category">
               {/* Thêm "Tất cả sản phẩm" */}
-              <SideMenuComponent 
-                key="all-products" 
+              <SideMenuComponent
+                key="all-products"
                 value={null}
                 onClick={handleAllProductsClick}
               >
@@ -182,10 +201,12 @@ const ProductsPage = () => {
 
               {Array.isArray(categories) && categories.length > 0 ? (
                 categories.map((category) => (
-                  <SideMenuComponent 
-                    key={category._id} 
+                  <SideMenuComponent
+                    key={category._id}
                     value={category._id}
-                    onClick={() => handleCategoryClick(category._id, category.categoryName)}
+                    onClick={() =>
+                      handleCategoryClick(category._id, category.categoryName)
+                    }
                   >
                     {category.categoryName}
                   </SideMenuComponent>
@@ -201,7 +222,10 @@ const ProductsPage = () => {
                 products.map((product) => {
                   const imageUrl = product.productImage.startsWith("http")
                     ? product.productImage
-                    : `https://res.cloudinary.com/dlyl41lgq/image/upload/v2/${product.productImage.replace("\\", "/")}`;
+                    : `https://res.cloudinary.com/dlyl41lgq/image/upload/v2/${product.productImage.replace(
+                        "\\",
+                        "/"
+                      )}`;
 
                   return (
                     <CardProduct
