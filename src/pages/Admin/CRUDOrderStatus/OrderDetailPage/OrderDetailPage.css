@@ -55,7 +55,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--green100);
+  background: var(--color6);
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 10px;

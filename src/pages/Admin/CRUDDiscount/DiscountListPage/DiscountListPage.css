@@ -10,7 +10,7 @@
   width: fit-content;
   height: 52rem;
   text-align: top;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   border-radius: 15px;
   box-shadow: 0 0 4px 0 var(--shadow);
 }
@@ -35,6 +35,7 @@ h2 {
   align-items: center;
 
   padding: 10px;
+  margin-right: 10px;
 }
 
 .discount-list__title {
@@ -77,16 +78,16 @@ h2 {
 }
 
 .promo-table tbody tr:hover {
-  background-color: var(--grey9); /* Màu nền khi hover */
+  background-color: var(--color5);
 }
 
 .promo-table tbody tr.highlight {
-  background-color: var(--green50); /* Màu nền sáng lên */
-  transition: background-color 0.3s ease; /* Hiệu ứng mượt */
+  background-color: var(--color5);
+  transition: background-color 0.3s ease;
 }
 
 .promo-table tbody tr.highlight:hover {
-  background-color: var(--green50); /* Màu nền sáng hơn khi hover */
+  background-color: var(--color5);
 }
 
 .delete-btn {

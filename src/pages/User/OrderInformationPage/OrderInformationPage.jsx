@@ -40,7 +40,6 @@ const OrderInformationPage = () => {
   };
   const handleClickNext = async () => {
     const orderData = {
-      
       orderItems: selectedProducts.map((product) => ({
         product: product.id, // Gắn ID của sản phẩm vào trường `product`
         quantity: product.quantity, // Số lượng
@@ -108,9 +107,29 @@ const OrderInformationPage = () => {
   const [status, setStatus] = useState("PENDING"); // Trạng thái đơn hàng
 
   // Tổng tiền hàng
+  console.log("selectedPro", selectedProducts);
+
   const totalItemPrice = Array.isArray(selectedProducts)
     ? selectedProducts.reduce((acc, product) => {
-        const price = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+        console.log("produtcccc", product);
+        console.log("typeof product.price:", typeof product.price);
+        // const price = String(product.price) || 0;
+        // const priceStr =
+        //   typeof product.price === "number"
+        //     ? product.price.toString()
+        //     : product.price;
+        const price =
+          typeof product.price === "number"
+            ? product.price
+            : parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+
+        // if (typeof product.price === "number") {
+        //   price = product.price; // Nếu là số, dùng trực tiếp
+        // } else if (typeof product.price === "string") {
+        //   price = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+        // } else {
+        //   console.warn("Unexpected price type:", product.price);
+        // }
         return acc + price * product.quantity;
       }, 0)
     : 0;
@@ -228,7 +247,9 @@ const OrderInformationPage = () => {
                 <td className="Money">
                   <p className="MoneyProduct">
                     {(
-                      parseFloat(product.price.replace(/[^0-9.-]+/g, "")) *
+                      (typeof product.price === "number"
+                        ? product.price
+                        : parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) *
                       product.quantity
                     ).toLocaleString()}{" "}
                     VND

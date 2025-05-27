@@ -36,23 +36,17 @@ const StoreInfoPage = () => {
           {/* side menu */}
           <div className="side-menu__discount">
             <SideMenuComponent onClick={ClickInfor}>
-              Thông tin cửa hàng
+              Store's Information
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickOrder}>Đơn hàng</SideMenuComponent>
-            <SideMenuComponent onClick={ClickDiscount}>
-              Khuyến mãi
-            </SideMenuComponent>
-            <SideMenuComponent onClick={ClickStatus}>
-              Trạng thái
-            </SideMenuComponent>
+            <SideMenuComponent onClick={ClickOrder}>Order</SideMenuComponent>
+            <SideMenuComponent onClick={ClickDiscount}>Promo</SideMenuComponent>
+            <SideMenuComponent onClick={ClickStatus}>Status</SideMenuComponent>
             <SideMenuComponent onClick={ClickCategory}>
-              Loại sản phẩm
+              Category
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickUser}>
-              Danh sách người dùng
-            </SideMenuComponent>
+            <SideMenuComponent onClick={ClickUser}>User</SideMenuComponent>
             <SideMenuComponent onClick={ClickReport}>
-              Thống kê
+              Statistic
             </SideMenuComponent>
           </div>
           {/* content */}
@@ -66,14 +60,14 @@ const StoreInfoPage = () => {
                 </div>
                 <div className="col name-phone">
                   <div className="store-name">
-                    <label className="title-name">Tên cửa hàng</label>
+                    <label className="title-name">Store's name</label>
                     <FormComponent
                       style={{ width: "100%" }}
                       value="AVOCADO"
                     ></FormComponent>
                   </div>
                   <div className="store-phone">
-                    <label className="title-name">Số điện thoại</label>
+                    <label className="title-name">Phone</label>
                     <FormComponent
                       style={{ width: "100%" }}
                       value="0334455246"
@@ -92,7 +86,7 @@ const StoreInfoPage = () => {
                 ></FormComponent>
               </div>
               <div className="row store-info__email mb-5">
-                <label className="title-name">Địa chỉ</label>
+                <label className="title-name">Address</label>
                 <FormComponent
                   className="store-address mb-3"
                   style={{ width: "100%" }}
@@ -107,8 +101,8 @@ const StoreInfoPage = () => {
 
               {/* button */}
               <div className="btn__store-info">
-                <ButtonComponent>Lưu</ButtonComponent>
-                <ButtonComponent>Thoát</ButtonComponent>
+                <ButtonComponent>Save</ButtonComponent>
+                <ButtonComponent>Exit</ButtonComponent>
               </div>
             </div>
           </div>

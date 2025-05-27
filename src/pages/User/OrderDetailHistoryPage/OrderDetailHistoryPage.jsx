@@ -1,45 +1,44 @@
-
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import SideMenuComponent from "../../../components/SideMenuComponent/SideMenuComponent";
-import ProductRowComponent from "../../../components/ProductRowComponent/ProductRowComponent"; 
+import ProductRowComponent from "../../../components/ProductRowComponent/ProductRowComponent";
 import "./OrderDetailHistoryPage.css";
 import * as UserService from "../../../services/UserService";
 import { resetUser, updateUser } from "../../../redux/slides/userSlide";
 import { React, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-
 const OrderDetailHistoryPage = () => {
   const deliveryCost = 30000;
   const location = useLocation();
-  const navigate= useNavigate();
+  const navigate = useNavigate();
   const order = location.state?.order; // Lấy dữ liệu từ state
   const [showLoading, setShowLoading] = useState(false); // Thêm trạng thái riêng
   const dispatch = useDispatch();
 
   if (!order) {
-    return <div>Không tìm thấy thông tin đơn hàng!</div>;
+    return <div>Order information not found!</div>;
   }
 
   const firstOrderItem = order?.orderItems?.[0]; // optional chaining để tránh lỗi
 
   // Nếu không có bất kỳ sản phẩm nào trong đơn hàng
   if (!firstOrderItem) {
-    return <div>Không có sản phẩm nào trong đơn hàng.</div>;
+    return <div>No products found in the order.</div>;
   }
 
   // Tính tổng giá trị đơn hàng nếu có dữ liệu orderItems
-  const totalAmount = order.orderItems?.reduce((acc, orderItem) => {
-    return acc + parseInt(orderItem.total) || 0;
-  }, 0) || 0;
+  const totalAmount =
+    order.orderItems?.reduce((acc, orderItem) => {
+      return acc + parseInt(orderItem.total) || 0;
+    }, 0) || 0;
 
-  const handleClickProfile=(()=>{
-    navigate('/user-info')
-  })
-  const handleClickOrder=(()=>{
-    navigate('/order-history')
-  })
- 
+  const handleClickProfile = () => {
+    navigate("/user-info");
+  };
+  const handleClickOrder = () => {
+    navigate("/order-history");
+  };
+
   const handleNavigationLogin = () => {
     navigate("/login");
   };
@@ -57,7 +56,6 @@ const OrderDetailHistoryPage = () => {
     setShowLoading(false);
     handleNavigationLogin();
   };
-
 
   return (
     <div>
@@ -80,36 +78,45 @@ const OrderDetailHistoryPage = () => {
           {/* Nội dung chính */}
           <div className="user-info__bot">
             <div className="side-menu__info">
-              <SideMenuComponent onClick={handleClickProfile}>Thông tin cá nhân</SideMenuComponent>
+              <SideMenuComponent onClick={handleClickProfile}>
+                Profile
+              </SideMenuComponent>
               {/* <SideMenuComponent>Khuyến mãi</SideMenuComponent> */}
-              <SideMenuComponent onClick={handleClickOrder}>Đơn hàng</SideMenuComponent>
+              <SideMenuComponent onClick={handleClickOrder}>
+                Order
+              </SideMenuComponent>
               <SideMenuComponent onClick={handleLogout}>
-                Đăng xuất
+                Log out
               </SideMenuComponent>
             </div>
             <div className="order-detail-history">
               <div className="detail__content">
-                <h2 className="detail__title">Chi tiết đơn hàng</h2>
+                <h2 className="detail__title">Detail's order</h2>
                 <div className="row">
                   <label>
-                    <strong>ID đơn hàng:</strong> {order.orderCode}
+                    <strong>Order's ID: </strong>{" "}
+                    <label style={{ color: "#fff" }}>{order.orderCode}</label>
                   </label>
                 </div>
                 <div className="row">
                   <label>
-                    <strong>Trạng thái:</strong> {order.status.statusName}
+                    <strong>Order's status: </strong>{" "}
+                    <label style={{ color: "#fff" }}>
+                      {order.status.statusName}
+                    </label>
                   </label>
                 </div>
 
                 {/* Danh sách sản phẩm */}
-                <h3>Sản phẩm:</h3>
+                <h3>Products:</h3>
                 <div className="product-list">
-                  {Array.isArray(order.orderItems) && order.orderItems.length > 0 ? (
+                  {Array.isArray(order.orderItems) &&
+                  order.orderItems.length > 0 ? (
                     order.orderItems.map((item, index) => (
                       <ProductRowComponent key={index} product={item} />
                     ))
                   ) : (
-                    <div>Không có sản phẩm nào trong đơn hàng này.</div>
+                    <div>No products found in this order.</div>
                   )}
                 </div>
 
@@ -117,31 +124,45 @@ const OrderDetailHistoryPage = () => {
                 <div className="total-cost">
                   <div className="cost">
                     <label className="product-cost">
-                      Tổng tiền sản phẩm: {totalAmount.toLocaleString()} VND
+                      Total product cost: {totalAmount.toLocaleString()} VND
                     </label>
                     <label className="delivery-cost">
-                      Phí vận chuyển: {deliveryCost.toLocaleString()} VND
+                      Shipping fee: {deliveryCost.toLocaleString()} VND
                     </label>
                   </div>
                   <div className="total-bill">
-                    Tổng hóa đơn: {(totalAmount + deliveryCost).toLocaleString()} VND
+                    Total bill: {(totalAmount + deliveryCost).toLocaleString()}{" "}
+                    VND
                   </div>
                 </div>
 
                 {/* Thông tin giao hàng */}
                 <div className="info-delivery">
                   <div className="info-customer">
-                    <label>Thông tin giao hàng</label>
-                    <p>Tên: {order.shippingAddress.familyName} {order.shippingAddress.userName}</p>
-                    <p>Số điện thoại: {order.shippingAddress.userPhone}</p>
-                    <p>Địa chỉ: {order.shippingAddress?.userAddress}</p>
+                    <label>Order's information</label>
+                    <p>
+                      Client name: {order.shippingAddress.familyName}{" "}
+                      {order.shippingAddress.userName}
+                    </p>
+                    <p>Phone: {order.shippingAddress.userPhone}</p>
+                    <p>Address: {order.shippingAddress?.userAddress}</p>
                   </div>
                   <div className="info-journey">
-                    <label>Hành trình giao hàng</label>
-                    <p>Hoàn thành đơn hàng: {new Date(order.deliveryDate).toLocaleDateString()}</p>
-                    <p>Thanh toán: {new Date(order.createdAt).toLocaleDateString()}</p>
-                    <p>Xác nhận đơn hàng: {new Date(order.createdAt).toLocaleDateString()}</p>
-                    <p>Đặt hàng: {new Date(order.createdAt).toLocaleDateString()}</p>
+                    <label>Delivery progress</label>
+                    <p>
+                      Complete the order.:{" "}
+                      {new Date(order.deliveryDate).toLocaleDateString()}
+                    </p>
+                    <p>
+                      Payment: {new Date(order.createdAt).toLocaleDateString()}
+                    </p>
+                    <p>
+                      Order confirmation:{" "}
+                      {new Date(order.createdAt).toLocaleDateString()}
+                    </p>
+                    <p>
+                      Order: {new Date(order.createdAt).toLocaleDateString()}
+                    </p>
                   </div>
                 </div>
               </div>

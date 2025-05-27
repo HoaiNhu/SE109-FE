@@ -43,7 +43,7 @@ const UpdateContact = () => {
     return (
         <div>
             <div className="container-xl update-contact">
-                <h1 className="update-contact__title">LIÊN HỆ</h1>
+                <h1 className="update-contact__title">CONTACT</h1>
 
                 {/* update information */}
                 <div className="update-contatct__information">
@@ -53,26 +53,36 @@ const UpdateContact = () => {
                         <div className="info__right-contact">
                             <div className="contactHolder-field">
                                 <div className="contact-field-holder">
-                                    <p className="contact-field">Tên doanh nghiệp:</p>
-                                    <p className="contact-field">Địa chỉ:</p>
-                                    <p className="contact-field">Email:</p>
-                                    <p className="contact-field">Website:</p>
-                                    <p className="contact-field">Hotline:</p>
-                                    <p className="contact-field">Số điện thoại:</p>
-                                    <p className="contact-field">Hotline CSKH:</p>
-                                </div>
-                                <div className="input-holder-contact">
-                                    <div className="area1">
-                                        <FormComponent></FormComponent>
-                                        <FormComponent></FormComponent>
-                                        <FormComponent></FormComponent>
+                                    <div className="info-form">
+                                        <p className="contact-field">Name company:</p>
                                         <FormComponent></FormComponent>
                                     </div>
-                                    <div className="area2">
+                                    <div className="info-form">
+                                        <p className="contact-field">Address:</p>
                                         <FormComponent></FormComponent>
+                                    </div>
+                                    <div className="info-form">
+                                        <p className="contact-field">Email:</p>
+                                        <FormComponent></FormComponent>
+                                    </div>
+                                    <div className="info-form">
+                                        <p className="contact-field">Website:</p>
+                                        <FormComponent></FormComponent>
+                                    </div>
+                                    <div className="info-form">
+                                        <p className="contact-field">Hotline:</p>
+                                        <FormComponent></FormComponent>
+                                    </div>
+                                    <div className="info-form">
+                                        <p className="contact-field">Phone:</p>
+                                        <FormComponent></FormComponent>
+                                    </div>
+                                    <div className="info-form">
+                                        <p className="contact-field">Hotline Support Department:</p>
                                         <FormComponent></FormComponent>
                                     </div>
                                 </div>
+                                <div className="input-holder-contact"></div>
                             </div>
 
                             <div className="info__left-contact">
@@ -85,7 +95,7 @@ const UpdateContact = () => {
                                         />
                                     ) : (
                                         <div className="contact__image-placeholder">
-                                            Chọn hình ảnh
+                                            Choose image
                                         </div>
                                     )}
                                     <input
@@ -113,12 +123,11 @@ const UpdateContact = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     {/* submit */}
                     <div className="btn-submit">
-                        <ButtonComponent onClick={handleSubmit}>Cập nhật</ButtonComponent>
-                        <ButtonComponent>Thoát</ButtonComponent>
+                        <ButtonComponent onClick={handleSubmit}>Update</ButtonComponent>
+                        <ButtonComponent>Exit</ButtonComponent>
                     </div>
                 </div>
             </div>

@@ -60,7 +60,7 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--green100);
+  background: var(--color6);
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -73,7 +73,7 @@ label {
 .total-bill {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--brown100);
+  color: var(--color8);
 }
 
 .info-delivery {
@@ -81,10 +81,16 @@ label {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  color: var(--brown100);
+  color: var(--color1);
 }
 
 .info-customer p,
 .info-journey p {
   margin-bottom: 10px;
+}
+
+.cost .product-cost,
+.delivery-cost {
+  color: var(--color8);
+  font-weight: normal;
 }
