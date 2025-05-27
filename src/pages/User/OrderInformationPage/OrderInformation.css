@@ -1,5 +1,5 @@
 .title {
-  color: #3a060e;
+  color: var(--color6);
 
   /* Font_Header */
   font-family: Poppins;
@@ -35,7 +35,7 @@
 }
 
 .tongtien {
-  color: #3a060e;
+  color: var(--color4);
 
   /* Font_Title */
   font-family: Poppins;
@@ -67,7 +67,7 @@
 .QuantityHeader,
 .MoneyHeader,
 .MoneyProduct {
-  color: #3a060e;
+  color: var(--color6);
 
   /* Font_Title */
   font-family: Poppins;
@@ -118,7 +118,7 @@
 }
 
 .thanhtien {
-  color: #3a060e;
+  color: var(--color6);
 
   /* Font_Title */
   font-family: Poppins;
@@ -136,7 +136,7 @@
 }
 
 .login-question {
-  color: #3a060e;
+  color: var(--color6);
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
@@ -173,7 +173,7 @@
 .DiaChi,
 .ThoiGian,
 .labelNote {
-  color: var(--Color1, #3a060e);
+  color: var(--color6, #3a060e);
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
@@ -339,8 +339,8 @@
   align-items: center;
   gap: 10px;
   border-radius: 50px;
-  background: #3a060e;
-  color: #b1e321;
+  background: var(--color6);
+  color: var(--color8);
   text-align: center;
   font-family: Poppins;
   font-size: 16px;
@@ -429,7 +429,7 @@ tfoot td {
 
 .total-price {
   color: var(--brown100);
-  background-color: var(--green100);
+  background-color: var(--color6);
   border-radius: 0 0 20px 20px;
 }
 

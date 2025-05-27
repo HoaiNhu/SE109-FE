@@ -1,5 +1,5 @@
 .AddNewsTitle {
-    color: #3A060E;
+    color: var(--color6);
     text-align: center;
 
     /* Font_Header */
@@ -29,7 +29,7 @@
 }
 
 .contentP {
-    color: #3A060E;
+    color: var(--color6);
     text-align: center;
 
     /* Font_text_Bold */
@@ -77,7 +77,8 @@
     height: 250px;
     flex-shrink: 0;
     border-radius: 15px;
-    background: var(--White, #FFF);
+    background-color: white;
+    color: black;    
     box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
 }
 
@@ -86,7 +87,7 @@
     height: 40rem;
     box-shadow: 0 0 4px 0 var(--shadow);
     border-radius: 15px;
-    background: var(--grey9);
+    background: var(--White);
     cursor: pointer;
     background-color: #FFF;
     margin-left: 30px;
@@ -117,7 +118,7 @@
     height: 40rem;
     box-shadow: 0 0 4px 0 var(--shadow);
     border-radius: 15px;
-    background: var(--grey9);
+    background: var(--White);
     cursor: pointer;
   }
 .CustomBtn-Exit {
@@ -128,8 +129,8 @@
     align-items: center;
     gap: 10px;
     border-radius: 50px;
-    background: #3A060E;
-    color: #B1E321;
+    background: var(--color6);
+    color: #09122c;
     text-align: center;
     font-family: Poppins;
     font-size: 16px;

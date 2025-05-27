@@ -34,13 +34,13 @@
 }
 
 .btn__component1:hover {
-  background: var(--green30);
+  background: var(--color6);
   border-radius: 8px;
-  color: var(--brown100);
+  color: var(--color8);
 }
 
 .active1 {
-  background: var(--green30);
+  background: var(--color6);
   border-radius: 10px;
 }
 .delete-categoryBtn{
