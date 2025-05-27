@@ -161,24 +161,26 @@ const OrderListPage = () => {
         <div className="order-list__info">
           {/* side menu */}
           <div className="side-menu__order">
-            <SideMenuComponent onClick={ClickInfor}>
-              Thông tin cửa hàng
+            <SideMenuComponent className="btn-menu" onClick={ClickInfor}>
+              Store information 
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickOrder}>Đơn hàng</SideMenuComponent>
-            <SideMenuComponent onClick={ClickDiscount}>
-              Khuyến mãi
+            <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
+              Order
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickStatus}>
-              Trạng thái
+            <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
+              Promotion
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickCategory}>
-              Loại sản phẩm
+            <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
+              Status
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickUser}>
-              Danh sách người dùng
+            <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
+              Category
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickReport}>
-              Thống kê
+            <SideMenuComponent className="btn-menu" onClick={ClickUser}>
+              User
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickReport}>
+              Statistic
             </SideMenuComponent>
           </div>
           {/* order list */}

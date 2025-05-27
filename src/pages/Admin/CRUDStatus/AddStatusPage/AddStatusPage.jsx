@@ -97,7 +97,7 @@ const AddStatusPage = () => {
             <SideMenuComponent>Promotion</SideMenuComponent>
             <SideMenuComponent>Status</SideMenuComponent>
             <SideMenuComponent>Category</SideMenuComponent>
-            <SideMenuComponent>User list</SideMenuComponent>
+            <SideMenuComponent>User</SideMenuComponent>
             <SideMenuComponent>Statistic</SideMenuComponent>
           </div>
 

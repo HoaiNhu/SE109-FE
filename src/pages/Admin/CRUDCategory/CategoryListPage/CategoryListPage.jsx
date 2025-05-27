@@ -197,7 +197,7 @@ const CategoryListPage = () => {
       <div className="container-xl">
         <div className="category-list__info">
           {/* Side Menu */}
-          <div className="side-menu__category">
+          <div className="side-menu__category1">
             <SideMenuComponent onClick={ClickInfor}>
               Store's Information
             </SideMenuComponent>

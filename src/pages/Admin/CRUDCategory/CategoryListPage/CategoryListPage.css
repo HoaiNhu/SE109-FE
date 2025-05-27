@@ -6,8 +6,9 @@
   padding: 10px 0 20px 0;
 }
 /* ================side menu ======================= */
-.side-menu__category {
-  width: fit-content;
+
+.side-menu__category1 {
+ width: fit-content;
   height: 52rem;
   text-align: top;
   background-color: var(--white);
@@ -95,11 +96,9 @@ h2 {
   border: none;
   cursor: pointer;
   font-size: 1.6rem;
-<<<<<<< HEAD
   color: var(--color8);
-=======
-  color: var(--color2);
->>>>>>> a1bf2779c0bdaec067e110c20a280f51a28c9f84
+
+
 }
 
 .delete-btn:hover {

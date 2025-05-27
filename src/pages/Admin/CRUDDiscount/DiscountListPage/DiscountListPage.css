@@ -10,7 +10,16 @@
   width: fit-content;
   height: 52rem;
   text-align: top;
-  /* background-color: var(--white); */
+  background-color: var(--white); 
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+}
+
+.side-menu__info {
+ width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
   border-radius: 15px;
   box-shadow: 0 0 4px 0 var(--shadow);
 }
