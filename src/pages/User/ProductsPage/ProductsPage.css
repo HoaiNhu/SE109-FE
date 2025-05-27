@@ -1,7 +1,7 @@
 .product {
   margin: 40px 0;
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 /* ========================== top========================== */
@@ -29,6 +29,7 @@
   margin-right: 20px;
   background-color: var(--white);
 }
+
 /* =========================product list ==================== */
 
 .product__list {
@@ -69,6 +70,7 @@
   .side-menu__category {
     visibility: hidden;
   }
+
   .product__list {
     display: grid;
     gap: 5px;

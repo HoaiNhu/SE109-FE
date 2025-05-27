@@ -1,7 +1,7 @@
 .introduce {
   margin: 50px 0;
   font-size: 1.6rem;
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 /* ==========================introduce title===================== */
@@ -43,7 +43,7 @@
   width: 50rem;
   height: 35rem;
   background-color: transparent;
-  border: 2px solid var(--green100);
+  border: 2px solid var(--color6);
   border-radius: 20px;
 }
 
@@ -57,10 +57,12 @@
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 2rem;
+
 }
 
 .introduce__paragraph--content {
   text-align: justify;
   word-spacing: 5px;
   line-height: 1.75;
+  color: #fff;
 }

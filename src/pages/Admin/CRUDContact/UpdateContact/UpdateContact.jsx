@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import "./UpdateContact.css";
-import FormComponent from "../../../../components/FormComponent/FormComponent";
-import DropdownComponent from "../../../../components/DropdownComponent/DropdownComponent";
 import ButtonComponent from "../../../../components/ButtonComponent/ButtonComponent";
-import SizeComponent from "../../../../components/SizeComponent/SizeComponent";
+import FormComponent from "../../../../components/FormComponent/FormComponent";
+import "./UpdateContact.css";
 
 const UpdateContact = () => {
     const { state: contactData } = useLocation(); // Nhận dữ liệu từ `state`
@@ -65,14 +63,14 @@ const UpdateContact = () => {
                                 </div>
                                 <div className="input-holder-contact">
                                     <div className="area1">
-                                    <FormComponent></FormComponent>
-                                    <FormComponent></FormComponent>
-                                    <FormComponent></FormComponent>
-                                    <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
                                     </div>
                                     <div className="area2">
-                                    <FormComponent></FormComponent>
-                                    <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
+                                        <FormComponent></FormComponent>
                                     </div>
                                 </div>
                             </div>

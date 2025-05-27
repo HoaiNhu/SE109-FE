@@ -12,9 +12,9 @@ const IntroducePage = () => {
         <div className="introduce">
           {/* introduce top */}
           <div className="introduce__top">
-            <h1 className="introduce__title">GIỚI THIỆU</h1>
+            <h1 className="introduce__title">INTRODUCE</h1>
             <h3 className="introduce__welcome">
-              Chào mừng bạn đến với Avocado Bakery
+              Welcome to NNN.
             </h3>
           </div>
 
@@ -30,15 +30,10 @@ const IntroducePage = () => {
             {/* introduce right */}
             <div className="introduce__right">
               <h4 className="introduce__paragraph--title">
-                Câu chuyện thương hiệu
+                🌿 OUR BRAND STORY
               </h4>
               <p className="introduce__paragraph--content">
-                Là một hệ thống đội ngũ nhân viên và lãnh đạo chuyên nghiệp, gồm
-                CBCNV và những người thợ đã có kinh nghiệm lâu năm trong các
-                công ty đầu ngành. Mô hình vận hành hoạt động công ty được bố
-                trí theo chiều ngang, làm gia tăng sự thuận tiện trong việc vận
-                hành cỗ máy kinh doanh và gia tăng sự phối hợp thống nhất giữa
-                các bộ phận trong công ty.
+                From the very first glance, jewelry is more than just an accessory — it's a way to tell your personal story. Our jewelry website was born from a simple desire: to bring pure, elegant beauty with a personal touch to every woman.We believe that each piece of jewelry holds meaning. It's a gift to mark a milestone, a ring to celebrate love, or simply a bracelet that gives you a boost of confidence every time you wear it. What started from a small workshop, guided by hands full of passion, has grown into a digital space — so no matter where you are, you can find a piece of yourself in our designs.
               </p>
             </div>
           </div>
@@ -49,27 +44,15 @@ const IntroducePage = () => {
             {/* introduce left */}
             <div className="introduce__right">
               <h4 className="introduce__paragraph--title">
-                Sứ mệnh - tầm nhìn
+                ✨ OUR MISSION - 🌟 OUR VISION
               </h4>
               <p
                 className="introduce__paragraph--content"
                 style={{ marginRight: "10px" }}
               >
-                Avocado tự hào là một thương hiệu bánh ngọt Việt Nam chất lượng
-                cao, được xây dựng từ chính tình yêu và tâm huyết dành trọn cho
-                khách hàng. Với sứ mệnh mang đến những chiếc bánh thơm ngon,
-                tươi mới, và đầy sáng tạo, Avocado không chỉ là nơi cung cấp
-                bánh mà còn là cầu nối gắn kết những khoảnh khắc hạnh phúc của
-                mọi người. Từ nguyên liệu được chọn lọc kỹ lưỡng, quy trình sản
-                xuất nghiêm ngặt đến việc thiết kế từng chiếc bánh theo phong
-                cách tinh tế, chúng tôi luôn nỗ lực để mang lại trải nghiệm
-                tuyệt vời nhất cho khách hàng. Bất kể là bữa tiệc sinh nhật, lễ
-                cưới hay một buổi họp mặt ấm cúng, Avocado luôn đồng hành để tạo
-                nên những ký ức đáng nhớ và ý nghĩa nhất. Chúng tôi trân trọng
-                sự tin yêu của khách hàng và cam kết không ngừng sáng tạo để
-                mang đến những sản phẩm vượt trên cả mong đợi. Với Avocado, mỗi
-                chiếc bánh không chỉ là món ăn, mà còn là thông điệp của tình
-                yêu, sự tận tâm và chất lượng.
+                Our mission is to be a trusted companion, offering meaningful, high-quality, and beautifully designed jewelry that empowers individuals to express their identity, emotions, and values with elegance.
+
+                To become a beloved jewelry brand in Vietnam and expand to the global market, where every product is crafted with inspiration, care, and a desire to celebrate the authentic beauty within everyone.
               </p>
             </div>
             {/* introduce right */}
