@@ -30,7 +30,7 @@ const PaymentPage = () => {
       ...item,
       img: product?.img || "default_image_url",
       name: product?.title || "Unknown Product",
-      price: parseFloat(product?.price.replace(/[^0-9.-]+/g, "")) || 0,
+      price: parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, "")) || 0,
     };
   });
 

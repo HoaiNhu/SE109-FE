@@ -46,7 +46,7 @@ const OrderInformationPage = () => {
         total:
           typeof product.price === "number"
             ? product.price * product.quantity
-            : parseFloat(product.price.toString().replace(/[^0-9.-]+/g, "")) *
+            :  parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, "")) *
               product.quantity,
       })),
       shippingAddress, // Thông tin giao hàng
@@ -123,7 +123,7 @@ const OrderInformationPage = () => {
         const price =
           typeof product.price === "number"
             ? product.price
-            : parseFloat(product.price.toString().replace(/[^0-9.-]+/g, ""));
+            :   parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, ""));
 
         // if (typeof product.price === "number") {
         //   price = product.price; // Nếu là số, dùng trực tiếp
@@ -251,7 +251,7 @@ const OrderInformationPage = () => {
                     {(
                       (typeof product.price === "number"
                         ? product.price
-                        : parseFloat(product.price.replace(/[^0-9.-]+/g, ""))) *
+                        : parseFloat(product.price.toString().replace(/[^0-9.-]+/g, ""))) *
                       product.quantity
                     ).toLocaleString()}{" "}
                     VND

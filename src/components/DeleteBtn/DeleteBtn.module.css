@@ -5,7 +5,7 @@
   /* fill: var(--color1); */
   border: none;
   background-color: transparent;
-  color: var(--color1);
+  color: var(--color7);
 }
 
 .deleteBtn:hover {
