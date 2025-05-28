@@ -171,8 +171,8 @@ const LogInPage = () => {
               {/* Thêm phần checkbox */}
               <div className="login__extend">
                 <label className="remember__password">
-                  <input className="remember__checkbox" type="checkbox" />
-                  Remember password
+                  {/* <input className="remember__checkbox" type="checkbox" />
+                  Remember password */}
                 </label>
                 <div
                   onClick={handleForgotPassword}

@@ -15,7 +15,7 @@ const SearchBoxComponent = ({ onSearch, onButtonClick }) => {
     if (query.trim()) {
       onSearch(query.trim()); // Gọi hàm onSearch với từ khóa
     } else {
-      alert("Vui lòng nhập từ khóa tìm kiếm."); // Hiển thị cảnh báo nếu từ khóa trống
+      alert("Please add key word to search."); // Hiển thị cảnh báo nếu từ khóa trống
     }
   };
 
@@ -30,14 +30,14 @@ const SearchBoxComponent = ({ onSearch, onButtonClick }) => {
       <input
         className={styles.search__component}
         type="search"
-        placeholder="Nhập tên sản phẩm..."
+        placeholder="Enter product's key word"
         aria-label="Search"
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
       />
       <ButtonComponent
-        className='search__button'
+        className="search__button"
         onClick={() => onButtonClick(query)}
       >
         Search

@@ -15,14 +15,15 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 10px 0;
   z-index: 1;
 }
 
 /* nav top */
 img {
   width: 148px;
-  height: auto;
+  height: 80px;
+  object-fit: cover;
   border-radius: 5px;
 }
 
@@ -58,7 +59,7 @@ img {
 }
 
 .btn__signup:hover {
-  color:#F2BED1;
+  color: #f2bed1;
 }
 
 .nav__cart {
@@ -72,7 +73,7 @@ img {
 }
 
 .nav__cart:hover {
-  color: #F2BED1;
+  color: #f2bed1;
   cursor: pointer;
 }
 
@@ -86,7 +87,7 @@ img {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  padding: 0px 0;
   margin: 15px 0 0;
 }
 
@@ -107,8 +108,8 @@ img {
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #F2BED1;
-  color: #09122C;
+  background-color: #f2bed1;
+  color: #09122c;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 50%;
