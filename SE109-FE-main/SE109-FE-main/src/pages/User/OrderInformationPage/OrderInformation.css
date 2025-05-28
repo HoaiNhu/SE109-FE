@@ -1,0 +1,439 @@
+.title {
+  color: var(--color6);
+
+  /* Font_Header */
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 331px;
+  margin-top: -10px;
+}
+
+.order_area {
+  width: 1200px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+.TongtienHolder {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+  gap: 55px;
+  margin-top: 5px;
+  padding: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.tongtien {
+  color: var(--color4);
+
+  /* Font_Title */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 43px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product_area {
+  margin-top: 30px;
+}
+
+.LineProduct {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+  gap: 55px;
+  padding: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px 0px var(--dropshadow, rgba(32, 60, 22, 0.25));
+}
+
+.ProductInforHear,
+.PriceHeader,
+.QuantityHeader,
+.MoneyHeader,
+.MoneyProduct {
+  color: var(--color6);
+
+  /* Font_Title */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 20px;
+}
+
+.HeaderInfor {
+  margin-left: 85px;
+}
+
+.HeaderPrice {
+  margin-left: 330px;
+}
+
+.HeaderQuantity {
+  margin-left: 130px;
+}
+
+.HeaderMoney {
+  margin-left: 90px;
+}
+
+.PriceProduct {
+  width: 200px;
+  /* margin-left: 10px; */
+}
+
+.ProductInfor {
+  margin-left: 50px;
+}
+
+.Money {
+  width: 200px;
+  margin-left: 50px;
+}
+
+.Price {
+  color: #3a060e;
+
+  /* Font_Text_Big */
+  font-family: Poppins;
+  font-size: 20px;
+  width: auto;
+}
+
+.thanhtien {
+  color: var(--color6);
+
+  /* Font_Title */
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 770px;
+}
+
+.Quantity {
+  margin-left: -10px;
+}
+
+.login-question {
+  color: var(--color6);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.login-link {
+  color: #47cd3b;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-position: from-font;
+}
+
+.question {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.addressHolder,
+.DeliveryTimeHolder,
+.Note,
+.Button-area {
+  margin-left: 50px;
+}
+
+.DiaChi,
+.ThoiGian,
+.labelNote {
+  color: var(--color6, #3a060e);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 46px;
+}
+
+.input-address {
+  display: flex;
+  width: 1200px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  margin-top: 20px;
+}
+
+.Province,
+.District,
+.Village {
+  display: flex;
+  width: 220px;
+  height: 60px;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #3a060e;
+  border: none;
+}
+
+.comboBoxHolder {
+  display: flex;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+.DistrictHolder,
+.VillageHolder {
+  margin-left: 238px;
+}
+
+.TimeHolder {
+  margin-left: -50px;
+  font-size: 25px;
+}
+
+.DateHolder {
+  margin-left: 232px;
+  font-size: 20px;
+}
+
+.clock,
+.Datepicker {
+  display: flex;
+  width: 220px;
+  height: 60px;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  display: flex;
+  width: 220px;
+  height: 60px;
+  padding: 16px 20px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #3a060e;
+}
+
+.lableHolder {
+  margin-left: 20px;
+  display: flex;
+  margin-top: 30px;
+}
+
+.lableDate {
+  margin-left: 262px;
+}
+
+.ChonGio {
+  color: var(--Color1, #3a060e);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  /* 175% */
+  margin-left: -20px;
+  margin-right: 30px;
+}
+
+.ChonNgay {
+  color: var(--Color1, #3a060e);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  /* 175% */
+  margin-left: 90px;
+  margin-right: 30px;
+}
+
+.inputNote {
+  width: 1200px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: var(--White, #fff);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  color: #3a060e;
+  border: none;
+  margin-top: 10px;
+}
+
+.chinhsach {
+  color: #3a060e;
+
+  /* Font_Text */
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}
+.chinhsachBtn {
+  border: none;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.Btn_holder {
+  display: flex;
+  margin-left: 880px;
+  margin-bottom: 50px;
+}
+
+.Next_btn {
+  display: flex;
+  width: 130px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 50px;
+  background: var(--color6);
+  color: var(--color8);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 175% */
+  margin-left: 66px;
+}
+
+/* General Table Styling */
+.product_area {
+  width: 1200px;
+  margin: 30px auto;
+  border-radius: 20px;
+  background: var(--White, #fff);
+  box-shadow: 0px 0px 4px rgba(32, 60, 22, 0.25);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.HeaderHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.ProductInforHear,
+.PriceHeader,
+.QuantityHeader,
+.MoneyHeader {
+  color: #3a060e;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.LineProduct {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  /* border-radius: 0 0 20px 20px; */
+}
+
+.ProductInfor {
+  flex: 2;
+  margin-left: 10px;
+}
+
+.PriceProduct,
+.QuantityBtn,
+.Money {
+  flex: 1;
+  text-align: center;
+}
+
+.Price {
+  color: #3a060e;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.MoneyProduct {
+  color: #3a060e;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+tfoot tr {
+  background: #f9f9f9;
+}
+
+tfoot td {
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brown100);
+}
+
+.total-price {
+  color: var(--brown100);
+  background-color: var(--color6);
+  border-radius: 0 0 20px 20px;
+}
+
+.text-end {
+  font-weight: 600;
+  font-size: 2rem;
+}

@@ -1,0 +1,105 @@
+.product {
+  margin: 40px 0;
+  font-size: 1.6rem;
+  color: var(--color6);
+}
+
+/* ========================== top========================== */
+.product__top {
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.product__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+/* ========================bot======================== */
+.product__bot {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+/* ========================Side menu======================== */
+.side-menu__category1 {
+  width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+}
+
+/* =========================product list ==================== */
+
+.product__list {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  /* background-color: var(--grey5); */
+}
+
+/* .CardProduct.product__item {
+  font-weight: 600;
+} */
+
+/* .row > * {
+  padding: 0 0;
+} */
+/* ==========================see-more=========================== */
+/* .btn__see-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+} */
+
+/* 
+@media xxl {
+  .product__list {
+    display: grid;
+    gap: 5px;
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--grey5);
+  }
+} */
+
+@media (max-width: 539.98px) {
+  .side-menu__category {
+    visibility: hidden;
+    width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+  }
+
+  .product__list {
+    display: grid;
+    gap: 5px;
+    justify-content: space-between;
+    grid-template-columns: repeat(1, 1fr);
+    /* background-color: var(--grey5); */
+  }
+}
+
+/* Wrapper toàn bộ trang nếu chưa có */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Vùng nội dung chính */
+.product {
+  flex: 1; /* chiếm toàn bộ không gian trống giữa header và footer */
+  display: flex;
+  flex-direction: column;
+}

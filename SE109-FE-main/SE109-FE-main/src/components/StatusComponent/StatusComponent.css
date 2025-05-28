@@ -1,0 +1,25 @@
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-icon {
+  flex-shrink: 0;
+  fill: var(--color6); /* Mặc định màu nâu */
+}
+
+.status-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color6); /* Mặc định màu nâu */
+}
+
+/* Khi đơn hàng đã được giao */
+.status-delivered .status-name {
+  color: var(--color8); /* Màu xanh cho chữ */
+}
+
+.status-delivered .status-icon {
+  fill: var(--color8); /* Màu xanh cho icon */
+}

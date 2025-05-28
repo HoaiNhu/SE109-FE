@@ -1,0 +1,66 @@
+.store-info__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.side-menu__info {
+ width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+}
+
+/* ===================content============= */
+.store-info {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: 0px 0px 4px 0px var(--shadow);
+}
+
+.store-info__content {
+  margin: 20px;
+}
+
+.title {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--brown100);
+  margin-bottom: 10px;
+}
+
+.logo__image-store {
+  width: 100%;
+  height: 26rem;
+  object-fit: contain;
+  background-color: var(--grey9);
+  border-radius: 15px;
+}
+
+
+.name-phone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.store-info__email {
+  margin-bottom: 30px;
+}
+
+.dropdown__address {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn__store-info {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}

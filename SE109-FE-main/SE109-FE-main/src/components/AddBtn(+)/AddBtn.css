@@ -1,0 +1,9 @@
+.AddBtn {
+  border: 2px solid var(--color1, #fff);
+  background-color: transparent;
+  border-radius: 15px;
+}
+.AddBtnHolder {
+  width: 50px;
+  /* height: 80px; */
+}

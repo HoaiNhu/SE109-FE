@@ -1,0 +1,32 @@
+.primary {
+  display: flex;
+  background-color: var(--color2) !important;
+  color: var(--color6) !important;
+  border: none;
+  padding: 0;
+  box-shadow: 0px 0px 10px 0px #f2bed1;
+}
+
+.primary:hover {
+  transition: 0.25s;
+  transform: translateY(-8px);
+  cursor: pointer;
+}
+
+.secondary {
+  display: flex;
+  background-color: var(--color2) !important;
+  color: var(--color1) !important;
+  border-radius: 15px;
+  border: none !important;
+}
+
+.delete-productBtn {
+  border: none;
+  background-color: white;
+}
+.primary:hover {
+  transition: 0.25s;
+  transform: translateY(-8px);
+  cursor: pointer;
+}
