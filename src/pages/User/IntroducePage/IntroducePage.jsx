@@ -12,8 +12,10 @@ const IntroducePage = () => {
         <div className="introduce">
           {/* introduce top */}
           <div className="introduce__top">
-            <h1 className="introduce__title">INTRODUCES</h1>
-            <h3 className="introduce__welcome">Welcome to Avocado Jewelry</h3>
+            <h1 className="introduce__title">INTRODUCE</h1>
+            <h3 className="introduce__welcome">
+              Welcome to NNN.
+            </h3>
           </div>
 
           {/* introduce bot */}
@@ -27,14 +29,11 @@ const IntroducePage = () => {
             </div>
             {/* introduce right */}
             <div className="introduce__right">
-              <h4 className="introduce__paragraph--title">The brand story</h4>
+              <h4 className="introduce__paragraph--title">
+                🌿 OUR BRAND STORY
+              </h4>
               <p className="introduce__paragraph--content">
-                We are a professional team of employees and leaders, including
-                staff members and skilled artisans with years of experience in
-                leading companies within the industry. Our company operates with
-                a horizontal organizational structure, enhancing business
-                efficiency and fostering seamless collaboration among
-                departments.
+                From the very first glance, jewelry is more than just an accessory — it's a way to tell your personal story. Our jewelry website was born from a simple desire: to bring pure, elegant beauty with a personal touch to every woman.We believe that each piece of jewelry holds meaning. It's a gift to mark a milestone, a ring to celebrate love, or simply a bracelet that gives you a boost of confidence every time you wear it. What started from a small workshop, guided by hands full of passion, has grown into a digital space — so no matter where you are, you can find a piece of yourself in our designs.
               </p>
             </div>
           </div>
@@ -44,26 +43,16 @@ const IntroducePage = () => {
           <div className="introduce__bot">
             {/* introduce left */}
             <div className="introduce__right">
-              <h4 className="introduce__paragraph--title">Mission - Vision</h4>
+              <h4 className="introduce__paragraph--title">
+                ✨ OUR MISSION - 🌟 OUR VISION
+              </h4>
               <p
                 className="introduce__paragraph--content"
                 style={{ marginRight: "10px" }}
               >
-                Avocado proudly stands as a high-quality Vietnamese jewelry
-                brand, built on passion and dedication to our customers. With a
-                mission to bring sophisticated, luxurious, and unique jewelry
-                designs, Avocado is not just a jewelry provider but a bridge
-                that helps you shine in every important moment. From carefully
-                selected precious materials and meticulous craftsmanship to
-                exquisitely designed jewelry, we strive to offer the finest
-                experience to our customers. Whether it's a meaningful gift, a
-                personal accessory, or a statement piece for special occasions,
-                Avocado is always by your side to create unforgettable and
-                distinctive impressions. We deeply appreciate our customers'
-                trust and are committed to continuous innovation and creativity,
-                bringing products that exceed expectations. At Avocado, every
-                piece of jewelry is not just an accessory but a symbol of love,
-                dedication, and timeless value .
+                Our mission is to be a trusted companion, offering meaningful, high-quality, and beautifully designed jewelry that empowers individuals to express their identity, emotions, and values with elegance.
+
+                To become a beloved jewelry brand in Vietnam and expand to the global market, where every product is crafted with inspiration, care, and a desire to celebrate the authentic beauty within everyone.
               </p>
             </div>
             {/* introduce right */}

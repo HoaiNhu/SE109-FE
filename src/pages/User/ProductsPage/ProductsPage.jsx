@@ -172,7 +172,7 @@ const ProductsPage = () => {
         <div className="product">
           {/* product top */}
           <div className="product__top">
-            <h1 className="product__title">SẢN PHẨM</h1>
+            <h1 className="product__title">PRODUCT</h1>
             {/* Hiển thị tên category nếu có */}
             {currentCategory ? (
               <p className="product__current-category">
@@ -182,7 +182,7 @@ const ProductsPage = () => {
                 }
               </p>
             ) : (
-              <p className="product__current-category">Tất cả sản phẩm</p>
+              <p className="product__current-category">All product</p>
             )}
           </div>
 

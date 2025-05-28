@@ -9,139 +9,163 @@ import { useNavigate } from "react-router-dom";
 import * as productService from "../../../../services/productServices";
 import { useMutationHook } from "../../../../hooks/useMutationHook";
 
-
 const UpdateProductPage = () => {
-    const navigate = useNavigate();
-    const accessToken = localStorage.getItem("access_token");
-  const { state: productData } = useLocation(); // Nhận dữ liệu từ `state`
-  const [product, setProduct] = useState(
-    productData || {
-      productName: "",
-      productPrice: "",
-      productSize: "",
-      productCategory: "",
-      productImage: null,
-      productDescription: "",
-    }
-  );
-  const [categories, setCategories] = useState([]); // State lưu danh sách category
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem("access_token");
+  const { state: productData } = useLocation();
 
-   useEffect(() => {
-      const fetchCategories = async () => {
-        try {
-  
-          const response = await fetch("http://localhost:3001/api/category/get-all-category", {
-            method: "GET", // Phương thức GET để lấy danh sách category
-            headers: {
-              "Content-Type": "application/json",
-            },
+  const [product, setProduct] = useState({
+    productName: "",
+    productPrice: "",
+    productSize: "",
+    productCategory: "",
+    productImage: null,
+    productDescription: "",
+    productMaterial: "",
+    productWeight: "",
+    productId: productData?.productId || productData?._id || "",
+  });
+
+  const [categories, setCategories] = useState([]);
+  const [imagePreview, setImagePreview] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch product data from backend based on productId
+  useEffect(() => {
+    const fetchProduct = async () => {
+      if (!product.productId) {
+        console.error("No productId provided to fetch product data");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        const data = await productService.getDetailsproduct(product.productId, accessToken);
+        if (data.status === "OK" && data.data) {
+          const fetchedProduct = data.data;
+          setProduct({
+            productName: fetchedProduct.productName || "",
+            productPrice: fetchedProduct.productPrice || "",
+            productSize: fetchedProduct.productSize || "",
+            productCategory: fetchedProduct.productCategory || "",
+            productImage: fetchedProduct.productImage || null,
+            productDescription: fetchedProduct.productDescription || "",
+            productMaterial: fetchedProduct.productMaterial || "",
+            productWeight: fetchedProduct.productWeight || "",
+            productId: fetchedProduct._id || product.productId,
           });
-  
-          if (!response.ok) {
-            throw new Error("Failed to fetch categories");
-          }
-  
-          const data = await response.json(); // Chuyển đổi dữ liệu từ JSON
-          console.log("Categories data:", categories);
-  
-          // Kiểm tra và gán mảng categories từ data.data
-          if (Array.isArray(data.data)) {
-            setCategories(data.data); // Lưu danh sách category vào state
-  
-          } else {
-            console.error("Categories data is not in expected format");
-          }
-        } catch (error) {
-          console.error("Error fetching categories:", error);
+          setImagePreview(fetchedProduct.productImage || null);
+        } else {
+          console.error("Product data is not in the expected format:", data);
         }
-      };
-      fetchCategories();
-    }, []);
+      } catch (error) {
+        console.error("Error fetching product data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const [imagePreview, setImagePreview] = useState(
-    product.productImage || null
-  );
+    fetchProduct();
+  }, [product.productId, accessToken]);
+
+  // Fetch categories
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/category/get-all-category", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch categories");
+        }
+
+        const data = await response.json();
+        if (Array.isArray(data.data)) {
+          setCategories(data.data);
+        } else {
+          console.error("Category data is not in the expected format");
+        }
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+    fetchCategories();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setProduct({ ...product, [e.target.name]: e.target.value });
+    setProduct({ ...product, [name]: value });
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const previewURL = URL.createObjectURL(file); // Tạo URL tạm để hiển thị hình
+      const previewURL = URL.createObjectURL(file);
       setImagePreview(previewURL);
       setProduct({ ...product, productImage: file });
     }
   };
 
   const handleEditImage = () => {
-    document.getElementById("imageInput").click(); // Kích hoạt input chọn file
+    document.getElementById("imageInput").click();
   };
 
-  
-   const mutation = useMutationHook(
-      async (data) => {
-        for (let pair of data.formData.entries()) {
-          console.log("form",`${pair[0]}: ${pair[1]}`);
-        }
-        console.log("DATA", data)
-        const response = await productService.updateproduct( data.id,accessToken,data.formData);
-        console.log("RESULT", response);
-        try {
-          const result = await response;
-         
-          if (result.status === "OK") {
-            alert("Jewelry item updated successfully!");
-            navigate('/admin/products')
-            // Reset form
-            //setProduct({productName: "", productPrice: "", productCategory:null, productImage:null, productSize:"" });
-          } else {
-            alert(`Failed to update jewelry item:  ${result.message}`);
-          }
-        } catch (error) {
-          alert("An error occurred while updating the jewelry item!");
-          console.error(error);
-        }
-        return response;
+  const mutation = useMutationHook(async (data) => {
+    for (let pair of data.formData.entries()) {
+      console.log("form", `${pair[0]}: ${pair[1]}`);
+    }
+    console.log("DATA", data);
+    const response = await productService.updateproduct(data.id, accessToken, data.formData);
+    console.log("RESULT", response);
+    try {
+      const result = await response;
+      if (result.status === "OK") {
+        alert("Jewelry updated successfully!");
+        navigate("/admin/products");
+      } else {
+        alert(`Failed to update jewelry: ${result.message}`);
       }
-    );
-    const { data, isLoading, isSuccess, isError } = mutation;
-  
-    const handleSubmit = () => {
-    
-      console.log("state", product)
-      const formData = new FormData();
-      formData.append("productName", product.productName);
-      formData.append("productPrice", product.productPrice);
-      formData.append("productCategory", product.productCategory);
-      formData.append("productSize", product.productSize);
-      formData.append("productDescription", product.productDescription);
+    } catch (error) {
+      alert("An error occurred while updating the jewelry!");
+      console.error("Error updating jewelry:", error);
+    }
+    return response;
+  });
+
+  const { data, isLoading, isSuccess, isError } = mutation;
+
+  const handleSubmit = () => {
+    console.log("state", product);
+    const formData = new FormData();
+    formData.append("productName", product.productName);
+    formData.append("productPrice", product.productPrice);
+    formData.append("productCategory", product.productCategory);
+    formData.append("productSize", product.productSize);
+    formData.append("productDescription", product.productDescription);
+    formData.append("productMaterial", product.productMaterial);
+    formData.append("productWeight", product.productWeight);
+    if (product.productImage && typeof product.productImage !== "string") {
       formData.append("productImage", product.productImage);
-      // Kiểm tra FormData
-     
-      const data = { id: product.productId, formData: formData}
-  
-      const response = mutation.mutate(data)
-    };
-    
+    }
 
+    const data = { id: product.productId, formData: formData };
+    mutation.mutate(data);
+  };
 
-  //Xoa
-  
   const handleDelete = async (productId) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this product?");
-
     if (confirmDelete) {
       try {
-        // Call the API to delete the product and image
-        const response = await productService.deleteProduct(productId,accessToken)
-        console.log("RESPONSE", response)
-        if (response.status="OK") {
+        const response = await productService.deleteProduct(productId, accessToken);
+        console.log("RESPONSE", response);
+        if (response.status === "OK") {
           alert("Product deleted successfully!");
-         // Redirect to product list page
-         navigate("/admin/products")
+          navigate("/admin/products");
         }
       } catch (error) {
         console.error("Error deleting product:", error);
@@ -149,29 +173,36 @@ const UpdateProductPage = () => {
       }
     }
   };
-  
+
+  const materialOptions = [
+    { display: "Gold", value: "vàng" },
+    { display: "Silver", value: "bạc" },
+    { display: "Stainless Steel", value: "thép không gỉ" },
+    { display: "Platinum", value: "platinum" },
+  ];
+
+  if (loading) {
+    return <div>Loading data...</div>;
+  }
 
   return (
     <div>
       <div className="container-xl update-product">
-        <h1 className="update-product__title">Update jewelry item</h1>
+        <h1 className="update-product__title">Update Jewelry</h1>
 
-        {/* update information */}
         <div className="update-product__information">
-          {/* info top */}
           <div className="info__top">
-            {/* infor left */}
             <div className="info__left">
               <div className="product__image-container">
                 {imagePreview ? (
                   <img
                     src={imagePreview}
-                    alt="Product Preview"
+                    alt="Product preview"
                     className="product__image-preview"
                   />
                 ) : (
                   <div className="product__image-placeholder">
-                    Choose image
+                    Select an image
                   </div>
                 )}
                 <input
@@ -200,37 +231,36 @@ const UpdateProductPage = () => {
               </div>
             </div>
 
-            {/* info right */}
             <div className="info__right">
               <div className="col product-name">
                 <label className="label-name">Name</label>
                 <FormComponent
-                name="productName"
+                  name="productName"
                   value={product.productName}
                   onChange={handleInputChange}
-                ></FormComponent>
+                />
               </div>
 
-              <div className="product-price">
+              <div className="col product-price">
                 <label className="label-price">Price</label>
                 <FormComponent
-                name="productPrice"
+                  name="productPrice"
                   value={product.productPrice}
                   onChange={handleInputChange}
-                ></FormComponent>
+                />
               </div>
 
-              <div className="product-category">
+              <div className="col product-category">
                 <label className="label-category">Category</label>
                 <select
                   name="productCategory"
                   value={product.productCategory}
                   onChange={handleInputChange}
-                  className="choose-property"
-                  style={{ width: "36rem", height: "6rem", border: "none", color: "grey", borderRadius: "50px", boxShadow: "0px 2px 4px 0px #203c1640", padding: "15px" }}
-                  placeholder="Choose category"
+                  className="form__text"
                 >
-                  <option value="" disabled>Choose category</option>
+                  <option value="" disabled>
+                    Select category
+                  </option>
                   {Array.isArray(categories) && categories.length > 0 ? (
                     categories.map((category) => (
                       <option key={category._id} value={category._id}>
@@ -238,23 +268,22 @@ const UpdateProductPage = () => {
                       </option>
                     ))
                   ) : (
-                    <option disabled>No product categories available.</option>
+                    <option disabled>No categories available</option>
                   )}
                 </select>
               </div>
 
-              <div className="product-size">
+              <div className="col product-size">
                 <label className="label-size">Size</label>
                 <div className="item__size">
                   <SizeComponent
-                   name="productSize"
-                   value={product.productSize}
+                    name="productSize"
+                    value={product.productSize}
                     isSelected={product.productSize}
                     onChange={handleInputChange}
                   >
                     {product.productSize}
                   </SizeComponent>
-                 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="30"
@@ -271,13 +300,41 @@ const UpdateProductPage = () => {
                   </svg>
                 </div>
               </div>
+
+              <div className="col product-material">
+                <label className="label-material">Material</label>
+                <select
+                  name="productMaterial"
+                  value={product.productMaterial}
+                  onChange={handleInputChange}
+                  className="form__text"
+                >
+                  <option value="" disabled>
+                    Select material
+                  </option>
+                  {materialOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.display}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="col product-weight">
+                <label className="label-weight">Weight</label>
+                <FormComponent
+                  name="productWeight"
+                  value={product.productWeight}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
           </div>
-          {/* info bot */}
+
           <div className="info__bot">
             <label className="label-description">Description</label>
             <textarea
-            name="productDescription"
+              name="productDescription"
               className="product-description"
               value={product.productDescription}
               onChange={(e) =>
@@ -288,11 +345,15 @@ const UpdateProductPage = () => {
             />
           </div>
         </div>
-        {/* submit */}
+
         <div className="btn-submit">
           <ButtonComponent onClick={handleSubmit}>Save</ButtonComponent>
-          <ButtonComponent onClick={() => handleDelete(product.productId)}>Delete</ButtonComponent>
-          <ButtonComponent onClick={()=> navigate("/admin/products")}>Exit</ButtonComponent>
+          <ButtonComponent onClick={() => handleDelete(product.productId)}>
+            Delete
+          </ButtonComponent>
+          <ButtonComponent onClick={() => navigate("/admin/products")}>
+            Cancel
+          </ButtonComponent>
         </div>
       </div>
     </div>
