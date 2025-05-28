@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
 import ProductInfor from "../../../components/ProductInfor/ProductInfor";
-import imageProduct from "../../../assets/img/hero_3.jpg";
 import "./OrderInformation.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import ButtonComponent from "../../../components/ButtonComponent/ButtonComponent";
@@ -9,15 +8,10 @@ import FormComponent from "../../../components/FormComponent/FormComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { useMutationHook } from "../../../hooks/useMutationHook";
 import * as OrderService from "../../../services/OrderService";
-import * as UserService from "../../../services/UserService";
 import { addOrder, setOrderDetails } from "../../../redux/slides/orderSlide";
 
 const OrderInformationPage = () => {
   const location = useLocation();
-  // const orderData = location.state || {};
-  // dispatch(setOrderDetails(orderData));
-
-  // const selectedProducts = location.state?.selectedProductDetails || [];
   const selectedProducts = Array.isArray(location.state?.selectedProductDetails)
     ? location.state.selectedProductDetails
     : [];
@@ -26,36 +20,33 @@ const OrderInformationPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const mutation = useMutationHook((data) => OrderService.createOrder(data));
-  const shippingPrice = 30000; // Phí vận chuyển cố định
+  const shippingPrice = 30000; // Fixed shipping fee
 
-  const user = useSelector((state) => state.user); // Lấy thông tin user từ Redux
-
+  const user = useSelector((state) => state.user); // Get user info from Redux
   const isLoggedIn = !!user?.userEmail;
-  const [wards, setWards] = useState([]);
-  const [districts, setDistricts] = useState([]);
-  const [cities, setCities] = useState([]);
 
   const handleClickBack = () => {
     navigate("/cart");
   };
+
   const handleClickNext = async () => {
     const orderData = {
       orderItems: selectedProducts.map((product) => ({
-        product: product.id, // Gắn ID của sản phẩm vào trường `product`
-        quantity: product.quantity, // Số lượng
+        product: product.id,
+        quantity: product.quantity,
         total:
           typeof product.price === "number"
             ? product.price * product.quantity
-            :  parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, "")) *
-              product.quantity,
+            : parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, "")) *
+            product.quantity,
       })),
-      shippingAddress, // Thông tin giao hàng
-      paymentMethod: "Online Payment", // Phương thức thanh toán
-      userId: user?.id || null, // ID người dùng, nếu đăng nhập
-      deliveryDate, // Ngày giao hàng
-      deliveryTime, // Giờ giao hàng
-      orderNote, // Ghi chú đơn hàng
-      shippingPrice: 30000, // Phí vận chuyển cố định
+      shippingAddress, // Shipping address
+      paymentMethod: "Online Payment",
+      userId: user?.id || null,
+      deliveryDate,
+      deliveryTime,
+      orderNote,
+      shippingPrice: 30000,
       status,
       totalItemPrice,
       totalPrice,
@@ -64,23 +55,12 @@ const OrderInformationPage = () => {
     console.log("orderData", orderData);
 
     try {
-      // Gửi đến API và lấy phản hồi
       const response = await mutation.mutateAsync(orderData);
 
       if (response?.data?._id) {
-        // Thêm orderId vào orderData
         const fullOrderData = { ...orderData, orderId: response.data._id };
-
-        // Lưu vào localStorage thông tin đơn hàng
-        // localStorage.setItem("orderData", JSON.stringify(fullOrderData));
-
-        // Lưu vào Redux store
         dispatch(addOrder(fullOrderData));
-
-        // Điều hướng đến trang thanh toán
-        navigate("/payment", {
-          state: { ...fullOrderData },
-        });
+        navigate("/payment", { state: { ...fullOrderData } });
       } else {
         console.error("Failed to create order:", response);
       }
@@ -99,51 +79,23 @@ const OrderInformationPage = () => {
     userPhone: "",
     userEmail: "",
   });
-  // console.log("selectedProducts", selectedProducts);
-  console.log("user", user);
-  console.log("shippingAddress", shippingAddress);
 
-  const [orderNote, setOrderNote] = useState(""); // Ghi chú đặt hàng
-  const [deliveryDate, setDeliveryDate] = useState(""); // Ngày giao hàng
-  const [deliveryTime, setDeliveryTime] = useState(""); // Giờ giao hàng
-  const [status, setStatus] = useState("PENDING"); // Trạng thái đơn hàng
-
-  // Tổng tiền hàng
-  console.log("selectedPro", selectedProducts);
+  const [orderNote, setOrderNote] = useState("");
+  const [deliveryDate, setDeliveryDate] = useState("");
+  const [deliveryTime, setDeliveryTime] = useState("");
+  const [status, setStatus] = useState("PENDING");
 
   const totalItemPrice = Array.isArray(selectedProducts)
     ? selectedProducts.reduce((acc, product) => {
-        console.log("produtcccc", product);
-        console.log("typeof product.price:", typeof product.price);
-        // const price = String(product.price) || 0;
-        // const priceStr =
-        //   typeof product.price === "number"
-        //     ? product.price.toString()
-        //     : product.price;
-        const price =
-          typeof product.price === "number"
-            ? product.price
-            :   parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, ""));
-
-        // if (typeof product.price === "number") {
-        //   price = product.price; // Nếu là số, dùng trực tiếp
-        // } else if (typeof product.price === "string") {
-        //   price = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
-        // } else {
-        //   console.warn("Unexpected price type:", product.price);
-        // }
-        return acc + price * product.quantity;
-      }, 0)
+      const price =
+        typeof product.price === "number"
+          ? product.price
+          : parseFloat((product.price ?? "0").toString().replace(/[^0-9.-]+/g, ""));
+      return acc + price * product.quantity;
+    }, 0)
     : 0;
 
-  console.log("totalItemPrice", totalItemPrice);
-
-  const totalPrice = useMemo(
-    () => totalItemPrice + shippingPrice,
-    [totalItemPrice]
-  );
-
-  console.log("totalPrice", totalPrice);
+  const totalPrice = useMemo(() => totalItemPrice + shippingPrice, [totalItemPrice]);
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -168,50 +120,8 @@ const OrderInformationPage = () => {
     }
   };
 
-  useEffect(() => {
-    // Load cities
-    const fetchCities = async () => {
-      const data = await UserService.fetchCities();
-      setCities(data);
-    };
-    fetchCities();
-  }, []);
-
-  const handleCityChange = (e) => {
-    const cityCode = e.target.value;
-    const selectedCity = cities.find((city) => city.code === cityCode);
-    setDistricts(selectedCity?.districts || []);
-    setWards([]);
-    setShippingAddress((prev) => ({
-      ...prev,
-      userCity: cityCode,
-      userDistrict: "",
-      userWard: "",
-    }));
-  };
-
-  const handleDistrictChange = (e) => {
-    const districtCode = e.target.value;
-    const selectedDistrict = districts.find(
-      (district) => district.code === districtCode
-    );
-    setWards(selectedDistrict?.wards || []);
-    setShippingAddress((prev) => ({
-      ...prev,
-      userDistrict: districtCode,
-      userWard: "",
-    }));
-  };
-
-  const handleWardChange = (e) => {
-    setShippingAddress((prev) => ({ ...prev, userWard: e.target.value }));
-  };
-
-  // Hàm cập nhật ngày và giờ giao hàng
   const handleDeliveryDateChange = (e) => setDeliveryDate(e.target.value);
   const handleDeliveryTimeChange = (e) => setDeliveryTime(e.target.value);
-
-  // Hàm cập nhật ghi chú
   const handleOrderNoteChange = (e) => setOrderNote(e.target.value);
 
   return (
@@ -296,7 +206,7 @@ const OrderInformationPage = () => {
       </div>
 
       <div>
-        {/* =====Dia chi giao hang===== */}
+        {/* =====Shipping Address===== */}
         <div className="shipping-info">
           <div className="input-name">
             <div
@@ -361,68 +271,48 @@ const OrderInformationPage = () => {
           </div>
           <div className="address" style={{ padding: "10px 50px" }}>
             <h2>Địa chỉ</h2>
-            <FormComponent
-              // className="input-address"
-              type="text"
-              placeholder="Nhập địa chỉ giao hàng: Số nhà, hẻm, đường,..."
-              style={{ width: "100%" }}
-              value={shippingAddress.userAddress}
-              onChange={handleInputChange("userAddress")}
-            ></FormComponent>
-          </div>
-          <div className="comboBoxHolder">
-            <div className="ProvinceHolder">
-              <select
-                className="Province"
-                value={shippingAddress.userCity}
-                onChange={handleCityChange}
-              >
-                <option value="" disabled>
-                  Chọn tỉnh
-                </option>
-                {cities.map((city) => (
-                  <option key={city.code} value={city.code}>
-                    {city.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="DistrictHolder">
-              <select
-                className="District"
-                value={shippingAddress.userDistrict}
-                onChange={handleDistrictChange}
-              >
-                <option value="" disabled>
-                  Chọn quận/huyện
-                </option>
-                {districts.map((district) => (
-                  <option key={district.code} value={district.code}>
-                    {district.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="VillageHolder">
-              <select
-                className="Village"
-                value={shippingAddress.userWard}
-                onChange={handleWardChange}
-              >
-                <option value="" disabled>
-                  Chọn phường/xã
-                </option>
-                {wards.map((ward) => (
-                  <option key={ward.code} value={ward.code}>
-                    {ward.name}
-                  </option>
-                ))}
-              </select>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+              <div style={{ flex: "1 1 45%" }}>
+                <FormComponent
+                  type="text"
+                  placeholder="Số nhà, đường"
+                  style={{ width: "100%" }}
+                  value={shippingAddress.userAddress}
+                  onChange={handleInputChange("userAddress")}
+                ></FormComponent>
+              </div>
+              <div style={{ flex: "1 1 45%" }}>
+                <FormComponent
+                  type="text"
+                  placeholder="Phường/Xã"
+                  style={{ width: "100%" }}
+                  value={shippingAddress.userWard}
+                  onChange={handleInputChange("userWard")}
+                ></FormComponent>
+              </div>
+              <div style={{ flex: "1 1 45%" }}>
+                <FormComponent
+                  type="text"
+                  placeholder="Quận/Huyện"
+                  style={{ width: "100%" }}
+                  value={shippingAddress.userDistrict}
+                  onChange={handleInputChange("userDistrict")}
+                ></FormComponent>
+              </div>
+              <div style={{ flex: "1 1 45%" }}>
+                <FormComponent
+                  type="text"
+                  placeholder="Tỉnh/Thành phố"
+                  style={{ width: "100%" }}
+                  value={shippingAddress.userCity}
+                  onChange={handleInputChange("userCity")}
+                ></FormComponent>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* =====Thoi gian giao hang==== */}
+        {/* =====Delivery Time===== */}
         <div className="DeliveryTimeHolder">
           <p className="ThoiGian">Thời gian giao hàng dự kiến:</p>
           <div className="d-flex" style={{ gap: "50px", margin: "20px 0" }}>
@@ -447,7 +337,7 @@ const OrderInformationPage = () => {
             </div>
           </div>
         </div>
-        {/* ============Ghi chu don hang======== */}
+        {/* =====Order Note===== */}
         <div className="Note" style={{ margin: "50px 50px" }}>
           <div>
             <h2>Ghi chú đơn hàng:</h2>
@@ -464,7 +354,7 @@ const OrderInformationPage = () => {
           </div>
         </div>
 
-        {/* ================= Button======== */}
+        {/* =====Buttons===== */}
         <div className="Button-area">
           <button className="chinhsachBtn">
             <a href="/chinhsach" target="_blank" className="chinhsach">
