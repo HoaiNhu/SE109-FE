@@ -170,14 +170,14 @@ const ProductsPage = () => {
           {/* product bot */}
           <div className="product__bot">
             {/* side menu */}
-            <div className="side-menu__category">
+            <div className="side-menu__category1">
               {/* Thêm "Tất cả sản phẩm" */}
               <SideMenuComponent
                 key="all-products"
                 value={null}
                 onClick={handleAllProductsClick}
               >
-                Tất cả sản phẩm
+                All
               </SideMenuComponent>
 
               {Array.isArray(categories) && categories.length > 0 ? (

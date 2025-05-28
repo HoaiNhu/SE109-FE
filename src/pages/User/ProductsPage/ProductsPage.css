@@ -25,9 +25,13 @@
 }
 
 /* ========================Side menu======================== */
-.side-menu__category {
-  margin-right: 20px;
+.side-menu__category1 {
+  width: fit-content;
+  height: 52rem;
+  text-align: top;
   background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
 }
 
 /* =========================product list ==================== */
@@ -69,6 +73,12 @@
 @media (max-width: 539.98px) {
   .side-menu__category {
     visibility: hidden;
+    width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
   }
 
   .product__list {
@@ -78,4 +88,18 @@
     grid-template-columns: repeat(1, 1fr);
     /* background-color: var(--grey5); */
   }
+}
+
+/* Wrapper toàn bộ trang nếu chưa có */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Vùng nội dung chính */
+.product {
+  flex: 1; /* chiếm toàn bộ không gian trống giữa header và footer */
+  display: flex;
+  flex-direction: column;
 }
