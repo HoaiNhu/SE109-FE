@@ -93,14 +93,22 @@ const LogInPage = () => {
 
   const handleUserEmailChange = (e) => {
     const value = e.target.value;
-    if (typeof value === "string" && value.trim().length >= 0) {
+    if (
+      typeof value === "string" &&
+      value.trim().length >= 0 &&
+      value.trim().length <= 40
+    ) {
       setFormData((prevData) => ({ ...prevData, userEmail: value }));
     }
   };
 
   const handleUserPasswordChange = (e) => {
     const value = e.target.value;
-    if (typeof value === "string" && value.trim().length >= 0) {
+    if (
+      typeof value === "string" &&
+      value.trim().length >= 0 &&
+      value.trim().length <= 40
+    ) {
       setFormData((prevData) => ({ ...prevData, userPassword: value }));
     }
   };
