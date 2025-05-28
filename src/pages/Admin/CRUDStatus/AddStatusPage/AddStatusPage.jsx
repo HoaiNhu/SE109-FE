@@ -5,17 +5,13 @@ import ButtonComponent from "../../../../components/ButtonComponent/ButtonCompon
 import "./AddStatusPage.css";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { createStatus } from "../../../../services/StatusService";
+import * as StatusService from "../../../../services/StatusService";
 import Loading from "../../../../components/LoadingComponent/Loading";
 import Message from "../../../../components/MessageComponent/Message";
-import * as StatusService from "../../../../services/StatusService";
 import { useMutationHook } from "../../../../hooks/useMutationHook";
 import { isAdmin } from "../../../../utils";
 
 const AddStatusPage = () => {
-  // const [statusCode, setStatusCode] = useState("");
-  // const [statusName, setStatusName] = useState("");
-  // const [statusDescription, setStatusDescription] = useState("");
   const accessToken = localStorage.getItem("access_token");
 
   const [formData, setFormData] = useState({
@@ -24,15 +20,45 @@ const AddStatusPage = () => {
     statusDescription: "",
   });
 
-  // const [errorMessage, setErrorMessage] = useState(null);
-  const [showLoading, setShowLoading] = useState(false); // Thêm trạng thái riêng
-  // const [errorMessage, setErrorMessage] = useState("");
+  const [errors, setErrors] = useState({}); // State to track validation errors
+  const [showLoading, setShowLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Validation function to check for empty fields
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.statusCode.trim()) {
+      newErrors.statusCode = "Status Code is required";
+    }
+    if (!formData.statusName.trim()) {
+      newErrors.statusName = "Status Name is required";
+    }
+    // Optional: Make statusDescription required or keep it optional
+    if (!formData.statusDescription.trim()) {
+      newErrors.statusDescription = "Status Description is required";
+    }
+    return newErrors;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate form
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setStatusMessage({
+        type: "Error",
+        message: "Please fill in all required fields.",
+      });
+      return;
+    }
+
+    // Clear errors and proceed with submission
+    setErrors({});
+    setShowLoading(true);
     mutation.mutate(formData);
   };
 
@@ -43,7 +69,9 @@ const AddStatusPage = () => {
   const mutation = useMutationHook((data) =>
     StatusService.createStatus(data, accessToken)
   );
+
   useEffect(() => {
+    setShowLoading(false); // Reset loading state after mutation
     if (mutation.isSuccess) {
       setFormData({
         statusCode: "",
@@ -72,6 +100,11 @@ const AddStatusPage = () => {
       ...prevData,
       [e.target.name]: e.target.value,
     }));
+    // Clear error for the field being edited
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [e.target.name]: "",
+    }));
   };
 
   return (
@@ -90,7 +123,6 @@ const AddStatusPage = () => {
           />
         )}
         <div className="add-status__container">
-          {/* side menu */}
           <div className="side-menu__status">
             <SideMenuComponent>Store information</SideMenuComponent>
             <SideMenuComponent>Order</SideMenuComponent>
@@ -117,7 +149,11 @@ const AddStatusPage = () => {
                       name="statusCode"
                       value={formData.statusCode}
                       onChange={handleChange}
-                    ></FormComponent>
+                      error={errors.statusCode} // Pass error to FormComponent
+                    />
+                    {errors.statusCode && (
+                      <span className="error-message">{errors.statusCode}</span>
+                    )}
                   </div>
                   <div className="content__item">
                     <label className="name__title">Name</label>
@@ -126,22 +162,29 @@ const AddStatusPage = () => {
                       name="statusName"
                       value={formData.statusName}
                       onChange={handleChange}
-                    ></FormComponent>
+                      error={errors.statusName}
+                    />
+                    {errors.statusName && (
+                      <span className="error-message">{errors.statusName}</span>
+                    )}
                   </div>
                   <div className="content__item">
-                    <label className="description__title">
-                      Description
-                    </label>
+                    <label className="description__title">Description</label>
                     <FormComponent
                       placeholder="Enter description"
                       name="statusDescription"
                       value={formData.statusDescription}
                       onChange={handleChange}
-                    ></FormComponent>
+                      error={errors.statusDescription}
+                    />
+                    {errors.statusDescription && (
+                      <span className="error-message">
+                        {errors.statusDescription}
+                      </span>
+                    )}
                   </div>
                 </div>
               )}
-              {/* button */}
               <div className="btn__add-status">
                 <ButtonComponent type="submit" onClick={handleSubmit}>
                   Save
