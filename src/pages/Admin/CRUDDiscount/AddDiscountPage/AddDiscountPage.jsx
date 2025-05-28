@@ -218,7 +218,7 @@ const AddDiscountPage = () => {
                 <div className="content__item">
                   <label className="id__title">Promo code</label>
                   <FormComponent
-                    placeholder="Nhập mã khuyến mãi"
+                    placeholder="KM1"
                     name="discountCode"
                     onChange={handleInputChange}
                     value={statediscount.discountCode}
@@ -227,7 +227,7 @@ const AddDiscountPage = () => {
                 <div className="content__item">
                   <label className="name__title">Promo name</label>
                   <FormComponent
-                    placeholder="Nhập tên khuyến mãi"
+                    placeholder="Sumer happiness"
                     name="discountName"
                     value={statediscount.discountName}
                     onChange={handleInputChange}
@@ -236,7 +236,7 @@ const AddDiscountPage = () => {
                 <div className="content__item">
                   <label className="value__title">Promo value (VND)</label>
                   <FormComponent
-                    placeholder="Nhập giá trị khuyến mãi"
+                    placeholder="100 000"
                     className="choose-property"
                     name="discountValue"
                     value={statediscount.discountValue}
@@ -260,7 +260,7 @@ const AddDiscountPage = () => {
                       boxShadow: "0px 2px 4px 0px #203c1640",
                       padding: "15px",
                     }}
-                    placeholder="Chọn loại sản phẩm"
+                    placeholder="Choose category"
                   >
                     <option value="" disabled>
                       Choose product
@@ -283,7 +283,7 @@ const AddDiscountPage = () => {
                   <input
                     type="date"
                     className="form-control discount__date"
-                    placeholder="Chọn ngày bắt đầu"
+                    placeholder="Choose start date"
                     ref={startDateRef}
                     name="discountStartDate"
                     onChange={handleInputChange}
@@ -297,7 +297,7 @@ const AddDiscountPage = () => {
                   <input
                     type="date"
                     className="form-control discount__date"
-                    placeholder="Chọn ngày kết thúc"
+                    placeholder="Choose end date"
                     ref={endDateRef}
                     name="discountEndDate"
                     onChange={handleInputChange}
