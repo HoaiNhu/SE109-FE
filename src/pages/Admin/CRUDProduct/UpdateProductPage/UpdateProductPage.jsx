@@ -23,6 +23,7 @@ const UpdateProductPage = () => {
     productDescription: "",
     productMaterial: "",
     productWeight: "",
+    productQuantity:"",
     productId: productData?.productId || productData?._id || "",
   });
 
@@ -48,11 +49,12 @@ const UpdateProductPage = () => {
             productName: fetchedProduct.productName || "",
             productPrice: fetchedProduct.productPrice || "",
             productSize: fetchedProduct.productSize || "",
-            productCategory: fetchedProduct.productCategory || "",
+            productCategory: fetchedProduct.productCategory?._id || "",
             productImage: fetchedProduct.productImage || null,
             productDescription: fetchedProduct.productDescription || "",
             productMaterial: fetchedProduct.productMaterial || "",
             productWeight: fetchedProduct.productWeight || "",
+            productQuantity:fetchedProduct.productQuantity ||"",
             productId: fetchedProduct._id || product.productId,
           });
           setImagePreview(fetchedProduct.productImage || null);
@@ -149,6 +151,7 @@ const UpdateProductPage = () => {
     formData.append("productDescription", product.productDescription);
     formData.append("productMaterial", product.productMaterial);
     formData.append("productWeight", product.productWeight);
+    formData.append("productQuantity", product.productQuantity);
     if (product.productImage && typeof product.productImage !== "string") {
       formData.append("productImage", product.productImage);
     }
@@ -328,6 +331,14 @@ const UpdateProductPage = () => {
                   onChange={handleInputChange}
                 />
               </div>
+              <div className="col product-quantity">
+                <label className="label-quantity">Quantity</label>
+                <FormComponent
+                  name="productQuantity"
+                  value={product.productQuantity}
+                  onChange={handleInputChange}
+                />
+              </div>
             </div>
           </div>
 
@@ -344,6 +355,7 @@ const UpdateProductPage = () => {
               required
             />
           </div>
+          
         </div>
 
         <div className="btn-submit">

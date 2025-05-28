@@ -14,6 +14,7 @@ import {
   updateQuantity,
 } from "../../../redux/slides/cartSlide";
 const CartPage = () => {
+  
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleNavigate = (path) => {
@@ -22,6 +23,7 @@ const CartPage = () => {
 
   const products = useSelector((state) => state.cart.products);
   // console.log("products", products);
+console.log("products in cart", products);
 
   const calculatePrice = (price) => {
     if (typeof price !== 'string') {
@@ -53,21 +55,47 @@ const CartPage = () => {
   const isSelected = (productId) => selectedProducts.includes(productId);
   const [selectedProducts, setSelectedProducts] = useState([]); //lưu sản phẩm được chọn
   // Hàm toggle chọn/deselect sản phẩm
-  const toggleSelectRow = (productId) => {
-    setSelectedProducts((prev) => {
-      const updated = prev.includes(productId)
-        ? prev.filter((id) => id !== productId)
-        : [...prev, productId];
-      console.log("Updated selected products:", updated);
-      return updated;
-    });
-  };
+ const toggleSelectRow = (productId) => {
+  const product = products.find((p) => p.id === productId);
+
+  if (!product) return;
+
+  if (product.productQuantity === 0) {
+    alert(`Sản phẩm "${product.title}" đã hết hàng.`);
+    return;
+  }
+
+  if (product.quantity > product.productQuantity) {
+    alert(
+      `Sản phẩm "${product.title}" có số lượng vượt quá tồn kho. Hiện còn lại ${product.productQuantity} sản phẩm.`
+    );
+    return;
+  }
+
+  setSelectedProducts((prev) => {
+    const updated = prev.includes(productId)
+      ? prev.filter((id) => id !== productId)
+      : [...prev, productId];
+    console.log("Updated selected products:", updated);
+    return updated;
+  });
+};
+
 
   // Hàm xử lý khi nhấn "Mua ngay"
   const handleBuyNow = () => {
-    const selectedProductDetails = products.filter((product) =>
-      selectedProducts.includes(product.id)
-    );
+     const selectedProductDetails = products.filter((product) =>
+    selectedProducts.includes(product.id)
+  );
+
+  const overstockedItems = selectedProductDetails.filter(
+    (product) => product.quantity > product.productQuantity
+  );
+
+  if (overstockedItems.length > 0) {
+    alert("Một số sản phẩm có số lượng vượt quá tồn kho. Vui lòng điều chỉnh lại.");
+    return;
+  }
 
     navigate("/order-information", { state: { selectedProductDetails } });
   };
@@ -139,9 +167,12 @@ const CartPage = () => {
                 </td>
                 <td className="QuantityBtn">
                   <QuantityBtn
-                    initialQuantity={product.quantity}
-                    productId={product.id}
-                  />
+  initialQuantity={product.quantity}
+  productId={product.id}
+  maxQuantity={product.productQuantity}
+/>
+
+
                 </td>
                 <td className="Money">
                   <p className="MoneyProduct">

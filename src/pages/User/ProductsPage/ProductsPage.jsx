@@ -149,6 +149,9 @@ const ProductsPage = () => {
         productCategory,
         productDescription,
         productPrice,
+        productQuantity,
+        productWeight,
+        productMaterial,
       } = selectedProduct;
       navigate("/view-product-detail", {
         state: {
@@ -159,6 +162,9 @@ const ProductsPage = () => {
           productDescription,
           productCategory,
           productPrice,
+          productQuantity,
+          productWeight,
+          productMaterial,
         },
       });
     } else {
@@ -237,6 +243,7 @@ const ProductsPage = () => {
                       price={`${product.productPrice}`}
                       id={product._id}
                       onClick={() => handleDetail(product._id)}
+                      quantity={product.productQuantity}
                     />
                   );
                 })

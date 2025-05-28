@@ -8,52 +8,51 @@ import { useState } from "react";
 import AddToCartButtonComponent from "../AddToCartButtonComponent/AddToCartButtonComponent";
 import { createEntityAdapter } from "@reduxjs/toolkit";
 
-const CardProduct = ({ id, type, img, title, price, onClick }) => {
+const CardProduct = ({ id, type, img, title, price, onClick , quantity}) => {
   const dispatch = useDispatch();
 
   //Hiệu ứng sản phẩm bay dô vỏ hàng
   const handleAddToCart = (e) => {
-    const productElement = e.currentTarget.closest(".card");
-    const navIcon = document.querySelector(".nav__icon");
+  if (quantity === 0) {
+    alert("Sản phẩm đã hết hàng!");
+    return;
+  }
 
-    if (productElement && navIcon) {
-      // Get positions
-      const productRect = productElement.getBoundingClientRect();
-      const navIconRect = navIcon.getBoundingClientRect();
+  // Hiệu ứng bay vào giỏ hàng
+  const productElement = e.currentTarget.closest(".card");
+  const navIcon = document.querySelector(".nav__icon");
 
-      // Create a clone of the product image
-      const clone = productElement.cloneNode(true);
-      clone.style.position = "fixed";
-      clone.style.top = `${productRect.top}px`;
-      clone.style.left = `${productRect.left}px`;
-      clone.style.width = `${productRect.width}px`;
-      clone.style.height = `${productRect.height}px`;
-      clone.style.zIndex = 1000;
-      clone.style.transition = "all 1.5s cubic-bezier(0.22, 1, 0.36, 1)";
+  if (productElement && navIcon) {
+    const productRect = productElement.getBoundingClientRect();
+    const navIconRect = navIcon.getBoundingClientRect();
 
-      // Append clone to body
-      document.body.appendChild(clone);
+    const clone = productElement.cloneNode(true);
+    clone.style.position = "fixed";
+    clone.style.top = `${productRect.top}px`;
+    clone.style.left = `${productRect.left}px`;
+    clone.style.width = `${productRect.width}px`;
+    clone.style.height = `${productRect.height}px`;
+    clone.style.zIndex = 1000;
+    clone.style.transition = "all 1.5s cubic-bezier(0.22, 1, 0.36, 1)";
+    document.body.appendChild(clone);
 
-      // Trigger animation
-      requestAnimationFrame(() => {
-        clone.style.transform = `translate(
-          ${navIconRect.left - productRect.left}px,
-          ${navIconRect.top - productRect.top}px
-        ) scale(0.1)`;
-        clone.style.opacity = "0.5";
-      });
+    requestAnimationFrame(() => {
+      clone.style.transform = `translate(
+        ${navIconRect.left - productRect.left}px,
+        ${navIconRect.top - productRect.top}px
+      ) scale(0.1)`;
+      clone.style.opacity = "0.5";
+    });
 
-      // Cleanup after animation
-      clone.addEventListener("transitionend", () => {
-        clone.remove();
-      });
-    }
+    clone.addEventListener("transitionend", () => {
+      clone.remove();
+    });
+  }
 
-    // Dispatch the action to add to cart
+  // Thêm vào giỏ hàng
+  dispatch(addToCart({ id, img, title, price,productQuantity : quantity }));
+};
 
-    console.log("Received ID in CardProduct:", id); // Kiểm tra ID
-    dispatch(addToCart({ id, img, title, price }));
-  };
 
   return (
     <Card
@@ -122,7 +121,12 @@ const CardProduct = ({ id, type, img, title, price, onClick }) => {
           </div>
 
           <div style={{ alignItems: "center" }}>
-            <AddToCartButtonComponent onClick={handleAddToCart} />
+           {quantity === 0 ? (
+  <p style={{ color: "red", fontWeight: "bold" }}>Hết hàng</p>
+) : (
+  <AddToCartButtonComponent onClick={handleAddToCart} />
+)}
+
           </div>
         </div>
       )}

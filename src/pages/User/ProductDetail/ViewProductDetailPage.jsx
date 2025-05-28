@@ -20,6 +20,9 @@ const ViewProductDetailPage = () => {
       productCategory: "",
       productImage: null,
       productDescription: "",
+      productQuantity:"",
+      productWeight:"",
+      productMaterial:"",
     }
   );
 
@@ -65,17 +68,30 @@ const ViewProductDetailPage = () => {
 
     // Hàm thêm sản phẩm vào giỏ hàng
     const handleAddToCart = () => {
-      const { productName, productPrice, productImage, productCategory } = product;
-      console.log("PRODUCT", product)
-      // Dispatch action để thêm vào giỏ hàng
-      dispatch(addToCart({ id: productCategory, img: productImage, title: productName, price: productPrice }));
-      console.log("PRODUCT", productPrice)
-    };
+      const { productName, productPrice, productImage, productCategory, productQuantity } = product;
+
+      if (Number(productQuantity) === 0) {
+  alert("Sản phẩm đã hết hàng!");
+  return;
+}
+
+
+  dispatch(addToCart({
+  id: product._id,
+  img: product.productImage,
+  title: product.productName,
+  price: product.productPrice,
+  quantity: 1,
+  productQuantity: product.productQuantity, // 👈 bắt buộc
+}));
+
+};
+
 
   return (
     <div>
       <div className="container-xl mb-3">
-        <h1 className="view-product-detail-title">Chi tiết sản phẩm</h1>
+        <h1 className="view-product-detail-title">Product Detail</h1>
         {/* info top */}
         <div className="view__product-info d-flex gap-3">
           {/* top left */}
@@ -90,9 +106,9 @@ const ViewProductDetailPage = () => {
           <div className="info__right">
             <div className="product__name">{product.productName}</div>
             <div className="product__info">
-              <label>Giá:</label>
+              <label>Price:</label>
               <div className="product__price">{`${product.productPrice.toLocaleString('en-US')} VND`}</div>
-              <label>Loại:</label>
+              <label>Category:</label>
               {Array.isArray(categories) && categories.length > 0 ? (
                 <div>
                   {categories
@@ -106,14 +122,35 @@ const ViewProductDetailPage = () => {
               ) : (
                 <option disabled>Không có loại sản phẩm</option>
               )}
-              <label>Kích thước:</label>
+              <label>Size:</label>
               <div className="size">
                 <SizeComponent >{product.productSize}</SizeComponent>
               </div>
-              <div className="button_area">
-                <ButtonComponent style={{ width: '200px', marginRight: '20px' }} onClick={handleAddToCart} >Thêm vào giỏ hàng</ButtonComponent>
-                <ButtonComponent onClick={() => navigate('/products')}>Thoát</ButtonComponent>
+              <label>Weight:</label>
+              <div className="weight">
+                <div >{product.productWeight} feces</div>
               </div>
+              <label>Material:</label>
+              <div className="material">
+                <div >{product.productMaterial} </div>
+              </div>
+              <div className="button_area d-flex align-items-center gap-4">
+  {Number(product.productQuantity) === 0 ? (
+    <div className="out-of-stock-label">Sold Out</div>
+  ) : (
+    <ButtonComponent
+      style={{ width: "200px", marginRight: "20px" }}
+      onClick={handleAddToCart}
+    >
+      Add to cart
+    </ButtonComponent>
+  )}
+  <ButtonComponent onClick={() => navigate("/products")}>
+    Exit
+  </ButtonComponent>
+</div>
+
+
             </div>
           </div>
         </div>

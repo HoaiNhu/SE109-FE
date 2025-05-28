@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Hàm lưu trạng thái vào localStorage
-const saveToLocalStorage = (state) => {
+const saveToLocalStorage = (state) => { 
   localStorage.setItem("cart", JSON.stringify(state));
 };
 
@@ -42,6 +42,7 @@ const cartSlice = createSlice({
           title: action.payload.title,
           price: action.payload.price,
           quantity: action.payload.quantity || 1,
+          productQuantity: action.payload.productQuantity,
         });
       }
 

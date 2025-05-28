@@ -19,6 +19,7 @@ const AddProductPage = () => {
     productDescription: "",
     productMaterial: "",
     productWeight: "",
+    productQuantity :"",
   });
 
   const [categories, setCategories] = useState([]);
@@ -80,6 +81,7 @@ const AddProductPage = () => {
           productDescription: "",
           productMaterial: "",
           productWeight: "",
+          productQuantity:"",
         });
         setPreviewImage(null);
       } else {
@@ -105,6 +107,7 @@ const AddProductPage = () => {
     formData.append("productDescription", stateProduct.productDescription);
     formData.append("productMaterial", stateProduct.productMaterial);
     formData.append("productWeight", stateProduct.productWeight);
+     formData.append("productQuantity", stateProduct.productQuantity);
     if (stateProduct.productImage) {
       formData.append("productImage", stateProduct.productImage);
     }
@@ -237,6 +240,17 @@ const AddProductPage = () => {
                     </option>
                   ))}
                 </select>
+              </div>
+              <div className="form-row product-quantity">
+                <label>Quantity</label>
+                <FormComponent
+                  className="form__text"
+                  placeholder="Enter quantity"
+                  name="productQuantity"
+                  value={stateProduct.productQuantity}
+                  onChange={handleInputChange}
+                  required
+                />
               </div>
             </div>
           </div>
