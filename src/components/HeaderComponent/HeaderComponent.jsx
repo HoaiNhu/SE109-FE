@@ -157,7 +157,9 @@ const HeaderComponent = () => {
                       ) : (
                         <UserIconComponent />
                       )}
-                      <span style={{color:"#fff"}}>{user.userName || user.userEmail || "User"}</span>
+                      <span style={{ color: "#fff" }}>
+                        {user.userName || user.userEmail || "User"}
+                      </span>
                     </div>
                   </OverlayTrigger>
                 ) : (
@@ -205,9 +207,7 @@ const HeaderComponent = () => {
                     <ButtonNoBGComponent to="/products">
                       Product
                     </ButtonNoBGComponent>
-                    <ButtonNoBGComponent to="/news">
-                      News
-                    </ButtonNoBGComponent>
+                    <ButtonNoBGComponent to="/news">News</ButtonNoBGComponent>
                     <ButtonNoBGComponent to="/introduce">
                       Our Story
                     </ButtonNoBGComponent>
