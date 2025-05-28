@@ -1,0 +1,158 @@
+.order-list__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  gap: 10px;
+  padding: 10px 0 20px 0;
+}
+/* ================side menu ======================= */
+.side-menu__order {
+  width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+}
+
+h2 {
+  color: var(--color6);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 160px;
+}
+
+/* ==============order list================ */
+.order-list__content {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0px 0px 4px 0px var(--shadow);
+  padding: 20px;
+}
+.order-list__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* padding: 10px; */
+  margin-bottom: 20px;
+}
+
+/* .order-list__title {
+  margin-left: 25px;
+} */
+
+.filter-order {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 20px;
+}
+
+.btn__action {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  gap: 10px;
+}
+/* ====================table================= */
+.table-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  /* padding: 10px; */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 4px 0px var(--shadow);
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table th,
+.order-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.order-table th {
+  font-weight: 700;
+  color: var(--brown100);
+  font-size: 1.6rem;
+}
+
+.order-table tbody tr:hover {
+  background-color: var(--grey9); /* Màu nền khi hover */
+}
+
+.order-table tbody tr.highlight {
+  background-color: var(--green50); /* Màu nền sáng lên */
+  transition: background-color 0.3s ease; /* Hiệu ứng mượt */
+}
+
+.order-table tbody tr.highlight:hover {
+  background-color: var(--green50); /* Màu nền sáng hơn khi hover */
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: var(--color8);
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.filter-order__status {
+  --button-width: 200px; /* Tùy chỉnh width */
+  --button-height: 50px; /* Tùy chỉnh height */
+  width: var(--button-width);
+  height: var(--button-height);
+  border-radius: 15px;
+  background-color: var(--white);
+  color: var(--brown100);
+  font-size: 1.8rem;
+  text-align: left; /* Đảm bảo text căn lề trái */
+  box-shadow: 0px 0px 4px 0px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.filter-order__status .dropdown-toggle {
+  background: transparent;
+  border: none;
+  color: var(--brown100);
+  width: 100%; /* Đảm bảo dropdown button rộng */
+  height: 100%; /* Đảm bảo chiều cao */
+  padding: 0 15px;
+  /* font-weight: bold; */
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-order__status .dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px var(--shadow);
+  font-size: 1.6rem;
+  padding: 10px 0;
+}
+
+.filter-order__status .dropdown-item {
+  padding: 8px 15px;
+  color: var(--brown100);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.filter-order__status .dropdown-item:hover,
+.filter-order__status .dropdown-item:focus {
+  background-color: var(--brown100);
+  color: var(--white);
+}

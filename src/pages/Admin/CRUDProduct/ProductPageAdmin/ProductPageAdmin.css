@@ -1,0 +1,94 @@
+.productadmin {
+  margin: 40px 0;
+  font-size: 1.6rem;
+  color: var(--color6);
+}
+
+/* ========================== top========================== */
+.productadmin__top {
+  margin: 0 auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.productadmin__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+/* ========================bot======================== */
+.productadmin__bot {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+/* ========================Side menu======================== */
+.side-menu__category {
+  margin-right: 20px;
+  background-color: var(--color8);
+}
+
+/* =========================productadmin list ==================== */
+
+.productadmin__list {
+  display: grid;
+  gap: 5px;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  /* background-color: var(--grey5); */
+}
+
+.pageNumber {
+  border: none;
+  background: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: var(--white);
+}
+
+.PageNumberHolder {
+  margin-left: 280px;
+  margin-top: 10px;
+}
+
+/* .Cardproductadmin.productadmin__item {
+    font-weight: 600;
+  } */
+
+/* .row > * {
+    padding: 0 0;
+  } */
+/* ==========================see-more=========================== */
+/* .btn__see-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  } */
+
+/* 
+  @media xxl {
+    .productadmin__list {
+      display: grid;
+      gap: 5px;
+      justify-content: space-between;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: var(--grey5);
+    }
+  } */
+
+@media (max-width: 539.98px) {
+  .side-menu__category {
+    visibility: hidden;
+  }
+
+  .productadmin__list {
+    display: grid;
+    gap: 5px;
+    justify-content: space-between;
+    grid-template-columns: repeat(1, 1fr);
+    /* background-color: var(--grey5); */
+  }
+}
