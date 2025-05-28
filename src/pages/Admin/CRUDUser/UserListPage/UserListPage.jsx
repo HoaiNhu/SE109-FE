@@ -16,13 +16,27 @@ import CheckboxComponent from "../../../../components/CheckboxComponent/Checkbox
 
 const UserListPage = () => {
   const navigate = useNavigate();
-  const ClickInfor=()=>{navigate("/admin/store-info")}
-  const ClickOrder=()=>{navigate("/admin/order-list")}
-  const ClickDiscount=()=>{navigate("/admin/discount-list")}
-  const ClickStatus=()=>{navigate("/admin/status-list")}
-  const ClickCategory=()=>{navigate("/admin/category-list")}
-  const ClickUser=()=>{navigate("/admin/user-list")}
-  const ClickReport=()=>{navigate("/admin/report")}
+  const ClickInfor = () => {
+    navigate("/admin/store-info");
+  };
+  const ClickOrder = () => {
+    navigate("/admin/order-list");
+  };
+  const ClickDiscount = () => {
+    navigate("/admin/discount-list");
+  };
+  const ClickStatus = () => {
+    navigate("/admin/status-list");
+  };
+  const ClickCategory = () => {
+    navigate("/admin/category-list");
+  };
+  const ClickUser = () => {
+    navigate("/admin/user-list");
+  };
+  const ClickReport = () => {
+    navigate("/admin/report");
+  };
 
   const user = useSelector((state) => state.user.allUser || []);
   const userCurrent = useSelector((state) => state.user || {});
@@ -168,33 +182,33 @@ const UserListPage = () => {
         {/* Menu bên trái */}
         <div className="side-menu__user">
           <SideMenuComponent className="btn-menu" onClick={ClickInfor}>
-              Store information 
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
-              Order
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
-              Promotion
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
-              Status
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
-              Category
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickUser}>
-              User
-            </SideMenuComponent>
-            <SideMenuComponent className="btn-menu" onClick={ClickReport}>
-              Statistic
-            </SideMenuComponent>
+            Store information
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
+            Order
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
+            Promotion
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
+            Status
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
+            Category
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickUser}>
+            User
+          </SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickReport}>
+            Statistic
+          </SideMenuComponent>
         </div>
 
         {/* Nội dung chính */}
         <div className="user-list__content">
           {/* Header */}
           <div className="admin-top">
-            <h2 className="user-list__title">Danh sách người dùng</h2>
+            <h2 className="user-list__title">User list</h2>
             <div className="tag-admin">
               <img
                 className="admin-avatar"
@@ -214,9 +228,9 @@ const UserListPage = () => {
 
           {/* Nút thêm */}
           <div className="btn__action">
-            <ButtonComponent onClick={handleAddUser}>Thêm</ButtonComponent>
+            <ButtonComponent onClick={handleAddUser}>Add</ButtonComponent>
             {/* <ButtonComponent>Chi tiết</ButtonComponent> */}
-            <ButtonComponent onClick={handleDeleteUser}>Xóa</ButtonComponent>
+            <ButtonComponent onClick={handleDeleteUser}>Delete</ButtonComponent>
           </div>
 
           {/* Bảng người dùng */}
@@ -230,16 +244,16 @@ const UserListPage = () => {
                       onChange={toggleSelectAll}
                     />
                   </th>
-                  <th>STT</th>
-                  <th>Họ</th>
-                  <th>Tên</th>
-                  <th>Số điện thoại</th>
+                  <th>No</th>
+                  <th>Last name</th>
+                  <th>Name</th>
+                  <th>Phone</th>
                   <th>Email</th>
                   {/* <th>Mật khẩu</th> */}
-                  <th>Địa chỉ</th>
-                  <th>Vai trò</th>
-                  <th>Ngày tạo</th>
-                  <th>Chỉnh sửa gần nhất</th>
+                  <th>Address</th>
+                  <th>Role</th>
+                  <th>Create at</th>
+                  <th>Last update</th>
                   <th></th>
                 </tr>
               </thead>
