@@ -19,7 +19,7 @@ import {
 import { getAllNews } from "../../../services/NewsService";
 import img12 from "../../../assets/img/hero_2.jpg";
 const text =
-  "Là một hệ thống đội ngũ nhân viên và lãnh đạo chuyên nghiệp, gồm CBCNV và những người thợ đã có kinh nghiệm lâu năm trong các công ty đầu ngành. Mô hình vận hành hoạt động công ty được bố trí theo chiều ngang, làm gia tăng sự thuận tiện trong việc vận hành cỗ máy kinh doanh và gia tăng sự phối hợp thống nhất giữa các bộ phận trong công ty.";
+  "From the very first glance, jewelry is more than just an accessory — it's a way to tell your personal story. Our jewelry website was born from a simple desire: to bring pure, elegant beauty with a personal touch to every woman.We believe that each piece of jewelry holds meaning. It's a gift to mark a milestone, a ring to celebrate love, or simply a bracelet that gives you a boost of confidence every time you wear it. What started from a small workshop, guided by hands full of passion, has grown into a digital space — so no matter where you are, you can find a piece of yourself in our designs.";
 
 const HomePage = () => {
   const [selectedProducts, setSelectedProducts] = useState([]);
@@ -49,8 +49,8 @@ const HomePage = () => {
           console.log("HBJK");
           const images = Array.isArray(discounts.data)
             ? discounts.data
-                .map((discount) => discount?.discountImage)
-                .filter(Boolean)
+              .map((discount) => discount?.discountImage)
+              .filter(Boolean)
             : [];
 
           console.log("IMG", images);
@@ -451,7 +451,7 @@ const HomePage = () => {
           }}
         >
           {" "}
-          AVOCADO'S STORIES
+          NNN.'S STORIES
         </h1>
         <h3
           style={{
@@ -461,7 +461,7 @@ const HomePage = () => {
             paddingBottom: 25,
           }}
         >
-          Avocado is proud to be a premium Vietnamese jewelry boutique,
+          NNN. is proud to be a premium Vietnamese jewelry boutique,
           combining luxury, elegance, and refined sophistication
         </h3>
         <div
@@ -576,7 +576,7 @@ const HomePage = () => {
             paddingBottom: 25,
           }}
         >
-          Latest updates on Avocado's activities
+          Latest updates on NNN.'s activities
         </h3>
 
         <div

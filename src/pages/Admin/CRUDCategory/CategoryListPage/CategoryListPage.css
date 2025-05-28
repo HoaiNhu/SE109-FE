@@ -5,8 +5,10 @@
   gap: 10px;
   padding: 10px 0 20px 0;
 }
+
 /* ================side menu ======================= */
-.side-menu__category {
+
+.side-menu__category1 {
   width: fit-content;
   height: 52rem;
   text-align: top;
@@ -29,6 +31,7 @@ h2 {
   border-radius: 15px;
   box-shadow: 0px 0px 4px 0px var(--shadow);
 }
+
 .category-list__action {
   display: flex;
   justify-content: space-between;
@@ -49,6 +52,7 @@ h2 {
   align-items: center;
   gap: 10px;
 }
+
 /* ====================table================= */
 .table-container {
   width: 100%;

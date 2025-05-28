@@ -79,7 +79,9 @@ const ReportPage = () => {
       revenue += order.totalPrice;
 
       order.orderItems.forEach((item) => {
+        if (!item.product || !item.product._id) return;
         const productId = item.product._id;
+
         console.log("productId", productId);
 
         const product = products.find((p) => p._id === productId);
@@ -257,7 +259,7 @@ const ReportPage = () => {
             <SideMenuComponent onClick={ClickInfor}>
               Store information
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickOrder}>Đơn hàng</SideMenuComponent>
+            <SideMenuComponent onClick={ClickOrder}> Order</SideMenuComponent>
             <SideMenuComponent onClick={ClickDiscount}>
               Promotion
             </SideMenuComponent>
@@ -265,10 +267,10 @@ const ReportPage = () => {
               Status
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickCategory}>
-              Product category
+              Category
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickUser}>
-              User list
+              User
             </SideMenuComponent>
             <SideMenuComponent onClick={ClickReport}>
               Statistic

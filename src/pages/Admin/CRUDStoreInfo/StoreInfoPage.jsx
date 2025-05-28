@@ -34,7 +34,7 @@ const StoreInfoPage = () => {
       <div className="container-xl">
         <div className="store-info__container">
           {/* side menu */}
-          <div className="side-menu__discount">
+          <div className="side-menu__info">
             <SideMenuComponent onClick={ClickInfor}>
               Store's Information
             </SideMenuComponent>
