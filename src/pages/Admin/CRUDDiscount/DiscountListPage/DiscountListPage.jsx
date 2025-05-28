@@ -130,15 +130,21 @@ const DiscountListPage = () => {
           {/* Side menu */}
           <div className="side-menu__discount">
             <SideMenuComponent onClick={ClickInfor}>
-              Store's Information
+              Store information
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickOrder}>Order</SideMenuComponent>
-            <SideMenuComponent onClick={ClickDiscount}>Promo</SideMenuComponent>
-            <SideMenuComponent onClick={ClickStatus}>Status</SideMenuComponent>
+            <SideMenuComponent onClick={ClickOrder}> Order</SideMenuComponent>
+            <SideMenuComponent onClick={ClickDiscount}>
+              Promotion
+            </SideMenuComponent>
+            <SideMenuComponent onClick={ClickStatus}>
+              Status
+            </SideMenuComponent>
             <SideMenuComponent onClick={ClickCategory}>
               Category
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickUser}>User</SideMenuComponent>
+            <SideMenuComponent onClick={ClickUser}>
+              User
+            </SideMenuComponent>
             <SideMenuComponent onClick={ClickReport}>
               Statistic
             </SideMenuComponent>

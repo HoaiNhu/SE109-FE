@@ -225,7 +225,7 @@ const StatusListPage = () => {
               Category
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickUser}>
-              User list
+              User
             </SideMenuComponent>
             <SideMenuComponent className="btn-menu" onClick={ClickReport}>
               Statistic

@@ -7,7 +7,8 @@
 }
 
 /* ================side menu ======================= */
-.side-menu__category {
+
+.side-menu__category1 {
   width: fit-content;
   height: 52rem;
   text-align: top;
@@ -99,7 +100,6 @@ h2 {
   cursor: pointer;
   font-size: 1.6rem;
   color: var(--color8);
-
 }
 
 .delete-btn:hover {

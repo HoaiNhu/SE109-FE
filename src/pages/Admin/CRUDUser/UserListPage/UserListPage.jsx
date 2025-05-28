@@ -22,7 +22,7 @@ const UserListPage = () => {
   const ClickStatus=()=>{navigate("/admin/status-list")}
   const ClickCategory=()=>{navigate("/admin/category-list")}
   const ClickUser=()=>{navigate("/admin/user-list")}
-  const ClickReprot=()=>{navigate("/admin/report")}
+  const ClickReport=()=>{navigate("/admin/report")}
 
   const user = useSelector((state) => state.user.allUser || []);
   const userCurrent = useSelector((state) => state.user || {});
@@ -167,23 +167,27 @@ const UserListPage = () => {
       <div className="user-list__info">
         {/* Menu bên trái */}
         <div className="side-menu__user">
-          <SideMenuComponent onClick={ClickInfor}>
-            Thông tin cửa hàng
-          </SideMenuComponent>
-          <SideMenuComponent onClick={ClickOrder}>Đơn hàng</SideMenuComponent>
-          <SideMenuComponent onClick={ClickDiscount}>
-            Khuyến mãi
-          </SideMenuComponent>
-          <SideMenuComponent onClick={ClickStatus}>
-            Trạng thái
-          </SideMenuComponent>
-          <SideMenuComponent onClick={ClickCategory}>
-            Loại sản phẩm
-          </SideMenuComponent>
-          <SideMenuComponent onClick={ClickUser}>
-            Danh sách người dùng
-          </SideMenuComponent>
-          <SideMenuComponent onClick={ClickReprot}>Thống kê</SideMenuComponent>
+          <SideMenuComponent className="btn-menu" onClick={ClickInfor}>
+              Store information 
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickOrder}>
+              Order
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickDiscount}>
+              Promotion
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickStatus}>
+              Status
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickCategory}>
+              Category
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickUser}>
+              User
+            </SideMenuComponent>
+            <SideMenuComponent className="btn-menu" onClick={ClickReport}>
+              Statistic
+            </SideMenuComponent>
         </div>
 
         {/* Nội dung chính */}

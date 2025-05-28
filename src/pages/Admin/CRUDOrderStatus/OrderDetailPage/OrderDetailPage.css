@@ -81,7 +81,7 @@ h2 {
 
 .label-status {
   padding: 10px 20px;
-  background-color: var(--green50);
+  background-color: var(--white);
   border-radius: 25px 0;
   margin-bottom: 10px;
 }
@@ -107,7 +107,7 @@ h2 {
 .info-customer .info-title {
   /* font-weight: bold; */
   text-align: left; /* Căn trái */
-  color: var(--brown100);
+  color: var(--color6);
 }
 
 .info-customer .info-value {

@@ -5,6 +5,15 @@
   margin-top: 20px;
 }
 
+.side-menu__info {
+ width: fit-content;
+  height: 52rem;
+  text-align: top;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 var(--shadow);
+}
+
 /* ===================content============= */
 .store-info {
   width: 100%;
@@ -33,6 +42,7 @@
   background-color: var(--grey9);
   border-radius: 15px;
 }
+
 
 .name-phone {
   display: flex;
