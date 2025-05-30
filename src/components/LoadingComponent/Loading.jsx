@@ -5,6 +5,7 @@ const Loading = ({ isLoading }) => {
 
   return (
     <div
+      data-testid="loading" // Thêm data-testid
       style={{
         position: "fixed",
         top: 0,
