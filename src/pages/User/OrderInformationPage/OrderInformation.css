@@ -319,6 +319,7 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
 .chinhsachBtn {
   border: none;
   margin-top: 20px;
@@ -346,7 +347,8 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 28px; /* 175% */
+  line-height: 28px;
+  /* 175% */
   margin-left: 66px;
 }
 
@@ -436,4 +438,18 @@ tfoot td {
 .text-end {
   font-weight: 600;
   font-size: 2rem;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+  display: block;
+}
+
+.error-message {
+  color: red;
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-align: center;
 }
