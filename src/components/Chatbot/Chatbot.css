@@ -1,0 +1,51 @@
+/* src/components/Chatbot/Chatbot.css */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chatbot-popup {
+    width: 350px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-header {
+    background-color: var(--color5) !important;
+    /* Vàng đậm */
+    color: white !important;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.bot-message {
+    background-color: #fff !important;
+    color: #333 !important;
+}
+
+.user-message {
+    background-color: #f0e68c !important;
+    /* Vàng nhạt */
+    color: #333 !important;
+}
+
+.chatbot-toggle-btn {
+    background-color: var(--color6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.chatbot-toggle-btn:hover {
+    background-color: var(--color7);
+}

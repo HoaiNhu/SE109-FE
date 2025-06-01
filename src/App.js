@@ -1,3 +1,4 @@
+// src/App.js
 import "@glints/poppins";
 import axios from "axios";
 import React, { Fragment, useEffect, useState } from "react";
@@ -20,12 +21,13 @@ import { updateUser } from "./redux/slides/userSlide";
 import * as UserService from "./services/UserService";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "./components/LoadingComponent/Loading";
+import Chatbot from "./components/Chatbot/Chatbot";
+import MyChatbot from "./components/Chatbot/Chatbot";
 
 function App() {
   const dispatch = useDispatch();
   const [showLoading, setShowLoading] = useState(false);
   const user = useSelector((state) => state.user);
-  console.log("user", user);
 
   useEffect(() => {
     WebFont.load({
@@ -37,13 +39,10 @@ function App() {
 
   const handleDecoded = () => {
     let storageData = localStorage.getItem("access_token");
-    // console.log("storageData", storageData);
-
     let decoded = {};
     if (storageData) {
       try {
         decoded = jwtDecode(storageData);
-        console.log("decoded", decoded);
       } catch (error) {
         console.error("Token không hợp lệ", error);
       }
@@ -54,25 +53,19 @@ function App() {
   useEffect(() => {
     setShowLoading(true);
     const { storageData, decoded } = handleDecoded();
-    console.log("decoded?.id", decoded?.id);
     if (decoded?.id) {
       handleGetDetailsUser(decoded?.id, storageData);
     }
     setShowLoading(false);
   }, []);
 
-  //token hết hạn
   UserService.axiosJWT.interceptors.request.use(
     async (config) => {
-      // Do something before request is sent
       const currentTime = new Date();
       const { decoded } = handleDecoded();
       if (decoded?.exp < currentTime.getTime() / 1000) {
-        // console.log("decoded?.exp", decoded?.exp);
-
         try {
           const data = await UserService.refreshToken();
-          // localStorage.setItem("access_token", data?.access_token);
           config.headers["token"] = `Bearer ${data?.access_token}`;
         } catch (error) {
           console.error("Lỗi khi làm mới token", error);
@@ -80,36 +73,17 @@ function App() {
       }
       return config;
     },
-    function (error) {
-      // Do something with request error
-      return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
   );
 
   const handleGetDetailsUser = async (id, token) => {
-    const res = await UserService.getDetailsUser(id, token);
-    // console.log("res", res);
-    dispatch(updateUser({ ...res?.data, access_token: token }));
+    try {
+      const res = await UserService.getDetailsUser(id, token);
+      dispatch(updateUser({ ...res?.data, access_token: token }));
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+    }
   };
-
-  // useEffect(() => {
-  //   fetchApi();
-  // }, []);
-
-  // console.log(
-  //   "REACT_APP_API_URL_BACKEND: ",
-  //   process.env.REACT_APP_API_URL_BACKEND
-  // );
-
-  // const fetchApi = async () => {
-  //   const res = await axios.get(
-  //     `${process.env.REACT_APP_API_URL_BACKEND}/user/get-all-user`
-  //   );
-  //   return res.data;
-  // };
-
-  // const query = useQuery({ queryKey: ["todos"], queryFn: fetchApi });
-  // console.log("query: ", query);
 
   return (
     <div style={{ fontFamily: "poppins" }}>
@@ -121,19 +95,18 @@ function App() {
               {routes.map((route) => {
                 const Page = route.page;
                 const isCheckAuth = !route.isPrivate || user.isAdmin;
-                // console.log(`Route: ${route.path}, isCheckAuth: ${isCheckAuth}`);
-
                 const Header = route.isShowHeader ? DefaultComponent : Fragment;
                 const Footer = route.isShowFooter ? FooterComponent : Fragment;
+
                 return (
                   <Route
                     key={route.path}
                     path={isCheckAuth ? route.path : undefined}
-                    // path={route.path}
                     element={
                       <div>
                         <Header />
                         <Page />
+                        <MyChatbot userId={user._id || "guest"} />
                         <Footer />
                       </div>
                     }
@@ -144,7 +117,6 @@ function App() {
           </AuthProvider>
         </Router>
       )}
-      {/* </Loading> */}
     </div>
   );
 }

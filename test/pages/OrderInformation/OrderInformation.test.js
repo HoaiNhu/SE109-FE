@@ -140,6 +140,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -181,6 +182,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -216,6 +218,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -252,6 +255,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -287,6 +291,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -302,6 +307,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(emailInput).toHaveValue("user#name@domain.com");
         });
     });
@@ -317,6 +323,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -338,6 +345,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -361,6 +369,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -383,6 +392,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -406,6 +416,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -428,6 +439,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -451,6 +463,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -473,6 +486,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -496,6 +510,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -518,6 +533,7 @@ describe("OrderInformationPage", () => {
                     }),
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -542,6 +558,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -566,6 +583,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -589,6 +607,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -609,6 +628,7 @@ describe("OrderInformationPage", () => {
                     orderNote: "Note here",
                 })
             );
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -652,6 +672,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(OrderService.createOrder).toHaveBeenCalled();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).toHaveBeenCalledWith("/payment", expect.anything());
         });
     });
@@ -682,6 +703,7 @@ describe("OrderInformationPage", () => {
         await waitFor(() => {
             // Điều chỉnh dựa trên thông báo lỗi thực tế
             expect(screen.getByText(/Failed to create order. Please try again./i)).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(mockNavigate).not.toHaveBeenCalled();
         });
     });
