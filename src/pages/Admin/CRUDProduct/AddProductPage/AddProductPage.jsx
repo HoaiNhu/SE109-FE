@@ -19,7 +19,7 @@ const AddProductPage = () => {
     productDescription: "",
     productMaterial: "",
     productWeight: "",
-    productQuantity :"",
+    productQuantity: "",
   });
 
   const [categories, setCategories] = useState([]);
@@ -28,12 +28,15 @@ const AddProductPage = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("http://localhost:3001/api/category/get-all-category", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch(
+          "http://localhost:3001/api/category/get-all-category",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch categories");
@@ -81,7 +84,7 @@ const AddProductPage = () => {
           productDescription: "",
           productMaterial: "",
           productWeight: "",
-          productQuantity:"",
+          productQuantity: "",
         });
         setPreviewImage(null);
       } else {
@@ -107,7 +110,7 @@ const AddProductPage = () => {
     formData.append("productDescription", stateProduct.productDescription);
     formData.append("productMaterial", stateProduct.productMaterial);
     formData.append("productWeight", stateProduct.productWeight);
-     formData.append("productQuantity", stateProduct.productQuantity);
+    formData.append("productQuantity", stateProduct.productQuantity);
     if (stateProduct.productImage) {
       formData.append("productImage", stateProduct.productImage);
     }
@@ -135,6 +138,7 @@ const AddProductPage = () => {
                 onChange={handleOnChangeImg}
                 accept="image/*"
                 required
+                data-testid="file-input" //thêm data-testid để test
               />
               <div className="product__image">
                 {previewImage ? (
@@ -230,6 +234,7 @@ const AddProductPage = () => {
                   value={stateProduct.productMaterial}
                   onChange={handleInputChange}
                   className="form__text"
+                  data-testid="material-select" //thêm data-testid để test
                 >
                   <option value="" disabled>
                     Select material
