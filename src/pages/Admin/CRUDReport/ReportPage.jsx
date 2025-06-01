@@ -263,15 +263,11 @@ const ReportPage = () => {
             <SideMenuComponent onClick={ClickDiscount}>
               Promotion
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickStatus}>
-              Status
-            </SideMenuComponent>
+            <SideMenuComponent onClick={ClickStatus}>Status</SideMenuComponent>
             <SideMenuComponent onClick={ClickCategory}>
               Category
             </SideMenuComponent>
-            <SideMenuComponent onClick={ClickUser}>
-              User
-            </SideMenuComponent>
+            <SideMenuComponent onClick={ClickUser}>User</SideMenuComponent>
             <SideMenuComponent onClick={ClickReport}>
               Statistic
             </SideMenuComponent>
@@ -310,7 +306,7 @@ const ReportPage = () => {
                 />
                 <div className="btn__action">
                   <ButtonComponent className="btn-view" onClick={handleView}>
-                  View Statistics 
+                    View Statistics
                   </ButtonComponent>
                 </div>
               </div>

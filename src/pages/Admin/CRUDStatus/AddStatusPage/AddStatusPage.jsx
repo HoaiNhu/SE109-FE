@@ -71,27 +71,28 @@ const AddStatusPage = () => {
   );
 
   useEffect(() => {
-    setShowLoading(false); // Reset loading state after mutation
-    if (mutation.isSuccess) {
-      setFormData({
-        statusCode: "",
-        statusName: "",
-        statusDescription: "",
-      });
-      setStatusMessage({
-        type: "Success",
-        message: "Status added successfully!",
-      });
-    } else if (mutation.isError) {
-      const errorMessage =
-        mutation.error?.message.message ||
-        JSON.stringify(mutation.error) ||
-        "Failed to add status.";
-      console.log("errorMessage", errorMessage);
-      setStatusMessage({
-        type: "Error",
-        message: errorMessage,
-      });
+    if (mutation.isSuccess || mutation.isError) {
+      setShowLoading(false); // Chỉ reset loading state khi mutation hoàn thành
+      if (mutation.isSuccess) {
+        setFormData({
+          statusCode: "",
+          statusName: "",
+          statusDescription: "",
+        });
+        setStatusMessage({
+          type: "Success",
+          message: "Status added successfully!",
+        });
+      } else if (mutation.isError) {
+        const errorMessage =
+          mutation.error?.message?.message ||
+          JSON.stringify(mutation.error) ||
+          "Failed to add status.";
+        setStatusMessage({
+          type: "Error",
+          message: errorMessage,
+        });
+      }
     }
   }, [mutation.isSuccess, mutation.isError, mutation.error]);
 

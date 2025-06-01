@@ -197,6 +197,7 @@ const AddDiscountPage = () => {
                   onChange={handleOnChangeImg}
                   accept="image/*"
                   required
+                  data-testid="banner-input" //thêm data-testid để test
                 />
                 <div className="banner__image">
                   {previewImage && (
