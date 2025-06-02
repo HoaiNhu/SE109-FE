@@ -687,6 +687,7 @@ describe("OrderInformationPage", () => {
         fireEvent.click(screen.getByText(/Checkout/i));
         await waitFor(() => {
             expect(screen.getByText(/Last Name is required/i)).toBeInTheDocument();
+            // eslint-disable-next-line testing-library/no-wait-for-multiple-assertions
             expect(OrderService.createOrder).not.toHaveBeenCalled();
         });
     });

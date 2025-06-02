@@ -7,9 +7,10 @@ module.exports = {
   },
   testMatch: ["<rootDir>/test/**/*.test.js"],
   moduleDirectories: ["node_modules", "src"],
-
-  // 👇 Thêm dòng này để transform axios (hoặc toàn bộ node_modules trừ một số thư viện nhất định)
+  transform: {
+    "^.+\\.(js|jsx)$": "babel-jest", // Thêm dòng này để xử lý JS/JSX
+  },
   transformIgnorePatterns: [
-    "node_modules/(?!(axios)/)", // chỉ transpile axios
+    "node_modules/(?!(axios)/)",
   ],
 };
